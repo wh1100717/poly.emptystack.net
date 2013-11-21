@@ -1,5 +1,6 @@
 pygments: true
 name: Python 4 Online Judgement
 relative_permalinks: false
+baseurl: /python4OJ
 permalink: /news/:year/:month/:day/:title/
 repository: https://github.com/wh1100717/python4OJ
