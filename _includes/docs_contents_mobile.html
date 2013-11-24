@@ -2,10 +2,10 @@
   <select onchange="if (this.value) window.location.href=this.value">
     <option value="">Navigate the docs…</option>
     <optgroup label="Getting started">
-      {% include docs_option.html items='home quickstart installation usage structure configuration' %}
+      {% include docs_option.html items='home installation githubusage jekyllusage' %}
     </optgroup>
-    <optgroup label="Your Content">
-      {% include docs_option.html items='frontmatter posts drafts pages variables datafiles migrations' %}
+    <optgroup label="Python For OJ">
+      {% include docs_option.html items='pythonbase posts drafts pages variables datafiles migrations' %}
     </optgroup>
     <optgroup label="Customization">
       {% include docs_option.html items='templates permalinks pagination plugins extras' %}
