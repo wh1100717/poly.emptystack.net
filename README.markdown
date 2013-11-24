@@ -14,5 +14,9 @@ Just visit [here](http://wh1100717.github.com/PolyTechDocs)
 
 ##Contribution
 
-[Eric Wang](http://github.com/wh1100717)
+[Eric Wang](http://github.com/wh1100717) | 
 [Zhao Qing](https://github.com/zq920320)
+
+##Contact
+
+QQ群：99496674
