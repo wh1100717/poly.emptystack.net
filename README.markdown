@@ -4,13 +4,13 @@ PolyTechDocs为宝利明威测试小组自发组织和建立的协同文档编�
 
 ## Getting Started
 
-* [安装](http://jekyllrb.com/docs/installation/) gem(利用gem来安装jekyll、rdiscount、kramdown、wdm等工具)
-* 阅读[使用方法](http://jekyllrb.com/docs/usage/)和[配置方式](http://jekyllrb.com/docs/configuration/)
-* 克隆项目到本地并在现在进行编辑测试
+* [环境搭建](http://wh1100717.github.io/PolyTechDocs/docs/installation/)(利用gem来安装jekyll、rdiscount、kramdown、wdm等工具)
+* [GitHub使用介绍](http://wh1100717.github.io/PolyTechDocs/docs/githubusage/)
+* [Jekyl使用介绍](http://wh1100717.github.io/PolyTechDocs/docs/jekyllusage/)
 
 ## How To Read The Documentation WebSite
 
-Just visit [here](http://wh1100717.github.com/PolyTechDocs)
+访问[这里](http://wh1100717.github.com/PolyTechDocs)
 
 ##Contribution
 
