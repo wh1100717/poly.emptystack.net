@@ -2,7 +2,7 @@ encoding: utf-8
 pygments: true
 name: Python 4 Online Judgement
 relative_permalinks: false
-baseurl: /python4OJ
-url: /python4OJ
+baseurl: /PolyTechDocs
+url: /PolyTechDocs
 permalink: /news/:year/:month/:day/:title/
-repository: https://github.com/wh1100717/python4OJ
+repository: https://github.com/wh1100717/PolyTechDocs
