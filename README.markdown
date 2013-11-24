@@ -8,7 +8,7 @@ PolyTechDocs为宝利明威测试小组自发组织和建立的协同文档编�
 * [GitHub使用介绍](http://wh1100717.github.io/PolyTechDocs/docs/githubusage/)
 * [Jekyl使用介绍](http://wh1100717.github.io/PolyTechDocs/docs/jekyllusage/)
 
-## How To Read The Documentation WebSite
+## How To Visit The Documentation WebSite
 
 访问[这里](http://wh1100717.github.com/PolyTechDocs)
 

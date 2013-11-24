@@ -87,9 +87,7 @@ $ jekyll -v
 
 Pygments只支持easy_install安装，而easy_install是用Python编写的脚本工具，所以为了安装Pygments需要先安装Python。
 
-下载并安装[Python](http://www.python.org/)，安装后在系统环境变量PATH中配置Python相关的环境变量，具体配置请查看[这里](http://blog.csdn.net/liguo9860/article/details/6829610)
-
-可以通过以下命令查看是否安装并配置成功(注意：是大写的-V)：
+下载并安装[Python](http://www.python.org/)，安装后在系统环境变量PATH中[配置Python相关的环境变量](http://blog.csdn.net/liguo9860/article/details/6829610)，可以通过以下命令查看是否安装并配置成功(注意：是大写的-V)：
 
 {% highlight bash %}
 $ python -V

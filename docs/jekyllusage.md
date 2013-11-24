@@ -8,22 +8,22 @@ permalink: /docs/jekyllusage/
 
 作为文档编写者，你只需要利用jekyll在本地测试你所编写的文档。
 
-当我们通过GitHub将项目克隆到本地后(假如克隆到d:/PolyTechDocs/下)，我们就可以利用Jekyll反问我们的页面了
+当我们通过GitHub将项目克隆到本地后(假如克隆到D:/PolyTechDocs/下)，我们就可以利用Jekyll访问我们的页面了。
 
-Jekyll提供了一个内置服务器，可以使得我们直接通过浏览器来访问我们本地项目
+Jekyll提供了一个内置服务器，可以使得我们直接通过浏览器来访问我们本地项目。
 
 {% highlight bash %}
-$ jekyll serve
+D:\PolyTechDocs> jekyll serve
 # => 本地服务器进行部署，此时可以通过http://localhost:4000/来进行访问
-$ jekyll serve --watch
+D:\PolyTechDocs> jekyll serve --watch
 # => 本地服务器进行部署并监听，一旦项目中发生改变，将会导致服务器重新部署
 # => 该命令使得编写文档后查看效果非常方便，只需要刷新页面即可
 {% endhighlight %}
 
 <div class="note">
-  <h5>更多关于jekyll的框架、变量、配置、插件的内容</h5>
+  <h5>更多关于Jekyll的框架、变量、配置、插件的内容</h5>
   <p>
-    jekyll有很多的功能和模块，也有很多的配置文件，也可以进行很多的扩展，如果对这些感兴趣，请访问Jekyll的<a href="http://jekyllrb.com/docs/home/">官方说明文档</a>。
+    Jekyll有很多的功能和模块，也有很多的配置文件，也可以进行很多的扩展，如果对这些感兴趣，请访问Jekyll的<a href="http://jekyllrb.com/docs/home/">官方说明文档</a>。
   </p>
 </div>
 
