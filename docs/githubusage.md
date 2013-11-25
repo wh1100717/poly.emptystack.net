@@ -15,6 +15,7 @@ Github Pages提供了服务器支持，我们可以免费在这里发布自己�
 ## GitHub Installation
 
 可以通过[GitHub for Windows](http://windows.github.com/)来安装并通过界面的方式来使用GitHub，你也可以通过输入命令的方式来控制你的操作。请查看下列文档来熟悉GitHub:
+
 * [Set Up Git](https://help.github.com/articles/set-up-git)
 * [Create Repositories](https://help.github.com/create-a-repo)
 * [Fork A Repo](https://help.github.com/articles/fork-a-repo)
