@@ -16,7 +16,7 @@ Python是一种面线对象、直译式计算机程序设计语言。其语法�
 
 ##版本选择
 
-Python分为2.x和3.x版本，Python3对Python进行了大幅度的更改，建议学习Python2.x，因为目前的大部分插件和库仍然以2.x为主，而且在2.x的基础上学习3.x,并非难事。
+Python分为2.x和3.x版本，Python3进行了大幅度的更改，建议学习Python2.x，因为目前的大部分插件和库仍然以2.x为主，而且在2.x的基础上学习3.x,并非难事。
 
 Python的下载地址在[这里](http://www.python.org/)。安装后在系统环境变量PATH中[配置Python相关的环境变量](http://blog.csdn.net/liguo9860/article/details/6829610)，可以通过以下命令查看是否安装并配置成功(注意：是大写的-V)：
 
