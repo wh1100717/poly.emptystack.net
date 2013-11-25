@@ -609,6 +609,9 @@ article h2:first-child {
 
 /* Code Highlighting */
 
+pre {
+  white-space: pre; /* fix bootstrap conflict with pygments */
+}
 
 pre, code {
   white-space: pre;
