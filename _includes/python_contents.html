@@ -15,7 +15,7 @@
         <ul>
             {% for currentPage in site.pages %}
                 {% if currentPage.url contains '/python/answers/'%}
-                    <li class="{% if currentPage.title == {{site.title}} %}current{% endif %}">
+                    <li class="{% if currentPage.title == {{page.title}} %}current{% endif %}">
                         <a href="{{site.url}}{{ currentPage.url }}">{{ currentPage.title }}</a>
                     </li>            
                 {% endif %}
