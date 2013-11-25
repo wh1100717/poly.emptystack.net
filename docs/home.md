@@ -13,7 +13,7 @@ permalink: /docs/home/
 
 注重记录和分享才能让我们走的更远、更高。
 
-## What is the Poly Tech Docs?
+## What is Poly Tech Docs?
 
 PolyTechDocs为宝利明威测试小组自发组织和建立的协同文档编写项目，采用了Jekyll模版，使得文档编写可以在忽略字体大小样式，代码格式等方面的情况下进行专注于内容的高效编写。
 

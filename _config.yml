@@ -1,6 +1,7 @@
 encoding: utf-8
 pygments: true
-name: Python 4 Online Judgement
+markdown: redcarpet
+name: Poly Tech Docs
 relative_permalinks: false
 baseurl: /PolyTechDocs
 url: /PolyTechDocs
