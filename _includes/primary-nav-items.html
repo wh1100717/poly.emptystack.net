@@ -6,9 +6,13 @@
     <a href="{{ site.url }}/docs/home/">Docs</a>
   </li>
   <li class="{% if page.url contains '/python/' %}current{% endif %}">
-    <a href="{{ site.url }}/python/introduction">Python</a>
+    <a href="{{ site.url }}/python/introduction/">Python</a>
   </li>
-<!--
+  <li class="{% if page.url contains '/emm/' %}current{% endif %}">
+    <a href="{{ site.url }}/emm/introduction/">EMM</a>
+  </li>
+
+  <!--
   <li class="{% if page.author %}current{% endif %}">
     <a href="{{ site.url }}/news/">日志</a>
   </li>
