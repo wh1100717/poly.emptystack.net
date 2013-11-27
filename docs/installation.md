@@ -95,7 +95,7 @@ $ python -V
 
 接下来进行easy_install的安装。
 
-easy_install实际上setupTools里面的一个工具，我们需要安装setuptools。下载脚本[ez_setup.py](https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py)至本地，例如D盘跟目录。
+easy_install实际上setupTools里面的一个工具，我们需要安装setuptools。下载脚本[ez_setup.py](https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py)至本地，例如D盘根目录。
 
 在命令行执行如下代码来安装setupTools
 
@@ -114,7 +114,7 @@ sys.setdefaultencoding('gbk')
 
 即把默认编码方式改为gbk(网上有写用utf8的，在这个脚本中是无效的，需要改成gbk格式)。重新运行，如果出现刷屏的安装信息，则说明安装成功了。此时，在python目录下多了一个Script文件夹，easy_install就在里面。
 
-接下来进入easy_install所在的文件夹及Python跟目录/Scripts执行以下代码进行pygments关联插件的安装：
+接下来进入easy_install所在的文件夹及Python跟目录/Scripts执行以下命令进行pygments关联插件的安装：
 
 {% highlight bash %}
 C:\Python27\Scripts> easy_install.exe Pygments
