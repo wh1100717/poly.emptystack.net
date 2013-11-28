@@ -7,6 +7,12 @@ PolyTechDocs为宝利明威测试小组自发组织和建立的协同文档编�
 * [环境搭建](http://wh1100717.github.io/PolyTechDocs/docs/installation/)(利用gem来安装jekyll、rdiscount、kramdown、wdm等工具)
 * [GitHub使用介绍](http://wh1100717.github.io/PolyTechDocs/docs/githubusage/)
 * [Jekyll使用介绍](http://wh1100717.github.io/PolyTechDocs/docs/jekyllusage/)
+* [MarkDown教程](http://wh1100717.github.io/PolyTechDocs/docs/markdownbase/)
+
+##Tech Materials
+
+* [Python](http://wh1100717.github.io/PolyTechDocs/python/introduction/)
+* [EMM](http://wh1100717.github.io/PolyTechDocs/emm/introduction/)
 
 ## How To Visit The Documentation WebSite
 
