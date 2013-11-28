@@ -944,3 +944,22 @@ code.option, code.flag, code.filter, code.output {
     padding: 0 10px;
   }
 }
+
+/*默认样式，主要是position:fixed实现屏幕绝对定位*/
+#gotoTop{
+    display:none;
+    position:fixed;
+    top:75%;
+    left:50%;
+    cursor:pointer;
+    margin-top:-50px;
+    margin-left:520px;
+    padding:9px 4px;
+    width:45px;
+    height: 45px;
+    text-align:center;
+    background: url("http://s.libdd.com/img/icon/feed-icons.$6973.png") no-repeat -200px -60px;}
+/*用CSS表达式(expression)来实现ie6下position:fixed效果*/
+#gotoTop{_position:absolute;_top:expression(documentElement.scrollTop + documentElement.clientHeight * 3/4 + "px")}
+/*鼠标进入的反馈效果*/
+#gotoTop.hover{background: url("http://s.libdd.com/img/icon/feed-icons-ie.$5234.png") no-repeat -200px -60px;}
