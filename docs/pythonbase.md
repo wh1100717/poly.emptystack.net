@@ -1,8 +1,8 @@
 ---
 layout: docs
 title: Python
-prev_section: jekyllusage
-next_section: pythonbase
+prev_section: markdownsyntax
+next_section: emmbase
 permalink: /docs/pythonbase/
 ---
 

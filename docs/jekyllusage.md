@@ -2,7 +2,7 @@
 layout: docs
 title: Jekyll Usage
 prev_section: githubusage
-next_section: pythonbase
+next_section: markdownbase
 permalink: /docs/jekyllusage/
 ---
 
