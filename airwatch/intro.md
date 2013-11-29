@@ -106,34 +106,34 @@ AirWatch是企业移动设备解决方案提供商，被认为是企业移动管
 * [Enterprise Mobility Forum][25]
 
 
-[Bring Your Own Device (BYOD)]:{{site.url}}/emm/airwatch/byod/
-[Containerization (Workspace)]:{{site.url}}/emm/airwatch/containerization/
-[Mobile Security]:{{site.url}}/emm/airwatch/security/
-[Mobile Device Management]:{{site.url}}/emm/airwatch/mdm/
-[Mobile Application Management]:{{site.url}}/emm/airwatch/mam/
-[Mobile Content Management]:{{site.url}}/emm/airwatch/mcm/
-[Mobile Email Management]:{{site.url}}/emm/airwatch/mem/
-[Mobile Browsing Management]:{{site.url}}/emm/airwatch/mbm/
-[Laptop Management]:{{site.url}}/emm/airwatch/laptop/
-[Multi-user Management]:{{site.url}}/emm/airwatch/multiuser/
+[Bring Your Own Device (BYOD)]:{{site.url}}/airwatch/byod/
+[Containerization (Workspace)]:{{site.url}}/airwatch/containerization/
+[Mobile Security]:{{site.url}}/airwatch/security/
+[Mobile Device Management]:{{site.url}}/airwatch/mdm/
+[Mobile Application Management]:{{site.url}}/airwatch/mam/
+[Mobile Content Management]:{{site.url}}/airwatch/mcm/
+[Mobile Email Management]:{{site.url}}/airwatch/mem/
+[Mobile Browsing Management]:{{site.url}}/airwatch/mbm/
+[Laptop Management]:{{site.url}}/airwatch/laptop/
+[Multi-user Management]:{{site.url}}/airwatch/multiuser/
 
-[Android]:{{site.url}}/emm/airwatch/android/
-[Apple iOS]:{{site.url}}/emm/airwatch/ios/
-[BlackBerry]:{{site.url}}/emm/airwatch/blackberry/
-[Mac OS]:{{site.url}}/emm/airwatch/macos/
-[Symbian]:{{site.url}}/emm/airwatch/symbian/
-[Windows PC/RT]:{{site.url}}/emm/airwatch/windowspc/
-[Windows Mobile]:{{site.url}}/emm/airwatch/windowsmobile/
-[Windows Phone]:{{site.url}}/emm/airwatch/windowsphone/
+[Android]:{{site.url}}/airwatch/android/
+[Apple iOS]:{{site.url}}/airwatch/ios/
+[BlackBerry]:{{site.url}}/airwatch/blackberry/
+[Mac OS]:{{site.url}}/airwatch/macos/
+[Symbian]:{{site.url}}/airwatch/symbian/
+[Windows PC/RT]:{{site.url}}/airwatch/windowspc/
+[Windows Mobile]:{{site.url}}/airwatch/windowsmobile/
+[Windows Phone]:{{site.url}}/airwatch/windowsphone/
 
-[Education教育]:{{site.url}}/emm/airwatch/education/
-[Enterprise企业]:{{site.url}}/emm/airwatch/enterprise/
-[Finance金融]:{{site.url}}/emm/airwatch/finance/
-[Government政府]:{{site.url}}/emm/airwatch/government/
-[Healthcare医疗]:{{site.url}}/emm/airwatch/healthcare/
-[Retail零售]:{{site.url}}/emm/airwatch/retail/
-[Small & Medium-Sized Business中小企业]:{{site.url}}/emm/airwatch/business/
-[Transportation交通运输]:{{site.url}}/emm/airwatch/transport/
+[Education教育]:{{site.url}}/airwatch/education/
+[Enterprise企业]:{{site.url}}/airwatch/enterprise/
+[Finance金融]:{{site.url}}/airwatch/finance/
+[Government政府]:{{site.url}}/airwatch/government/
+[Healthcare医疗]:{{site.url}}/airwatch/healthcare/
+[Retail零售]:{{site.url}}/airwatch/retail/
+[Small & Medium-Sized Business中小企业]:{{site.url}}/airwatch/business/
+[Transportation交通运输]:{{site.url}}/airwatch/transport/
 
 [1]:http://aonetwork.com/the-alwayson-global-250-top-company-competition-2/
 [2]:http://www.bestinbizawards.com/2013-winners/
