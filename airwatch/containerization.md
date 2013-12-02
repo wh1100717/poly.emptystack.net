@@ -8,7 +8,7 @@ version: 1.0.0
 categories: [demo]
 ---
 
-<EMBED src=http://fast.wistia.com/embed/iframe/f8ojjfvr0s?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=288&videoWidth=512&plugin%5BpostRoll-v1%5D=%7B%22text%22%3A%22Get%20started%20on%20your%20free%3Cbr%2F%3E30-day%20AirWatch%20trial%3Cbr%2F%3Enow.%22%2C%22link%22%3A%22http%3A%2F%2Fwww.air-watch.com%2Ffree-trial%22%2C%22style%22%3A%7B%22backgroundColor%22%3A%22%23004e6c%22%2C%22color%22%3A%22%23ffffff%22%2C%22fontSize%22%3A%2236px%22%2C%22fontFamily%22%3A%22Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif%22%7D%7D style="HEIGHT: 380px; WIDTH: 670px">
+<EMBED src=http://fast.wistia.com/embed/iframe/f8ojjfvr0s?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=288&videoWidth=512&plugin%5BpostRoll-v1%5D=%7B%22text%22%3A%22Get%20started%20on%20your%20free%3Cbr%2F%3E30-day%20AirWatch%20trial%3Cbr%2F%3Enow.%22%2C%22link%22%3A%22http%3A%2F%2Fwww.air-watch.com%2Ffree-trial%22%2C%22style%22%3A%7B%22backgroundColor%22%3A%22%23004e6c%22%2C%22color%22%3A%22%23ffffff%22%2C%22fontSize%22%3A%2236px%22%2C%22fontFamily%22%3A%22Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif%22%7D%7D autostart="false" style="HEIGHT: 370px; WIDTH: 640px" >
 </EMBED>
 
 
