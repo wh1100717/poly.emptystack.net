@@ -8,6 +8,9 @@ version: 1.0.0
 categories: [demo]
 ---
 
+<EMBED src=http://fast.wistia.com/embed/iframe/a70irzt0uq?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=360&videoWidth=640&plugin%5BpostRoll%5D%5Braw%5D=%3Ca%20href%3D%22http%3A%2F%2Fwww.air-watch.com%2Ffree-trial%22%20target%3D%22_parent%22%3E%3Cimg%20src%3D%22%2F%2Fwww.air-watch.com%2Fassets%2Fimg%2Fpost-roll-freetrial.jpg%22%3E%3C%2Fa%3E&plugin%5BpostRoll%5D%5Bstyle%5D%5BbackgroundColor%5D=%23616161&plugin%5BpostRoll%5D%5Bstyle%5D%5Bcolor%5D=%23ffffff&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontFamily%5D=Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontSize%5D=36px&plugin%5BpostRoll%5D%5Bstyle%5D%5BtextAlign%5D=left&plugin%5BpostRoll%5D%5Bversion%5D=v1 style="HEIGHT: 380px; WIDTH: 670px">
+</EMBED>
+
 ##支持个人设备的企业部署
 随着移动化的发展，越来越多的企业开始进行BYOD的企业移动设备部署,或者包含企业设备和BYOD设备的混合部署。企业允许员工在任何地点访问企业资源，从而提高生产效率并提高员工的满意度。然而保证企业设备安全以及支持不同移动平台也产生了一系列复杂的问题。
 

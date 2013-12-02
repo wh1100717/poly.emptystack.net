@@ -8,6 +8,9 @@ version: 1.0.0
 categories: [demo]
 ---
 
+<EMBED src=http://fast.wistia.com/embed/iframe/1pw0kmfsx4?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=360&videoWidth=640&plugin%5BpostRoll%5D%5Braw%5D=%3Ca%20href%3D%22http%3A%2F%2Fwww.air-watch.com%2Ffree-trial%22%20target%3D%22_parent%22%3E%3Cimg%20src%3D%22%2F%2Fwww.air-watch.com%2Fassets%2Fimg%2Fpost-roll-freetrial.jpg%22%3E%3C%2Fa%3E&plugin%5BpostRoll%5D%5Bstyle%5D%5BbackgroundColor%5D=%23616161&plugin%5BpostRoll%5D%5Bstyle%5D%5Bcolor%5D=%23ffffff&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontFamily%5D=Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontSize%5D=36px&plugin%5BpostRoll%5D%5Bstyle%5D%5BtextAlign%5D=left&plugin%5BpostRoll%5D%5Bversion%5D=v1 style="HEIGHT: 380px; WIDTH: 670px">
+</EMBED>
+
 ##提供能够保持员工工作效率的应用程序
 移动应用程序正在改变员工的工作方式。今天的终端用户要求将他们的移动应用程序连接到企业资源上，从而提高他们的工作效率并促进与同事的合作。明智的企业会利用公司允许的公有或者内部订制的应用程序来满足员工的要求。
 

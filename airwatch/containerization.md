@@ -8,10 +8,14 @@ version: 1.0.0
 categories: [demo]
 ---
 
+<EMBED src=http://fast.wistia.com/embed/iframe/f8ojjfvr0s?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=288&videoWidth=512&plugin%5BpostRoll-v1%5D=%7B%22text%22%3A%22Get%20started%20on%20your%20free%3Cbr%2F%3E30-day%20AirWatch%20trial%3Cbr%2F%3Enow.%22%2C%22link%22%3A%22http%3A%2F%2Fwww.air-watch.com%2Ffree-trial%22%2C%22style%22%3A%7B%22backgroundColor%22%3A%22%23004e6c%22%2C%22color%22%3A%22%23ffffff%22%2C%22fontSize%22%3A%2236px%22%2C%22fontFamily%22%3A%22Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif%22%7D%7D style="HEIGHT: 380px; WIDTH: 670px">
+</EMBED>
+
+
 ##灵活的容器化移动部署
 随着移动化成为公司商业化的集成部分，解决保护移动设备上的企业数据所面临的挑战变得至关重要。
 
-容器化(有点类似沙箱的赶脚==！)提供了公私数据的完全分离。确保公司数据的安全性，同事保证员工隐私。AirWatch®利用容器化使组织可以规范企业安全性和跨移动设备的数据防丢失(DLP)策略。利用应用级和企业工作空间容器选项，AirWatch容器方案的部署可以满足企业安全需求。
+容器化(有点类似沙箱的赶脚==！)提供了公私数据的完全分离。确保公司数据的安全性，同时保证员工隐私。AirWatch®利用容器化使组织可以规范企业安全性和跨移动设备的数据防丢失(DLP)策略。利用应用级和企业工作空间容器选项，AirWatch容器方案的部署可以满足企业安全需求。
 
 -------------------------------------------
 ##灵活的体验

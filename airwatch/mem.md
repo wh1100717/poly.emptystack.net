@@ -8,6 +8,11 @@ version: 1.0.0
 categories: [demo]
 ---
 
+<EMBED src=http://fast.wistia.com/embed/iframe/q7s0lsgy0h?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=360&videoWidth=640&plugin%5BpostRoll%5D%5Braw%5D=%3Ca%20href%3D%22http%3A%2F%2Fwww.air-watch.com%2Ffree-trial%22%20target%3D%22_parent%22%3E%3Cimg%20src%3D%22%2F%2Fwww.air-watch.com%2Fassets%2Fimg%2Fpost-roll-freetrial.jpg%22%3E%3C%2Fa%3E&plugin%5BpostRoll%5D%5Bstyle%5D%5BbackgroundColor%5D=%23616161&plugin%5BpostRoll%5D%5Bstyle%5D%5Bcolor%5D=%23ffffff&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontFamily%5D=Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontSize%5D=36px&plugin%5BpostRoll%5D%5Bstyle%5D%5BtextAlign%5D=left&plugin%5BpostRoll%5D%5Bversion%5D=v1 style="HEIGHT: 380px; WIDTH: 670px">
+</EMBED>
+
+<EMBED src=http://fast.wistia.com/embed/iframe/ktrps4bzeh?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=360&videoWidth=640&plugin%5BpostRoll%5D%5Braw%5D=%3Ca%20href%3D%22http%3A%2F%2Fwww.air-watch.com%2Ffree-trial%22%20target%3D%22_parent%22%3E%3Cimg%20src%3D%22%2F%2Fwww.air-watch.com%2Fassets%2Fimg%2Fpost-roll-freetrial.jpg%22%3E%3C%2Fa%3E&plugin%5BpostRoll%5D%5Bstyle%5D%5BbackgroundColor%5D=%23616161&plugin%5BpostRoll%5D%5Bstyle%5D%5Bcolor%5D=%23ffffff&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontFamily%5D=Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontSize%5D=36px&plugin%5BpostRoll%5D%5Bstyle%5D%5BtextAlign%5D=left&plugin%5BpostRoll%5D%5Bversion%5D=v1 style="HEIGHT: 380px; WIDTH: 670px">
+</EMBED>
 
 ##保证企业邮箱的安全连接
 移动邮件服务是基于移动设备办公的核心功能。员工经常会在不安全的网络下使用未认证的第三方邮件客户端或者利用雇员所拥有的设备来访问邮箱。管理员需要保证邮件是安全的并阻止企业数据的遗失。
