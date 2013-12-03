@@ -54,5 +54,3 @@ PolyTechDocs为宝利明威测试小组自发组织和建立的协同文档编�
 
 [Eric Wang]:http://github.com/wh1100717
 [Zhao Qing]:https://github.com/zq920320
-[99496674]:http://qun.qq.com/#jointhegroup/gid/99496674
-
