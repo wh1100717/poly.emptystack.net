@@ -3,24 +3,15 @@
     <a href="{{ site.url }}/">首页</a>
   </li>
   <li class="{% if page.url contains '/docs/' %}current{% endif %}">
-    <a href="{{ site.url }}/docs/home/">Docs</a>
+    <a href="{{ site.url }}/docs/home/">Intro</a>
   </li>
   <li class="{% if page.url contains '/python/' %}current{% endif %}">
     <a href="{{ site.url }}/python/introduction/">Python</a>
   </li>
-  <li class="{% if page.url contains '/emm/' %}current{% endif %}">
-    <a href="{{ site.url }}/emm/introduction/">EMM</a>
-  </li>
   <li class="{% if page.url contains '/airwatch/' %}current{% endif %}">
     <a href="{{ site.url }}/airwatch/introduction/">AirWatch</a>
   </li>
-  
-  <!--
-  <li class="{% if page.author %}current{% endif %}">
-    <a href="{{ site.url }}/news/">日志</a>
+  <li class="{% if page.url contains '/emm/' %}current{% endif %}">
+    <a href="{{ site.url }}/emm/introduction/">EMM</a>
   </li>
-  <li class="">
-    <a href="{{ site.url }}">留言区</a>
-  </li>
--->
 </ul>

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: EMM
-prev_section: pythonbase
+prev_section: airwatchbase
 next_section: emmbase
 permalink: /docs/emmbase/
 ---

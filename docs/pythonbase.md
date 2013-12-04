@@ -2,7 +2,7 @@
 layout: docs
 title: Python
 prev_section: markdownsyntax
-next_section: emmbase
+next_section: airwatchbase
 permalink: /docs/pythonbase/
 ---
 
