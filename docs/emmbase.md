@@ -1,8 +1,21 @@
 ---
 layout: docs
-title: EMM
+title: Poly EMM
 prev_section: airwatchbase
 next_section: emmbase
 permalink: /docs/emmbase/
 ---
-<img src="{{ site.url }}/img/emmCompany.png"  alt="">
+
+>无论是新入职的员工，还是已经工作过一段时间的朋友<br>
+>无论是产品设计、运营专员，还是研发或者测试成员<br>
+>无论是渠道、销售人员，还是售后或者提供在线咨询<br>
+>了解公司产品都是开展自身业务必修课
+>
+>凭心而论，了解的途径不同，材料不同，甚至版本不同<br>
+>导致每个人了解产品的内容和深度都有所区别
+>
+>Poly EMM主要是想通过大家共同的维护和理解<br>
+>来建立一个保持最新产品设计和需求的文档方案
+
+这一部分内容，还并没有开展，因为目前还没有比较准确和详细的企业文档方案和流程，而且实时在变化，我们需要确定一个点，来开展这方面的业务和工作。
+

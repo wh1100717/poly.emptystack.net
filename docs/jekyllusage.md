@@ -6,10 +6,14 @@ next_section: markdownbase
 permalink: /docs/jekyllusage/
 ---
 
-作为文档编写者，你只需要利用jekyll在本地测试你所编写的文档。
+>我们需要本地环境运行并测试所编写的文档内容和样式是否正确。<br>
+>在[Installation]章节中已经讲解了如何搭建该环境。<br>
+>在[GitHub]章节中已经讲解了如何利用Github将项目克隆到本地。
+>
+>该章节主要讲解利用Jekyll来运行并查看项目内容。<br>
+>以及Jekyll提供的框架和内置功能方便文档撰写。
 
 当我们通过GitHub将项目克隆到本地后(假如克隆到D:/PolyTechDocs/下)，我们就可以利用Jekyll访问我们的页面了。
-
 Jekyll提供了一个内置服务器，可以使得我们直接通过浏览器来访问我们本地项目。
 
 {% highlight bash %}
@@ -157,3 +161,5 @@ Jekyll有其自身的文件结构和框架，利用默认文件结构可以减�
 </table>
 </div>
 
+[Installation]: {{site.url}}/docs/installation/
+[GitHub]: {site.url}}/docs/githubusage/

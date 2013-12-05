@@ -33,4 +33,6 @@ AirWatch不仅能够对邮件的保护，也能提供对其附件进行保护。
 
 -------------------------------------------
 ##邮箱集成(Email Integration)
-无论您邮箱基础架构是如何设置的，您都可以轻松的集成-自定义-AirWatch的高级邮箱管理到您已经存在的系统中。AirWatch支持Proxy(Microsoft Exchange 2003/2007/2010/2013, Lotus Notes, Novell GroupWise), PowerShell(Microsoft Exchange 2010/2013, Office365/BPOS)和Google(Google Apps)部署。您可以在[Email Integration](http://www.air-watch.com/differentiators/enterprise-integration/email-infrastructure)中获取更多信息。
+无论您邮箱基础架构是如何设置的，您都可以轻松的集成-自定义-AirWatch的高级邮箱管理到您已经存在的系统中。AirWatch支持Proxy(Microsoft Exchange 2003/2007/2010/2013, Lotus Notes, Novell GroupWise), PowerShell(Microsoft Exchange 2010/2013, Office365/BPOS)和Google(Google Apps)部署。您可以在[Email Integration]中获取更多信息。
+
+[Email Integration]:http://www.air-watch.com/differentiators/enterprise-integration/email-infrastructure

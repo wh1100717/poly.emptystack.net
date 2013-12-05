@@ -7,44 +7,40 @@ author: wh1100717
 version: 1.0.0
 categories: [demo]
 ---
-**We Simplify Enterprise Mobility**
+>**We Simplify Enterprise Mobility**
+>
+>**AirWatch**是企业移动设备解决方案提供商，被认为是企业移动管理领域的领导者。<br>
+>全世界有来自150多个国家超过9000个公司使用**AirWatch**提供的服务来管理他们的移动设备，包括里面的应用和内容。
 
-AirWatch是企业移动设备解决方案提供商，被认为是企业移动管理领域的领导者。全世界有来自150多个国家超过9000个公司使用AirWatch提供的服务来管理他们的移动设备，包括里面的应用和内容。
-
-##**AirWatch**提供多种技术解决方案：
-
-* [Bring Your Own Device (BYOD)]
-* [Containerization (Workspace)]
-* [Mobile Security]
-* [Mobile Device Management]
-* [Mobile Application Management]
-* [Mobile Content Management]
-* [Mobile Email Management]
-* [Mobile Browsing Management]
-* [Laptop Management]
-* [Multi-user Management]
-
-##**AirWatch**支持多种平台系统：
-
-* [Android]
-* [Apple iOS]
-* [BlackBerry]
-* [Mac OS]
-* [Symbian]
-* [Windows PC/RT]
-* [Windows Mobile]
-* [Windows Phone]
-
-##**AirWatch**提供多种行业解决方案
-
-* [Education教育]
-* [Enterprise企业]
-* [Finance金融]
-* [Government政府]
-* [Healthcare医疗]
-* [Retail零售]
-* [Small & Medium-Sized Business中小企业]
-* [Transportation交通运输]
+*   Solutions
+    *   [Bring Your Own Device (BYOD)]\[RELEASE] By [Eric Wang]
+    *   [Containerization (Workspace)]\[RELEASE] By [Eric Wang]
+    *   [Mobile Security]\[RELEASE] By [Eric Wang]
+    *   [Mobile Device Management]\[RELEASE] By [Eric Wang]
+    *   [Mobile Application Management]\[RELEASE] By [Eric Wang]
+    *   [Mobile Content Management]\[RELEASE] By [Eric Wang]
+    *   [Mobile Email Management]\[RELEASE] By [Eric Wang]
+    *   [Mobile Browsing Management]\[RELEASE] By [Eric Wang]
+    *   [Laptop Management]\[RELEASE] By [Eric Wang]
+    *   [Multi-user Management]\[RELEASE] By [Eric Wang]
+*   platform
+    *   Android [TODO]
+    *   Apple iOS [TODO]
+    *   BlackBerry [TODO]
+    *   Mac OS [TODO]
+    *   Symbian [TODO]
+    *   Windows PC/RT [TODO]
+    *   Windows Mobile [TODO]
+    *   Windows Phone [TODO]
+*   Industry
+    *   Education教育 [TODO]
+    *   Enterprise企业 [TODO]
+    *   Finance金融 [TODO]
+    *   Government政府 [TODO]
+    *   Healthcare医疗 [TODO]
+    *   Retail零售 [TODO]
+    *   Small & Medium-Sized Business中小企业 [TODO]
+    *   Transportation交通运输 [TODO]
 
 
 ##**AirWatch**团队介绍：
@@ -186,3 +182,5 @@ AirWatch是企业移动设备解决方案提供商，被认为是企业移动管
 [NASCIO]:http://www.nascio.org/
 [NRF]:http://www.nrf.com/
 [TAG]:http://www.tagonline.org/
+
+[Eric Wang]:http://github.com/wh1100717

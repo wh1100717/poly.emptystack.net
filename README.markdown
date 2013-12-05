@@ -12,7 +12,7 @@
 
 ## PolyTechDocs是什么？
 -------------------------------------------
-PolyTechDocs为宝利明威测试小组自发组织和建立的协同文档编写项目，采用了Jekyll模版，使得文档编写可以在忽略字体大小样式，代码格式等方面的情况下进行专注于内容的高效文档撰写。
+PolyTechDocs是一个文档协同撰写项目，采用了Jekyll模版，使得可以在忽略字体大小样式，代码格式等方面的情况下进行专注于内容的高效文档撰写。
 
 支持[MarkDown]、[Textile]、[Liquid]、[HTML&CSS]等多种方式进行文档撰写。同时利用[GitHub]提供的版本控制模式实现多人协同高效开发。
 
@@ -36,33 +36,38 @@ PolyTechDocs为宝利明威测试小组自发组织和建立的协同文档编�
 
 ##如何开始
 -------------------------------------------
-* [主页]
-* [环境搭建]
-* [GitHub使用介绍]
-* [Jekyll使用介绍]
-* [MarkDown教程]
+*   [主页]
+*   [环境搭建]
+*   [GitHub使用介绍]
+*   [Jekyll使用介绍]
+*   [MarkDown教程]
+
+##项目统计
+-------------------------------------------
+*   [项目主页]
+*   [项目更新情况]
+*   [项目统计数据]
+*   [项目分支情况]
+*   [项目Wiki]
 
 ##文档资料
 -------------------------------------------
 目前正在维护和添加的文档内容有：
 
-* [Python]:
- 
-		Python的基础知识和语法(By Eric Wang)
-		ZOJ和CodeForces的解题方案(By Eric Wang)
-		ZOJ&&CodeForces的使用介绍和常见错误解释(By Zhao Qing)
-		Python自动化测试脚本及框架(待完成)
-* [AirWatch]:
-
-		AirWatch公司介绍(By Eric Wang)
-		AirWatch的10种解决方案的介绍(By Eric Wang)
-		AirWatch支持的8种移动平台的介绍(待完成)
-		AirWatch针对8个不同行业的解决方案的介绍(待完成)
+*   [Python]:
+    *   Python的基础知识和语法(By [Eric Wang])
+    *   ZOJ和CodeForces的解题方案(By [Eric Wang])
+    *   ZOJ&&CodeForces的使用介绍和常见错误解释(By [Zhao Qing])
+    *   Python自动化测试脚本及框架(待完成)
+*   [AirWatch]:
+    *   AirWatch公司介绍(By [Eric Wang])
+    *   AirWatch的10种解决方案的介绍(By [Eric Wang])
+    *   AirWatch支持的8种移动平台的介绍(待完成)
+    *   AirWatch针对8个不同行业的解决方案的介绍(待完成)
 * [EMM]
+    *   EMM为公司的详细产品方案(待完成)
 
-		EMM为公司的详细产品方案(待完成)
-
-计划增加的内容为(不限于此)：
+计划(但不限于此)增加的内容为：
 
 * Java
 * JIRA && TestLink
@@ -72,7 +77,7 @@ PolyTechDocs为宝利明威测试小组自发组织和建立的协同文档编�
 -------------------------------------------
 [Eric Wang] | [Zhao Qing]
 
-<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1fe6afb9314d685d55dabfb21a63088aef4afb57fde787749ad1df53122cca53"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Python4OJ" title="Python4OJ"></a>
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1fe6afb9314d685d55dabfb21a63088aef4afb57fde787749ad1df53122cca53"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="PolyTechDocs" title="PolyTechDocs"></a>
 
 [MarkDown]:http://daringfireball.net/projects/markdown/
 [Textile]:http://textile.sitemonks.com/
@@ -92,3 +97,9 @@ PolyTechDocs为宝利明威测试小组自发组织和建立的协同文档编�
 
 [Eric Wang]:http://github.com/wh1100717
 [Zhao Qing]:http://github.com/zq920320
+
+[项目主页]:https://github.com/wh1100717/PolyTechDocs
+[项目更新情况]:https://github.com/wh1100717/PolyTechDocs/commits/gh-pages
+[项目统计数据]:https://github.com/wh1100717/PolyTechDocs/graphs
+[项目分支情况]:https://github.com/wh1100717/PolyTechDocs/network
+[项目Wiki]:https://github.com/wh1100717/PolyTechDocs/wiki

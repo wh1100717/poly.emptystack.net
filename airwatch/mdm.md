@@ -50,11 +50,11 @@ AirWatch简单的登录过程中提供了一个所有主流平台一致的基于
 数据集市提供给企业消费者可以将数据到导出到第三方商业智能(Business Intelligence)的解决方案。创建数据集市中关键数据的快照或者以csv格式导出数据，从而支持趋势分析。
 
 [Directory services]:http://www.air-watch.com/differentiators/enterprise-integration/directory-services
-[Android]:{{site.url}}/airwatch/android/
-[Apple iOS]:{{site.url}}/airwatch/ios/
-[BlackBerry]:{{site.url}}/airwatch/blackberry/
-[Mac OS]:{{site.url}}/airwatch/macos/
-[Symbian]:{{site.url}}/airwatch/symbian/
-[Windows PC/RT]:{{site.url}}/airwatch/windowspc/
-[Windows Mobile]:{{site.url}}/airwatch/windowsmobile/
-[Windows Phone]:{{site.url}}/airwatch/windowsphone/
+[Android]:http://www.air-watch.com/solutions/android/
+[Apple iOS]:http://www.air-watch.com/solutions/ios/
+[BlackBerry]:http://www.air-watch.com/solutions/blackberry/
+[Mac OS]:http://www.air-watch.com/solutions/macos/
+[Symbian]:http://www.air-watch.com/solutions/symbian/
+[Windows PC/RT]:http://www.air-watch.com/solutions/windowspc/
+[Windows Mobile]:http://www.air-watch.com/solutions/windowsmobile/
+[Windows Phone]:http://www.air-watch.com/solutions/windowsphone/

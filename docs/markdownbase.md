@@ -6,11 +6,11 @@ next_section: markdownsyntax
 permalink: /docs/markdownbase/
 ---
 
-**NOTE:** This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to [Markdown: Syntax][eng-doc].
+>**NOTE:** This is Simplelified  Chinese Edition Document of Markdown Syntax. If you are seeking for English Edition Document. Please refer to [Markdown: Syntax][eng-doc].
 
 [eng-doc]:http://daringfireball.net/projects/markdown/syntax
 
-**声明：** 版权来自[riku](https://github.com/riku/Markdown-Syntax-CN)。此文档用 Markdown 语法编写，你可以到这里[查看它的源文件][src1]。「繁体中文版的原始文件可以[查看这里][src] 。」--By @[riku][t]
+>**声明：** 版权来自[riku](https://github.com/riku/Markdown-Syntax-CN)。此文档用 Markdown 语法编写，你可以到这里[查看它的源文件][src1]。「繁体中文版的原始文件可以[查看这里][src] 。」--By @[riku][t]
   [src1]: http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md
   [src]: https://github.com/othree/markdown-syntax-zhtw/blob/master/syntax.md
   [t]: http://twitter.com/riku
