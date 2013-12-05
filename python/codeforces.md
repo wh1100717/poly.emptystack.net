@@ -8,7 +8,7 @@ version: 1.0.0
 categories: [demo]
 ---
 
-[Codeforces](http://codeforces.com/)这是一个俄国的算法竞赛网站,由来自萨拉托夫州立大学、由Mike Mirzayanov领导的一个团队创立和维护,是一个举办比赛、做题和交流的平台..官方语言是俄语和英语,因此可能有些偏僻的题目的题解是用俄语写的,别慌,扔给[百度翻译](http://fanyi.baidu.com/)翻成英文,可读性还是很不错的.
+[Codeforces](http://codeforces.com/)这是一个俄国的算法竞赛网站,由来自萨拉托夫州立大学,由Mike Mirzayanov领导的一个团队创立和维护,是一个举办比赛、做题和交流的平台.官方语言是俄语和英语,因此可能有些偏僻的题目的题解是用俄语写的,别慌,交给[百度翻译](http://fanyi.baidu.com/)翻成英文,可读性还是很不错的.
 ##注册
 点击右上角的[Register](http://codeforces.com/register/)进入注册界面,完成注册即可
 <img src="{{ site.url }}/img/cf/cfregister.jpg"  alt="">
@@ -46,7 +46,7 @@ categories: [demo]
 <div class="note info">
   <p>
         <h5>常见的Verdict</h5>
-        Running on test 1 &rarr; 正在第一个测试用例上运行，如果长时间不动请刷新
+        Running on test 1 &rarr; 正在第一个测试用例上运行，如果长时间不动请刷新<br>
         Accepted &rarr; 恭喜你答对了<br>
         Wrong Answer on test n &rarr; 很抱歉答案不对，问题出现在test n<br>
         Compilation Error &rarr; 编译错误<br>
