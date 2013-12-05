@@ -120,55 +120,55 @@ Unicode是书写国际文本的标准方法。如果你想要用你的母语如�
 if语句用来检验一个条件， 如果 条件为真，我们运行一块语句（称为 if-块 ）， 否则 我们处理另外一块语句（称为 else-块 ）。 else 从句是可选的。
 
 {% highlight python %}
-    number = 23
-    guess = int(raw_input('Enter an integer : '))
+number = 23
+guess = int(raw_input('Enter an integer : '))
 
-    if guess == number:
-        print 'Congratulations, you guessed it.' # New block starts here
-        print "(but you do not win any prizes!)" # New block ends here
-    elif guess < number:
-        print 'No, it is a little higher than that' # Another block
-        # You can do whatever you want in a block ...
-    else:
-        print 'No, it is a little lower than that' 
-        # you must have guess > number to reach here
+if guess == number:
+    print 'Congratulations, you guessed it.' # New block starts here
+    print "(but you do not win any prizes!)" # New block ends here
+elif guess < number:
+    print 'No, it is a little higher than that' # Another block
+    # You can do whatever you want in a block ...
+else:
+    print 'No, it is a little lower than that' 
+    # you must have guess > number to reach here
 
-    print 'Done'
-    # This last statement is always executed, after the if statement is executed
+print 'Done'
+# This last statement is always executed, after the if statement is executed
 {% endhighlight %}
 
 \--while语句：<br>
 只要在一个条件为真的情况下，while语句允许你重复执行一块语句。while语句是所谓 循环 语句的一个例子。while语句有一个可选的else从句。
 
 {% highlight python %}
-    number = 23
-    running = True
+number = 23
+running = True
 
-    while running:
-        guess = int(raw_input('Enter an integer : '))
+while running:
+    guess = int(raw_input('Enter an integer : '))
 
-        if guess == number:
-            print 'Congratulations, you guessed it.' 
-            running = False # this causes the while loop to stop
-        elif guess < number:
-            print 'No, it is a little higher than that' 
-        else:
-            print 'No, it is a little lower than that' 
+    if guess == number:
+        print 'Congratulations, you guessed it.' 
+        running = False # this causes the while loop to stop
+    elif guess < number:
+        print 'No, it is a little higher than that' 
     else:
-        print 'The while loop is over.' 
-        # Do anything else you want to do here
+        print 'No, it is a little lower than that' 
+else:
+    print 'The while loop is over.' 
+    # Do anything else you want to do here
 
-    print 'Done'
+print 'Done'
 {% endhighlight %}
 
 --for循环<br>
 for..in是另外一个循环语句，它在一序列的对象上 递归 即逐一使用队列中的每个项目。
 
 {% highlight python %}
-    for i in range(1, 5):
-        print i
-    else:
-        print 'The for loop is over'
+for i in range(1, 5):
+    print i
+else:
+    print 'The for loop is over'
 {% endhighlight %}
 
 --break语句<br>
@@ -176,26 +176,26 @@ break语句是用来 终止 循环语句的，即哪怕循环条件没有称为F
 一个重要的注释是，如果你从for或while循环中 终止 ，任何对应的循环else块将不执行。
 
 {% highlight python %}
-    while True:
-        s = raw_input('Enter something : ')
-        if s == 'quit':
-            break
-        print 'Length of the string is', len(s)
-    print 'Done'
+while True:
+    s = raw_input('Enter something : ')
+    if s == 'quit':
+        break
+    print 'Length of the string is', len(s)
+print 'Done'
 {% endhighlight %}
 
 --continue语句<br>
 continue语句被用来告诉Python跳过当前循环块中的剩余语句，然后 继续 进行下一轮循环。
 
 {% highlight python %}
-    while True:
-        s = raw_input('Enter something : ')
-        if s == 'quit':
-            break
-        if len(s) < 3:
-            continue
-        print 'Input is of sufficient length'
-        # Do other kinds of processing here...
+while True:
+    s = raw_input('Enter something : ')
+    if s == 'quit':
+        break
+    if len(s) < 3:
+        continue
+    print 'Input is of sufficient length'
+    # Do other kinds of processing here...
 {% endhighlight %}
 ——————————————————————————————————————
 ###函数<br>
@@ -203,9 +203,9 @@ continue语句被用来告诉Python跳过当前循环块中的剩余语句，然
 函数通过def关键字定义。def关键字后跟一个函数的 标识符 名称，然后跟一对圆括号。圆括号之中可以包括一些变量名，该行以冒号结尾。接下来是一块语句，它们是函数体。下面这个例子将说明这事实上是十分简单的：
 
 {% highlight python %}
-    def sayHello():
-        print 'Hello World!' # block belonging to the function
-    sayHello() # call the function
+def sayHello():
+    print 'Hello World!' # block belonging to the function
+sayHello() # call the function
 {% endhighlight %}
 
 --函数形参<br>
@@ -213,29 +213,29 @@ continue语句被用来告诉Python跳过当前循环块中的剩余语句，然
 参数在函数定义的圆括号对内指定，用逗号分割。当我们调用函数的时候，我们以同样的方式提供值。注意我们使用过的术语——函数中的参数名称为 形参 而你提供给函数调用的值称为 实参 。
 
 {% highlight python %}
-    def printMax(a, b):
-        if a > b:
-            print a, 'is maximum'
-        else:
-            print b, 'is maximum'
-    printMax(3, 4) # directly give literal values
-    x = 5
-    y = 7
-    printMax(x, y) # give variables as arguments
+def printMax(a, b):
+    if a > b:
+        print a, 'is maximum'
+    else:
+        print b, 'is maximum'
+printMax(3, 4) # directly give literal values
+x = 5
+y = 7
+printMax(x, y) # give variables as arguments
 {% endhighlight %}
 
 --局部变量<br>
 当你在函数定义内声明变量的时候，它们与函数外具有相同名称的其他变量没有任何关系，即变量名称对于函数来说是 局部 的。这称为变量的 作用域 。所有变量的作用域是它们被定义的块，从它们的名称被定义的那点开始。
 
 {% highlight python %}
-    def func(x):
-        print 'x is', x
-        x = 2
-        print 'Changed local x to', x
+def func(x):
+    print 'x is', x
+    x = 2
+    print 'Changed local x to', x
 
-    x = 50
-    func(x)
-    print 'x is still', x
+x = 50
+func(x)
+print 'x is still', x
 {% endhighlight %}
 
 --默认参数值<br>
@@ -243,10 +243,10 @@ continue语句被用来告诉Python跳过当前循环块中的剩余语句，然
 注意，默认参数值应该是一个参数。更加准确的说，默认参数值应该是不可变的——这会在后面的章节中做详细解释。从现在开始，请记住这一点。
 
 {% highlight python %}
-	def say(message, times = 1):
-	    print message * times
-	say('Hello')
-	say('World', 5)
+def say(message, times = 1):
+    print message * times
+say('Hello')
+say('World', 5)
 {% endhighlight %}
 
 --关键参数<br>
@@ -254,41 +254,41 @@ continue语句被用来告诉Python跳过当前循环块中的剩余语句，然
 这样做有两个 优势 ——一，由于我们不必担心参数的顺序，使用函数变得更加简单了。二、假设其他参数都有默认值，我们可以只给我们想要的那些参数赋值。
 
 {% highlight python %}
-    def func(a, b=5, c=10):
-        print 'a is', a, 'and b is', b, 'and c is', c
+def func(a, b=5, c=10):
+    print 'a is', a, 'and b is', b, 'and c is', c
 
-    func(3, 7)
-    func(25, c=24)
-    func(c=50, a=100)
+func(3, 7)
+func(25, c=24)
+func(c=50, a=100)
 {% endhighlight %}
 
 --return语句<br>
 return语句用来从一个函数 返回 即跳出函数。我们也可选从函数 返回一个值 。
 
 {% highlight python %}
-    def maximum(x, y):
-        if x > y:
-            return x
-        else:
-            return y
-    print maximum(2, 3)
+def maximum(x, y):
+    if x > y:
+        return x
+    else:
+        return y
+print maximum(2, 3)
 {% endhighlight %}
 
 --DocStrings<br>
 Python有一个很奇妙的特性，称为 文档字符串 ，它通常被简称为 docstrings 。DocStrings是一个重要的工具，由于它帮助你的程序文档更加简单易懂，你应该尽量使用它。你甚至可以在程序运行的时候，从函数恢复文档字符串！
 
 {% highlight python %}
-    def printMax(x, y):
-        '''Prints the maximum of two numbers.
-        The two values must be integers.'''
-        x = int(x) # convert to integers, if possible
-        y = int(y)
-        if x > y:
-            print x, 'is maximum'
-        else:
-            print y, 'is maximum'
-    printMax(3, 5)
-    print printMax.__doc__
+def printMax(x, y):
+    '''Prints the maximum of two numbers.
+    The two values must be integers.'''
+    x = int(x) # convert to integers, if possible
+    y = int(y)
+    if x > y:
+        print x, 'is maximum'
+    else:
+        print y, 'is maximum'
+printMax(3, 5)
+print printMax.__doc__
 {% endhighlight %}
 
 ——————————————————————————————————————
@@ -298,41 +298,41 @@ list是处理一组有序项目的数据结构，即你可以在一个列表中�
 列表中的项目应该包括在方括号中，这样Python就知道你是在指明一个列表。一旦你创建了一个列表，你可以添加、删除或是搜索列表中的项目。由于你可以增加或删除项目，我们说列表是 可变的 数据类型，即这种类型是可以被改变的。
 
 {% highlight python %}
-    # This is my shopping list
-    shoplist = ['apple', 'mango', 'carrot', 'banana']
-    print 'I have', len(shoplist),'items to purchase.'
+# This is my shopping list
+shoplist = ['apple', 'mango', 'carrot', 'banana']
+print 'I have', len(shoplist),'items to purchase.'
 
-    print 'These items are:', # Notice the comma at end of the line
-    for item in shoplist:
-        print item,
+print 'These items are:', # Notice the comma at end of the line
+for item in shoplist:
+    print item,
 
-    print '\nI also have to buy rice.'
-    shoplist.append('rice')
-    print 'My shopping list is now', shoplist
+print '\nI also have to buy rice.'
+shoplist.append('rice')
+print 'My shopping list is now', shoplist
 
-    print 'I will sort my list now'
-    shoplist.sort()
-    print 'Sorted shopping list is', shoplist
+print 'I will sort my list now'
+shoplist.sort()
+print 'Sorted shopping list is', shoplist
 
-    print 'The first item I will buy is', shoplist[0]
-    olditem = shoplist[0]
-    del shoplist[0]
-    print 'I bought the', olditem
-    print 'My shopping list is now', shoplist
+print 'The first item I will buy is', shoplist[0]
+olditem = shoplist[0]
+del shoplist[0]
+print 'I bought the', olditem
+print 'My shopping list is now', shoplist
 {% endhighlight %}
 
 --元组<br>
 元组和列表十分类似，只不过元组和字符串一样是 不可变的 即你不能修改元组。元组通过圆括号中用逗号分割的项目定义。元组通常用在使语句或用户定义的函数能够安全地采用一组值的时候，即被使用的元组的值不会改变。
 
 {% highlight python %}
-    zoo = ('wolf', 'elephant', 'penguin')
-    print 'Number of animals in the zoo is', len(zoo)
+zoo = ('wolf', 'elephant', 'penguin')
+print 'Number of animals in the zoo is', len(zoo)
 
-    new_zoo = ('monkey', 'dolphin', zoo)
-    print 'Number of animals in the new zoo is', len(new_zoo)
-    print 'All animals in new zoo are', new_zoo
-    print 'Animals brought from old zoo are', new_zoo[2]
-    print 'Last animal brought from old zoo is', new_zoo[2][2]
+new_zoo = ('monkey', 'dolphin', zoo)
+print 'Number of animals in the new zoo is', len(new_zoo)
+print 'All animals in new zoo are', new_zoo
+print 'Animals brought from old zoo are', new_zoo[2]
+print 'Last animal brought from old zoo is', new_zoo[2][2]
 {% endhighlight %}
 
 --字典<br>
@@ -343,56 +343,56 @@ list是处理一组有序项目的数据结构，即你可以在一个列表中�
 字典是dict类的实例/对象。
 
 {% highlight python %}
-    # 'ab' is short for 'a'ddress'b'ook
+# 'ab' is short for 'a'ddress'b'ook
 
-    ab = {       'Swaroop'   : 'swaroopch@byteofpython.info',
-                 'Larry'     : 'larry@wall.org',
-                 'Matsumoto' : 'matz@ruby-lang.org',
-                 'Spammer'   : 'spammer@hotmail.com'
-         }
+ab = {       'Swaroop'   : 'swaroopch@byteofpython.info',
+             'Larry'     : 'larry@wall.org',
+             'Matsumoto' : 'matz@ruby-lang.org',
+             'Spammer'   : 'spammer@hotmail.com'
+     }
 
-    print "Swaroop's address is %s" % ab['Swaroop']
+print "Swaroop's address is %s" % ab['Swaroop']
 
-    # Adding a key/value pair
-    ab['Guido'] = 'guido@python.org'
+# Adding a key/value pair
+ab['Guido'] = 'guido@python.org'
 
-    # Deleting a key/value pair
-    del ab['Spammer']
+# Deleting a key/value pair
+del ab['Spammer']
 
-    print '\nThere are %d contacts in the address-book\n' % len(ab)
-    for name, address in ab.items():
-        print 'Contact %s at %s' % (name, address)
+print '\nThere are %d contacts in the address-book\n' % len(ab)
+for name, address in ab.items():
+    print 'Contact %s at %s' % (name, address)
 
-    if 'Guido' in ab: # OR ab.has_key('Guido')
-        print "\nGuido's address is %s" % ab['Guido']
+if 'Guido' in ab: # OR ab.has_key('Guido')
+    print "\nGuido's address is %s" % ab['Guido']
 {% endhighlight %}
 
 --序列<br>
 列表、元组和字符串都是序列，但是序列是什么，它们为什么如此特别呢？序列的两个主要特点是索引操作符和切片操作符。索引操作符让我们可以从序列中抓取一个特定项目。切片操作符让我们能够获取序列的一个切片，即一部分序列。
 
 {% highlight python %}
-    shoplist = ['apple', 'mango', 'carrot', 'banana']
+shoplist = ['apple', 'mango', 'carrot', 'banana']
 
-    # Indexing or 'Subscription' operation
-    print 'Item 0 is', shoplist[0]
-    print 'Item 1 is', shoplist[1]
-    print 'Item 2 is', shoplist[2]
-    print 'Item 3 is', shoplist[3]
-    print 'Item -1 is', shoplist[-1]
-    print 'Item -2 is', shoplist[-2]
+# Indexing or 'Subscription' operation
+print 'Item 0 is', shoplist[0]
+print 'Item 1 is', shoplist[1]
+print 'Item 2 is', shoplist[2]
+print 'Item 3 is', shoplist[3]
+print 'Item -1 is', shoplist[-1]
+print 'Item -2 is', shoplist[-2]
 
-    # Slicing on a list
-    print 'Item 1 to 3 is', shoplist[1:3]
-    print 'Item 2 to end is', shoplist[2:]
-    print 'Item 1 to -1 is', shoplist[1:-1]
-    print 'Item start to end is', shoplist[:]
+# Slicing on a list
+print 'Item 1 to 3 is', shoplist[1:3]
+print 'Item 2 to end is', shoplist[2:]
+print 'Item 1 to -1 is', shoplist[1:-1]
+print 'Item start to end is', shoplist[:]
 
-    # Slicing on a string
-    name = 'swaroop'
-    print 'characters 1 to 3 is', name[1:3]
-    print 'characters 2 to end is', name[2:]
-    print 'characters 1 to -1 is', name[1:-1]
-    print 'characters start to end is', name[:]
+# Slicing on a string
+name = 'swaroop'
+print 'characters 1 to 3 is', name[1:3]
+print 'characters 2 to end is', name[2:]
+print 'characters 1 to -1 is', name[1:-1]
+print 'characters start to end is', name[:]
 {% endhighlight %}
 ——————————————————————————————————————
 
