@@ -68,4 +68,8 @@ round(a)        #四舍五入,比如round(3.2)返回3.0	| round(3.5)返回4.0
 13、#切片函数,将字符串按照" "（即空格）切片 然后转换为数组
 "1 2 3 4 5".split() #返回的是['1','2','3','4','5']
     #还可以给其参数，按照不同的格式来分割成数组，具体可以自行google之   
+14、三元表达式
+Python没有三元表达式，作为替代，Python可以利用如下形式实现该功能：
+exp1 if exp2 else exp3 (所对应的java版本为exp2?exp1:exp3)
+a　=　"not　null"　if　s　==　None　else　s
 {% endhighlight %}
