@@ -25,7 +25,7 @@ categories: [release]
 
 *	右键点击项目，选择Import
 
-![]({{site.url}}/img/hljemm/hljemm2.png)
+![]({{site.url}}/img/hljemm/hljemm3.png)
 
 *	在Import中进行选择和配置：
 	*	选择src和WebContent文件夹
