@@ -26,7 +26,10 @@ permalink: /docs/pythonbase/
         *   [CF Solutions21-40]\[RELEASE] By [Eric Wang]
         *   [CF Solutions41-60]\[0/20] By [Eric Wang]
         *   [ZOJ Solutions01-40]\[1/20] By [Eric Wang]
-*   Python高级编程 [TODO]
+*   Python高级编程(网络，多线程，文本处理，数据库，web 编程) [TODO]
+        *   scrapy [TODO]
+        *   Tornado [TODO]
+        *   web.py [TODO]
 *   Python类库 [TODO]
 
 <div class="note info">
