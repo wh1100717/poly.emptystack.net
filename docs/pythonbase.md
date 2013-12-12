@@ -24,7 +24,7 @@ permalink: /docs/pythonbase/
     *   OJ Solutions
         *   [CF Solutions01-20]\[RELEASE] By [Eric Wang]
         *   [CF Solutions21-40]\[RELEASE] By [Eric Wang]
-        *   [CF Solutions41-60]\[0/20] By [Eric Wang]
+        *   [CF Solutions41-60]\[13/20] By [Eric Wang]
         *   [ZOJ Solutions01-40]\[1/20] By [Eric Wang]
 *   Python高级编程(网络，多线程，文本处理，数据库，web 编程) [TODO]
         *   scrapy [TODO]
