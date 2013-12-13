@@ -17,7 +17,7 @@ categories: [RELEASE]
   <p>具体下载地址点击<a href="http://pan.baidu.com/s/13oRlq" target="_blank">这里</a>，选择/polysaas/代理软件/fg.rar下载即可</p>
 </div>
 
-##一、申请Google App Engine并创建appid
+##  一、申请Google App Engine并创建appid
 * 申请注册一个**Google App Engine**账号[点击这里注册](https://appengine.google.com)。没有Gmail账号先注册一个， 用你的Gmaill账号登录。<br>
 * 登录之后，自动转向**Application**注册页面，如下图：<br>
 ![](http://ww1.sinaimg.cn/large/786e2887tw1e4thu8o1tuj20hs067mxn.jpg)<br>
@@ -30,7 +30,7 @@ categories: [RELEASE]
 提交之后，就能看到下图这个页面，就说明你已经成功创建了一个新的应用,你也可以点击应用名称，进入控制面板进行管理。<br>
 ![](http://ww4.sinaimg.cn/large/786e2887tw1e4thubz37cj20go049t8w.jpg)<br>
 
-##二、下载GoAgent并上传至Google App Engine
+##  二、下载GoAgent并上传至Google App Engine
 * 下载GoAgent并解压
  * [GoAgent官方下载链接](http://goo.gl/qFyRk)<br>
  * [网盘链接](http://pan.baidu.com/s/13oRlq): /polysaas/代理软件/客户端下载.zip<br>
@@ -41,7 +41,8 @@ categories: [RELEASE]
  上传成功就会看图下图界面<br>
 <img src="http://ww1.sinaimg.cn/large/786e2887jw1e3bnmhap9wj.jpg?uploaded.png"  width="600" /><br>
 * 上传成功后编辑local\proxy.ini，把其中appid = goagent中的goagent 改成你已经上传成功的应用的appid (用windows的记事本也可以）
-##三、Chrome浏览器配置
+
+##  三、Chrome浏览器配置
 * 安装扩展
  * 地址栏输入chrome://extensions/后按回车，打开扩展管理页，将local文件夹中的SwitchySharp.crx拖拽到该页面之后点击确定即可安装<br>
 <img src="http://ww4.sinaimg.cn/large/786e2887tw1e3hhmzjy1zj.jpg?install_Proxy_Switchy_Sharp.png"  width="600" /><br>
