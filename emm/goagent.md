@@ -11,6 +11,12 @@ categories: [RELEASE]
 #GoAgent安装教程
 **GoAgent**是一个基于Google Appengine的，全面兼容IE，FireFox，chrome的代理工具，使用Python和Google App EngineSDK编写，程序可以在MicrosoftWindows，Mac，Linux，Android，iPod Touch，iPhone，iPad，webOS，OpenWrt，Maemo上使用。GoAgent出口地址使用的是美国加利福尼亚州山景城Google数据中心IP段。
 
+<div class="note info">
+  <h5>gmail注册和appengine访问不了的情况</h5>
+  <p>gmail访问不稳定，有时候appengine访问不了，我们可以先用自由门来翻墙访问并注册，但是自由门不稳定并且不安全，不建议长期使用</p>
+  <p>具体下载地址点击<a href="http://pan.baidu.com/s/13oRlq" target="_blank">这里</a>，选择/polysaas/代理软件/fg.rar下载即可</p>
+</div>
+
 ##一、申请Google App Engine并创建appid
 * 申请注册一个**Google App Engine**账号[点击这里注册](https://appengine.google.com)。没有Gmail账号先注册一个， 用你的Gmaill账号登录。<br>
 * 登录之后，自动转向**Application**注册页面，如下图：<br>
