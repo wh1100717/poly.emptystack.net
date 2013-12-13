@@ -35,18 +35,7 @@ categories: [RELEASE]
  上传成功就会看图下图界面<br>
 ![](http://ww1.sinaimg.cn/large/786e2887jw1e3bnmhap9wj.jpg?uploaded.png)<br>
 * 上传成功后编辑local\proxy.ini，把其中appid = goagent中的goagent 改成你已经上传成功的应用的appid (用windows的记事本也可以）
-##三、运行客户端
-* Windows用户运行local文件夹中的goagent.exe
- * 设置浏览器或其他需要代理的程序代理地址为127.0.0.1:8087
- * 注意：使用过程中要一直运行goagent.exe/proxy.py
- * 代理地址127.0.0.1:8087；如需使用PAC，设置pac地址为http://127.0.0.1:8086/proxy.pac；也可以配合SwitchySharp/AutoProxy等浏览器扩展（SwitchySharp用户可从local文件夹中的SwitchyOptions.bak文件导入配置）
-* 导入证书
- * IE/Chrome：使用管理员身份运行goagent.exe会自动向系统导入IE/Chrome的证书，你也可以双击local文件夹中的CA.crt安装证书（需要安装到“受信任的根证书颁发机构”）；<br>
- ![](http://ww1.sinaimg.cn/large/786e2887jw1e6mc176ngnj20bn0dit9l.jpg)<br>
- ![](http://ww4.sinaimg.cn/large/786e2887jw1e6mc184ah3j20e00e6wg1.jpg)<br>
-  * 下一步 -> 完成 -> 确定
-* **注意：请勿重复安装证书**
-##四、Chrome浏览器配置
+##三、Chrome浏览器配置
 * 安装扩展
  * 地址栏输入chrome://extensions/后按回车，打开扩展管理页，将local文件夹中的SwitchySharp.crx拖拽到该页面之后点击确定即可安装<br>
 ![](http://ww4.sinaimg.cn/large/786e2887tw1e3hhmzjy1zj.jpg?install_Proxy_Switchy_Sharp.png)<br>
