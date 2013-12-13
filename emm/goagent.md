@@ -47,7 +47,7 @@ categories: [RELEASE]
  * 地址栏输入chrome://extensions/后按回车，打开扩展管理页，将local文件夹中的SwitchySharp.crx拖拽到该页面之后点击确定即可安装<br>
 <img src="http://ww4.sinaimg.cn/large/786e2887tw1e3hhmzjy1zj.jpg?install_Proxy_Switchy_Sharp.png"  width="600" /><br>
 * 导入设置
- * 点击 Proxy SwitchySharp图标》选项》倒入/导出》<br>
+ * 点击 Proxy SwitchySharp图标-->选项-->倒入/导出<br>
 <img src="http://ww1.sinaimg.cn/large/786e2887jw1e2s44kpzqyj.jpg?bak.png"  width="600" /><br>
  * 浏览到SwitchyOptions.bak，点击确定导入设置
  * 更新自动切换规则（如果遇到无法更新规则列表，可以先运行**goagent**，并把浏览器代理设置为**GoAgent**模式再更新规则，不更新规则只会影响自动切换模式，不会影响其他模式的使用，若确实无法更新也可不更新，直接使用PAC模式即可）
