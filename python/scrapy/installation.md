@@ -59,8 +59,8 @@ C:\Python27\Scripts> easy_install.exe pip
 安装完成后会提示`--- Python 2.7 is now registered`
 
 *	安装lxml-3.2.4.win32-py2.7.exe(64位系统需要安装lxml-3.2.4.win-amd64-py2.7.exe)
-*	安装pywin32-218.win32-py2.7.exe
-*	安装Twisted-13.2.0.win32-py2.7.exe
+*	安装pywin32-218.win32-py2.7.exe(64位系统需要安装pywin32-218.win-amd64-py2.7.exe)
+*	安装Twisted-13.2.0.win32-py2.7.exe(64位系统需要安装Twisted-13.2.0.win-amd64-py2.7.exe)
 *	安装pyOpenSSL-0.13.1.win32-py2.7.exe(64位系统需要安装pyOpenSSL-0.13.1.win-amd64-py2.7.exe)
 *	将zope.interface-4.0.5-py2.7-win32.egg拷贝到C:\Python27\Scripts目录下，执行`$ easy_install.exe zope.interface-4.0.5-py2.7-win32.egg`
 
