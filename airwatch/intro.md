@@ -1,6 +1,6 @@
 ---
 layout: airwatch_item
-permalink: /airwatch/introduction/
+permalink: /airwatch/intro/
 title: "AirWatch Introduction"
 date: "2013-11-29 02:12:52 +0200"
 author: wh1100717

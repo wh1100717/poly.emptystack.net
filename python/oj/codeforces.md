@@ -1,6 +1,6 @@
 ---
 layout: python_item
-permalink: /python/codeforces/
+permalink: /python/oj/codeforces/
 title: "CodeForces"
 date: "2013-11-25 02:12:52 +0200"
 author: zq920320

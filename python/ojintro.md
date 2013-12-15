@@ -1,6 +1,6 @@
 ---
 layout: python_item
-permalink: /python/ojintroduction/
+permalink: /python/ojintro/
 title: "Online Judgement Introduction"
 date: "2013-11-25 02:12:52 +0200"
 author: wh1100717

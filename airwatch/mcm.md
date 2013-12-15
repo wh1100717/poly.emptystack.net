@@ -1,4 +1,4 @@
-    ---
+---
 layout: airwatch_item
 permalink: /airwatch/mcm/
 title: "Mobile Content Management"

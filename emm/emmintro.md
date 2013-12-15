@@ -1,6 +1,6 @@
 ---
 layout: emm_item
-permalink: /emm/introduction/
+permalink: /emm/intro/
 title: "EMM Introduction"
 date: "2013-11-27 02:12:52 +0200"
 author: wh1100717

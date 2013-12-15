@@ -16,20 +16,21 @@ permalink: /docs/pythonbase/
 
 我们目前提供了以下内容：
 
-*   Python基础
-    *   [Python基础知识介绍]\[DEMO] By [Eric Wang]
-    *   [Online Judgement介绍]\[DEMO] By [Zhao Qing]
-    *   [ZOJ介绍]\[DEMO] By [Zhao Qing]
-    *   [CodeForces介绍]\[DEMO] By [Zhao Qing]
-    *   OJ Solutions
-        *   [CF Solutions01-20]\[RELEASE] By [Eric Wang]
-        *   [CF Solutions21-40]\[RELEASE] By [Eric Wang]
-        *   [CF Solutions41-60]\[13/20] By [Eric Wang]
-        *   [ZOJ Solutions01-40]\[1/20] By [Eric Wang]
+*   [Python基础知识介绍]    \[DEMO] By [Eric Wang]
+*   [Online Judgement介绍]  \[DEMO] By [Zhao Qing]
+*   [Scrapy介绍]    \[DEMO] By [Eric Wang]
+*   Python 4 OJ
+    *   [ZOJ介绍]   \[DEMO] By [Zhao Qing]
+    *   [CodeForces介绍]    \[DEMO] By [Zhao Qing]
+    *   [CF Solutions01-20] \[RELEASE] By [Eric Wang]
+    *   [CF Solutions21-40] \[RELEASE] By [Eric Wang]
+    *   [CF Solutions41-60] \[13/20] By [Eric Wang]
+    *   [ZOJ Solutions01-40]    \[1/20] By [Eric Wang]
+*   Scrapy
+    *   [Scrapy Installation]   \[DEMO] By [Eric Wang]
 *   Python高级编程(网络，多线程，文本处理，数据库，web 编程) [TODO]
-        *   scrapy [TODO]
-        *   Tornado [TODO]
-        *   web.py [TODO]
+    *   Tornado [TODO]
+    *   web.py [TODO]
 *   Python类库 [TODO]
 
 <div class="note info">
@@ -45,14 +46,17 @@ permalink: /docs/pythonbase/
 </div>
 
 
-[Python基础知识介绍]:{{site.url}}/python/introduction/
-[Online Judgement介绍]:{{site.url}}/python/ojintroduction/
-[ZOJ介绍]:{{site.url}}/python/zoj/
-[CodeForces介绍]:{{site.url}}/python/codeforces/
-[CF Solutions01-20]:{{site.url}}/python/cf1-20/
-[CF Solutions21-40]:{{site.url}}/python/cf21-40/
-[CF Solutions41-60]:{{site.url}}/python/cf41-60/
-[ZOJ Solutions01-40]:{{site.url}}/python/zoj1-20/
+[Python基础知识介绍]:{{site.url}}/python/intro/
+[Online Judgement介绍]:{{site.url}}/python/ojintro/
+[Scrapy介绍]:{{site.url}}/python/scrapyintro/
+
+[ZOJ介绍]:{{site.url}}/python/oj/zoj/
+[CodeForces介绍]:{{site.url}}/python/oj/codeforces/
+[CF Solutions01-20]:{{site.url}}/python/oj/cf1-20/
+[CF Solutions21-40]:{{site.url}}/python/oj/cf21-40/
+[CF Solutions41-60]:{{site.url}}/python/oj/cf41-60/
+[ZOJ Solutions01-40]:{{site.url}}/python/oj/zoj1-20/
+[Scrapy Installation]:{{site.url}}/python/scrapy/installation/
 
 [Eric Wang]:http://github.com/wh1100717
 [Zhao Qing]:http://github.com/zq920320

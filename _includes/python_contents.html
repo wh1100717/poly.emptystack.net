@@ -2,42 +2,41 @@
     <aside>
         <ul>
             <li class="{% if page.title == 'Python Introduction' %}current{% endif %}">
-                <a href="{{site.url}}/python/introduction/">Python Intro</a>
+                <a href="{{site.url}}/python/intro/">Python Intro</a>
             </li>
             <li class="{% if page.title == 'Online Judgement Introduction' %}current{% endif %}">
-                <a href="{{site.url}}/python/ojintroduction/">OJ Intro</a>
+                <a href="{{site.url}}/python/ojintro/">Python 4 OJ</a>
             </li>
-            <li class="{% if page.title == 'ZOJ' %}current{% endif %}">
-                <a href="{{site.url}}/python/zoj/">ZOJ</a>
-            </li>
-            <li class="{% if page.title == 'CodeForces' %}current{% endif %}">
-                <a href="{{site.url}}/python/codeforces/">CodeForces</a>
+            <li class="{% if page.title == 'Scrapy Introduction' %}current{% endif %}">
+                <a href="{{site.url}}/python/scrapyintro/">Scrapy</a>
             </li>
         </ul>
-        <h4>OJ  Answers</h4>
+        <h4>Python 4 OJ</h4>
         <ul>
+            <li class="{% if page.title == 'ZOJ' %}current{% endif %}">
+                <a href="{{site.url}}/python/oj/zoj/">ZOJ</a>
+            </li>
+            <li class="{% if page.title == 'CodeForces' %}current{% endif %}">
+                <a href="{{site.url}}/python/oj/codeforces/">CodeForces</a>
+            </li>
             <li class="{% if {{page.title}} == 'CF Solutions 01-20' %}current{% endif %}">
-                <a href="{{site.url}}/python/answers/cf1-20">CF Solutions &nbsp;&nbsp;&nbsp;&nbsp;01-20</a>
+                <a href="{{site.url}}/python/oj/cf1-20">CF Solutions &nbsp;&nbsp;&nbsp;&nbsp;01-20</a>
             </li>
             <li class="{% if {{page.title}} == 'CF Solutions 21-40' %}current{% endif %}">
-                <a href="{{site.url}}/python/answers/cf21-40">CF Solutions &nbsp;&nbsp;&nbsp;&nbsp;21-40</a>
+                <a href="{{site.url}}/python/oj/cf21-40">CF Solutions &nbsp;&nbsp;&nbsp;&nbsp;21-40</a>
             </li>
             <li class="{% if {{page.title}} == 'CF Solutions 41-60' %}current{% endif %}">
-                <a href="{{site.url}}/python/answers/cf41-60">CF Solutions &nbsp;&nbsp;&nbsp;&nbsp;41-60</a>
+                <a href="{{site.url}}/python/oj/cf41-60">CF Solutions &nbsp;&nbsp;&nbsp;&nbsp;41-60</a>
             </li>
             <li class="{% if {{page.title}} == 'ZOJ Solutions 01-20' %}current{% endif %}">
-                <a href="{{site.url}}/python/answers/zoj1-20">ZOJ Solutions &nbsp;01-40</a>
+                <a href="{{site.url}}/python/oj/zoj1-20">ZOJ Solutions &nbsp;01-40</a>
             </li>
-
-<!--
-            {% for currentPage in site.pages %}
-                {% if currentPage.url contains '/python/answers/'%}
-                    <li class="{% if currentPage.title == {{page.title}} %}current{% endif %}">
-                        <a href="{{site.url}}{{ currentPage.url }}">{{ currentPage.title }}</a>
-                    </li>            
-                {% endif %}
-            {% endfor %}
--->
+        </ul>
+        <h4>Scrapy</h4>
+        <ul>
+            <li class="{% if {{page.title}} == 'Scrapy Installation' %}current{% endif %}">
+                <a href="{{site.url}}/python/scrapy/installation">Installation</a>
+            </li>
         </ul>
     </aside>
 </div>
