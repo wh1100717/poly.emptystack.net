@@ -48,6 +48,16 @@ C:\Python27\Scripts> easy_install.exe pip
 ##	Dependencies的预安装
 以下所有程序都可以到我分享的[云盘](http://pan.baidu.com/s/13oRlq)中找到,具体是在/polysaas/python/lib/目录下
 
+<div class="note warning">
+  <h5>出现提示不能在注册表中识别出来python2.7的解决方法</h5>
+  <p>
+		新建一个register.py 文件，把文档尾部的代码贴进去，保存并执行
+  </p>
+</div>
+
+在cmd中到该文件所在目录下，执行`$ python register.py`<br>
+安装完成后会提示`--- Python 2.7 is now registered`
+
 *	安装lxml-3.2.4.win32-py2.7.exe(64位系统需要安装lxml-3.2.4.win-amd64-py2.7.exe)
 *	安装pywin32-218.win32-py2.7.exe
 *	安装Twisted-13.2.0.win32-py2.7.exe
@@ -55,6 +65,7 @@ C:\Python27\Scripts> easy_install.exe pip
 *	将zope.interface-4.0.5-py2.7-win32.egg拷贝到C:\Python27\Scripts目录下，执行`$ easy_install.exe zope.interface-4.0.5-py2.7-win32.egg`
 
 验证dependecy是否安装成功的方法：<br>
+
 *   cmd执行`$ python`进入python控制台
 *   执行`import lxml`，如果没报错，则说明lxml安装成功
 *   执行`import twisted`，如果没报错，则说明twisted安装成功
@@ -70,12 +81,8 @@ C:\Python27\Scripts> easy_install.exe pip
 检查Scrapy是否安装成功，可以在cmd控制台执行`$ scrapy` 如果没有报错，则说明安装成功
 
 -------------------------------------------------------------------------------
-<div class="note warning">
-  <h5>出现提示不能在注册表中识别出来python2.7的解决方法</h5>
-  <p>
-		新建一个register.py 文件，把以下代码贴进去，保存
-  </p>
-</div>
+
+##无法识别Python2.7的解决方法的代码
 
 ```python
 #
@@ -131,5 +138,3 @@ if __name__ == "__main__":
     RegisterPy()
 ```
 
-在cmd中到该文件所在目录下，执行`$ python register.py`<br>
-安装完成后会提示`--- Python 2.7 is now registered`
