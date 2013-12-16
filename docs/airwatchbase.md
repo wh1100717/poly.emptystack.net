@@ -37,7 +37,7 @@ permalink: /docs/airwatchbase/
     *   Windows Mobile [TODO]
     *   Windows Phone [TODO]
 *   Industry
-    *   Education教育 [TODO]
+    *   [Education教育] \[RELEASE] By [Xiao Lin]
     *   Enterprise企业 [TODO]
     *   Finance金融 [TODO]
     *   Government政府 [TODO]
@@ -76,3 +76,4 @@ permalink: /docs/airwatchbase/
 [Transportation交通运输]:{{site.url}}/airwatch/transport/
 
 [Eric Wang]:http://github.com/wh1100717
+[Xiao Lin]:https://github.com/zxldmn

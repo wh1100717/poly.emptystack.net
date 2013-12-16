@@ -35,6 +35,19 @@ categories: [demo]
 * 安装后在系统环境变量PATH中[配置Python相关的环境变量](http://blog.csdn.net/liguo9860/article/details/6829610)
 * `$ python -V`查看是否安装并配置成功（注意：是大写的-V）
 
+##Netbeans 7.x安装Python插件
+-------------------------------------------
+目前新版的NetBeans 7.x 中，默认的插件中心已经没有python插件了，虽然不能直接在插件中心下载，我们可以手动来添加地址让NetBeans进入开发模式，安装python插件。如图所示：
+工具-->插件-->设置，点击添加，URL输入 http://deadlock.netbeans.org/hudson/job/nbms-and-javadoc/lastStableBuild/artifact/nbbuild/nbms/updates.xml.gz ，名称随意，点击确定，等待插件库更新。
+
+<img src="{{ site.url }}/img/python/netbeans4python/netbeans4python1.png"  width = "650" alt="">
+
+更新好以后，选择可用插件，右侧搜索中输入`python`，选择安装Python，然后等待安装即可。
+<img src="{{ site.url }}/img/python/netbeans4python/netbeans4python2.png"  width = "650" alt="">
+
+安装成功以后重启netbeans,就可以在新建项目中建立python的项目了。
+
+<img src="{{ site.url }}/img/python/netbeans4python/netbeans4python3.png"  width = "650" alt="">
 ##基础语法
 -------------------------------------------
 ###常量
