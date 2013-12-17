@@ -35,7 +35,7 @@ categories: [demo]
 *   Industry
     *   [Education教育] \[RELEASE] By [Xiao Lin]
     *   [Enterprise企业] \[RELEASE] By [Xiao Lin]
-    *   Finance金融 [TODO]
+    *   [Finance金融] \[RELEASE] By [Xiao Lin]
     *   Government政府 [TODO]
     *   Healthcare医疗 [TODO]
     *   Retail零售 [TODO]
