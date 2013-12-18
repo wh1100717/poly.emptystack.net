@@ -42,7 +42,7 @@ permalink: /docs/airwatchbase/
     *   [Finance金融] \[RELEASE] By [Xiao Lin]
     *   [Government政府] \[RELEASE] By [Xiao Lin]
     *   [Healthcare医疗] \[RELEASE] By [Xiao Lin]
-    *   Retail零售 [TODO]
+    *   [Retail零售] \[RELEASE] By [Xiao Lin]
     *   Small & Medium-Sized Business中小企业 [TODO]
     *   Transportation交通运输 [TODO]
 
