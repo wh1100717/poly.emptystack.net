@@ -44,7 +44,7 @@ permalink: /docs/airwatchbase/
     *   [Healthcare医疗] \[RELEASE] By [Xiao Lin]
     *   [Retail零售] \[RELEASE] By [Xiao Lin]
     *   [Small & Medium-Sized Business中小企业] By [Xiao Lin]
-    *   Transportation交通运输 [TODO]
+    *   [Transportation交通运输] By [Xiao Lin]
 
 [Bring Your Own Device (BYOD)]:{{site.url}}/airwatch/byod/
 [Containerization (Workspace)]:{{site.url}}/airwatch/containerization/

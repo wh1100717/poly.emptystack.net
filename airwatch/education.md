@@ -11,7 +11,7 @@ categories: [RELEASE]
 <EMBED src=http://fast.wistia.com/embed/iframe/amftvbp487?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=288&videoWidth=512&plugin%5BpostRoll%5D%5Braw%5D=%3Ca%20href%3D%22http%3A%2F%2Fwww.air-watch.com%2Ffree-trial%22%20target%3D%22_parent%22%3E%3Cimg%20src%3D%22%2F%2Fwww.air-watch.com%2Fassets%2Fimg%2Fpost-roll-freetrial.jpg%22%3E%3C%2Fa%3E&plugin%5BpostRoll%5D%5Bstyle%5D%5BbackgroundColor%5D=%23616161&plugin%5BpostRoll%5D%5Bstyle%5D%5Bcolor%5D=%23ffffff&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontFamily%5D=Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif&plugin%5BpostRoll%5D%5Bstyle%5D%5BfontSize%5D=36px&plugin%5BpostRoll%5D%5Bstyle%5D%5BtextAlign%5D=left&plugin%5BpostRoll%5D%5Bversion%5D=v1 autostart="false" style="HEIGHT: 370px; WIDTH: 640px" >
 </EMBED>
 
-##教育方面的主要特性
+##教育方面的主要特征
 随着移动设备和平板电脑的普及，教育机构正在逐步转变课堂教学模式。传统的纸质课本正在逐步被平板电脑的电子书所取代，学生们通过他们的指尖就能够轻松获得最新的有用的东西。教科书通过交互文本，3D影像，视频和音频等形式进入人们的生活中来。教育应用程序无处不在，从词汇理解到人脑解剖学，有超过20000个正在帮助学生们学习。
 
 Airwatch通过教育应用，电子书，和移动终端上的学习内容来帮助学校和大学应对下一代的教育。利用Airwatch，您可以基于我们的web控制台来跟踪你的机构下的所有移动终端、配置策略、发布应用程序、安全访问学校网络和资源。Airwatch允许管理员来管理移动设备确保符合学校策略并且实时进行违规设备监控。通过提高效率以及降低移动管理的成本使得最大限度的提高移动投资收益。
