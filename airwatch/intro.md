@@ -39,7 +39,7 @@ categories: [demo]
     *   [Government政府] \[RELEASE] By [Xiao Lin]
     *   [Healthcare医疗] \[RELEASE] By [Xiao Lin]
     *   [Retail零售] \[RELEASE] By [Xiao Lin]
-    *   Small & Medium-Sized Business中小企业 [TODO]
+    *   [Small & Medium-Sized Business中小企业] By [Xiao Lin]
     *   Transportation交通运输 [TODO]
 
 
@@ -128,7 +128,7 @@ categories: [demo]
 [Government政府]:{{site.url}}/airwatch/government/
 [Healthcare医疗]:{{site.url}}/airwatch/healthcare/
 [Retail零售]:{{site.url}}/airwatch/retail/
-[Small & Medium-Sized Business中小企业]:{{site.url}}/airwatch/business/
+[Small & Medium-Sized Business中小企业]:{{site.url}}/airwatch/smb/
 [Transportation交通运输]:{{site.url}}/airwatch/transport/
 
 [1]:http://aonetwork.com/the-alwayson-global-250-top-company-competition-2/
