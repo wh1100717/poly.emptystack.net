@@ -39,8 +39,8 @@ categories: [demo]
     *   [Government政府] \[RELEASE] By [Xiao Lin]
     *   [Healthcare医疗] \[RELEASE] By [Xiao Lin]
     *   [Retail零售] \[RELEASE] By [Xiao Lin]
-    *   [Small & Medium-Sized Business中小企业] By [Xiao Lin]
-    *   [Transportation交通运输] By [Xiao Lin]
+    *   [Small & Medium-Sized Business中小企业] \[RELEASE] By [Xiao Lin]
+    *   [Transportation交通运输] \[RELEASE] By [Xiao Lin]
 
 
 ##**AirWatch**团队介绍：
