@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Installation
-prev_section: home
+prev_section: invovled
 next_section: githubusage
 permalink: /docs/installation/
 ---

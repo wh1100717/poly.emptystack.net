@@ -75,7 +75,7 @@ PolyTechDocs是一个文档协同撰写项目，采用了Jekyll模版，使得�
 
 ##如何联系我们？
 -------------------------------------------
-[Eric Wang] | [Zhao Qing]
+[Eric Wang] | [Zhao Qing] | [Xiao Lin]
 
 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1fe6afb9314d685d55dabfb21a63088aef4afb57fde787749ad1df53122cca53"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="PolyTechDocs" title="PolyTechDocs"></a>
 
@@ -97,6 +97,7 @@ PolyTechDocs是一个文档协同撰写项目，采用了Jekyll模版，使得�
 
 [Eric Wang]:http://github.com/wh1100717
 [Zhao Qing]:http://github.com/zq920320
+[Xiao Lin]:http://github.com/zxldmn
 
 [项目主页]:https://github.com/wh1100717/PolyTechDocs
 [项目更新情况]:https://github.com/wh1100717/PolyTechDocs/commits/gh-pages

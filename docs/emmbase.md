@@ -2,7 +2,7 @@
 layout: docs
 title: Poly EMM
 prev_section: airwatchbase
-next_section: emmbase
+next_section: todo-translate
 permalink: /docs/emmbase/
 ---
 
