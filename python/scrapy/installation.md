@@ -63,6 +63,10 @@ C:\Python27\Scripts> easy_install.exe pip
 *	安装Twisted-13.2.0.win32-py2.7.exe(64位系统需要安装Twisted-13.2.0.win-amd64-py2.7.exe)
 *	安装pyOpenSSL-0.13.1.win32-py2.7.exe(64位系统需要安装pyOpenSSL-0.13.1.win-amd64-py2.7.exe)
 *	将zope.interface-4.0.5-py2.7-win32.egg拷贝到C:\Python27\Scripts目录下，执行`$ easy_install.exe zope.interface-4.0.5-py2.7-win32.egg`
+*       执行`pip install pyYaml` YAML for Python库
+*       执行`pip install requests==2.0.1` 安装requests库(upyun的依赖库)
+*       执行`pip install upyun` 安装又拍云接口库
+*       执行`pip install pybcs` 安装百度云接口库
 
 验证dependecy是否安装成功的方法：<br>
 

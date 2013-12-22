@@ -184,6 +184,10 @@ else:
     print 'The for loop is over'
 {% endhighlight %}
 
+{% highlight python %}
+for index, data in enumerate(list):#index表示是第几次循环
+{% endhighlight %}
+
 --break语句<br>
 break语句是用来 终止 循环语句的，即哪怕循环条件没有称为False或序列还没有被完全递归，也停止执行循环语句。<br>
 一个重要的注释是，如果你从for或while循环中 终止 ，任何对应的循环else块将不执行。
