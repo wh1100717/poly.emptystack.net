@@ -67,6 +67,7 @@ C:\Python27\Scripts> easy_install.exe pip
 *       执行`pip install requests==2.0.1` 安装requests库(upyun的依赖库)
 *       执行`pip install upyun` 安装又拍云接口库
 *       执行`pip install pybcs` 安装百度云接口库
+*       执行`pip install progressbar` 安装依赖库
 
 验证dependecy是否安装成功的方法：<br>
 
