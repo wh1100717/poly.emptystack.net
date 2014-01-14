@@ -8,6 +8,8 @@ version: 1.0.0
 categories: [demo]
 ---
 
+#Windows下Scrapy环境搭建
+
 ##	Python安装
 *	下载并安装[Python](http://www.python.org/)
 *	安装后在系统环境变量PATH中[配置Python相关的环境变量](http://blog.csdn.net/liguo9860/article/details/6829610)
@@ -142,4 +144,51 @@ def RegisterPy():
 if __name__ == "__main__":
     RegisterPy()
 ```
+
+
+#CentOS 6.4 64Bit下Scrapy环境搭建
+
+##Pre-requisites
+*	update centOS lib to latest version by `yum -y update`
+*	install development tools by `yum groupinstall -y development`
+*	install additional pakage `yum install -y zlib-dev openssl-devel sqlite-devel bzip2-devel`
+*	download python v2.7.6 `wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz`
+*	unzip downloaded file <br>
+	`xz -d Python-3.3.3.tar.xz`<br>	
+	`tar -xvf Python-3.3.3.tar`
+*	step into Python file by `cd Python-2.7.6`
+*	take installation by `./configure` and then `make && make altinstall`
+
+##Fix Yum python-2.7 unsurpported problem
+`mv /usr/bin/python /usr/bin/python2.6.6`
+`ln -s /usr/local/bin/python2.7 /usr/bin/python`<br>
+change the first line code `#!/usr/bin/python` to `#!/usr/bin/python2.6.6`
+
+##setuptools and pip installation
+	# Let's download the installation file using wget:
+	wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-1.4.2.tar.gz
+	
+	# Extract the files from the archive:
+	tar -xvf setuptools-1.4.2.tar.gz
+	
+	# Enter the extracted directory:
+	cd setuptools-1.4.2
+	
+	# Install setuptools using the Python we've installed (2.7.6)
+	python setup.py install
+	
+	# Install pip
+	easy_install pip
+	#alternative
+	curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python2.7 -
+
+##Fix lxml installation error problem
+	yum install libxslt-devel
+
+##Scrapy Installation
+	pip install scrapy
+
+##Others
+	pip install supervisor
+	pip install web.py
 
