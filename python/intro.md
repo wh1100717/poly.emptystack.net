@@ -50,11 +50,11 @@ categories: [demo]
 <img src="{{ site.url }}/img/python/netbeans4python/netbeans4python3.png"  width = "650" alt="">
 ##Eclipse安装Python插件
 -------------------------------------------
-*	下载PyDev
-*	解压放置在eclipse文件夹下
-*	启动eclipse
-*	windows->Preferences->PyDev->Interpreters->Python interpreter下点击new添加python.exe完成
-<img src="/img/python/eclipse4pythoneclipsePydev.jpg"  alt="">
+[下载PyDev](http://pan.baidu.com/s/13oRlq)
+解压放置在eclipse文件夹下
+启动eclipse
+windows->Preferences->PyDev->Interpreters->Python interpreter下点击new添加python.exe完成
+<img src="{{ site.url }}/img/python/eclipse4pythoneclipsePydev.jpg"  alt="">
 ##基础语法
 -------------------------------------------
 ###常量
