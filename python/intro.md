@@ -50,12 +50,12 @@ categories: [demo]
 <img src="{{ site.url }}/img/python/netbeans4python/netbeans4python3.png"  width = "650" alt="">
 ##Eclipse安装Python插件
 -------------------------------------------
-[下载PyDev](http://pan.baidu.com/s/13oRlq)<br>
-解压放置在eclipse文件夹下<br>
-启动eclipse<br>
-windows->Preferences->PyDev->Interpreters->Python interpreter下点击new添加python.exe完成<br>
+*	[下载PyDev](http://pan.baidu.com/s/13oRlq)
+*	解压放置在eclipse文件夹下
+*	启动eclipse
+*	windows->Preferences->PyDev->Interpreters->Python interpreter下点击new添加python.exe完成
 <img src="{{ site.url }}/img/python/eclipse4python/eclipsePydev.jpg"  alt="">
-##基础语法
+###基础语法
 -------------------------------------------
 ###常量
 一个字面意义上的常量的例子是如同5、1.23、9.25e-3这样的数，或者如同'This is a string'、"It's a string!"这样的字符串。它们被称作字面意义上的，因为它们具备 字面 的意义---你按照它们的字面意义使用它们的值。数2总是代表它自己，而不会是别的什么东西——它是一个常量，因为不能改变它的值。因此，所有这些都被称为字面意义上的常量。
