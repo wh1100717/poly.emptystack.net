@@ -55,6 +55,24 @@ categories: [demo]
 *	启动eclipse
 *	windows->Preferences->PyDev->Interpreters->Python interpreter下点击new添加python.exe完成
 <img src="{{ site.url }}/img/python/eclipse4python/eclipsePydev.jpg"  alt="">
+##Eclipse配置Github
+*	[下载Egit](http://pan.baidu.com/s/13oRlq)
+*	解压放置在eclipse文件夹下
+*	启动eclipse
+*	File->import
+![](http://img.my.csdn.net/uploads/201302/03/1359856918_4871.png)
+*	点击next选择clone URI
+![](http://img.my.csdn.net/uploads/201302/03/1359856965_4239.png)
+*	将Github的项目地址复制到URI中，并在Authentication中填写个人的Github账号->next
+![](http://img.my.csdn.net/uploads/201302/03/1359857008_4839.png)
+*	选择分支<br>
+![](http://img.my.csdn.net/uploads/201302/03/1359857084_9693.png)
+*	配置本地项目存放路径
+![](http://img.my.csdn.net/uploads/201302/03/1359857140_3138.png)
+*	选择Import as general project
+<img src="{{ site.url }}/img/python/eclipse4python/github.jpg"  alt="">
+*	next->finish<br>
+![](http://img.my.csdn.net/uploads/201302/03/1359857335_4462.png)
 ###基础语法
 -------------------------------------------
 ###常量
