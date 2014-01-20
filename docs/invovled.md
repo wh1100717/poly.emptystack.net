@@ -25,7 +25,8 @@ PolyTech是一个由Polysaas员工组建的项目集合，项目起始于11/2013
 
 ## Invovled Project
 *	[PolyTechDocs]: PolyTechDocs是一个文档协同撰写项目，可以在忽略字体大小样式，代码格式等方面的情况下进行专注于内容的高效文档撰写。
-*	[PolySpider]: 采用Scrapy对Android Market中的app进行数据抓取并存储到数据库中，为构建自有应用商店，数据挖掘，app自动同步更新提供基础支持。
+*	[PolySpider]: 采用Scrapy对Android Market中的app进行数据抓取并存储到数据库中，为构建自有应用商店，数据挖掘，app自动同步更新提供基础支持。(目前是private项目，只有小组成员才能访问)
+*   [Log2Web]: 采用WebSocket实现日志网页版外挂小工具。可以通过网页查看实时日志输出，并具有低网络及系统消耗等优点。
 
 ## Contributors
 
@@ -44,6 +45,7 @@ Phone: 18665801640
 [DISQUS]:http://www.disqus.com/
 [PolyTechDocs]:https://github.com/wh1100717/PolyTechDocs
 [PolySpider]:https://github.com/wh1100717/PolySpider
+[Log2Web]:https://github.com/wh1100717/Log2Web
 
 [Eric Wang]:http://github.com/wh1100717
 [Zhao Qing]:http://github.com/zq920320
