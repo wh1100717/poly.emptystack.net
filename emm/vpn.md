@@ -42,3 +42,10 @@ categories: [demo]
 {% highlight bash %}
 route add 192.168.1.0 mask 255.255.255.0 自己的IP地址
 {% endhighlight %}
+9.链接某些ip连不上时。<br>
+管理员身份进入命令处理器
+route print查看 活动路由中 接口在链路上的ip
+![({{site.url}}/img/vpn/vpn9.jpg)]
+{% highlight bash %}
+route add 192.168.1.0 mask 255.255.255.0 查到的IP
+{% endhighlight %}
