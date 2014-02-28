@@ -59,6 +59,7 @@ categories: [RELEASE]
  * **GoAgent PAAS**模式 全部通过PAAS
  * **GoAgent Socks5**模式 全部通过Socks5（暂不可用）
  * 自动切换模式 根据切换规则自动选择是否进行代理，自动选择使用何种代理
+
 ## 四、Mac开机自动启动GoAgent
 * 在local/目录下执行下面这条命令即可<br>
 	`python addto-startup.py`
