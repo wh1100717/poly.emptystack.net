@@ -63,3 +63,6 @@ categories: [RELEASE]
 ## 四、Mac开机自动启动GoAgent
 * 在local/目录下执行下面这条命令即可<br>
 	`python addto-startup.py`
+* 如果权限不够，执行<br>
+	`sudo python addto-startup.py`
+* 输入密码即可
