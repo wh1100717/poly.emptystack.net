@@ -161,3 +161,30 @@ console.log(encodeURIComponent(uri))
 
 `Math`对象为另一个内置对象。为JavaScript提供了数学计算功能。
 
+##函数闭包
+先看一段代码
+```javascript
+function f(){
+    var n = 100;
+}
+f()
+```
+变量n定义在f()中，属于作用于f的内部变量，当f()执行结束后变量的生存周期就结束了，所开辟的内存空间也将会被垃圾回收。
+再看另一段代码
+```javascript
+function f1(){
+    var n = 100;
+    return function f2(){console.log(n);}
+}
+var result = f1()
+console.log(result()) //100
+```
+我们在函数f1()外面定义了变量resul来接受f1()执行以后的返回值，f1()的返回值是一个匿名函数，该函数调用了f1()内部定义的变量n。
+
+我们发现虽然f1()执行完成了，但是执行`result()`会输出`100`，说明变量n并没有失效，他可以在f1()作用域外被result函数访问。
+
+我们把这种函数中引用函数作用域以外变量的特性叫做--**函数的闭包**
+
+函数闭包可以扩大引用变量的生存周期和使用范围，但也有可能造成内存泄露。
+
+
