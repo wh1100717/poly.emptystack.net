@@ -37,7 +37,6 @@ Email: 1100717@qq.com
 
 Phone: 18665801640
 
-<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1fe6afb9314d685d55dabfb21a63088aef4afb57fde787749ad1df53122cca53"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="PolyTechDocs" title="PolyTechDocs"></a>
 
 
 [待翻译的文档列表]:{{site.url}}/docs/todo-translate/

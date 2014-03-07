@@ -79,11 +79,6 @@ PolyTechDocs是一个文档协同撰写项目，采用了Jekyll模版，使得�
 * JIRA && TestLink
 * Web Service
 
-##如何联系我们？
--------------------------------------------
-[Eric Wang] | [Zhao Qing]
-
-<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=1fe6afb9314d685d55dabfb21a63088aef4afb57fde787749ad1df53122cca53"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="PolyTechDocs" title="PolyTechDocs"></a>
 
 [MarkDown]:http://daringfireball.net/projects/markdown/
 [Textile]:http://textile.sitemonks.com/
