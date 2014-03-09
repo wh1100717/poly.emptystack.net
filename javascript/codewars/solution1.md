@@ -40,7 +40,7 @@ pluck([{a:1}, {a:2}], 'a') // -> [1,2]
 If an object is missing the property, you should just leave it as undefined in the output array.
 
 ###Solution(coffee)
-```
+```javascript
 pluck = (objs, name) -> obj[name] for obj in objs
 ```
 
