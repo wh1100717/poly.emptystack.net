@@ -81,3 +81,83 @@ for simplicity we also don't consider the time it takes to put eggs into the pot
 ```javascript
 cookingTime = (eggs) -> Math.ceil(eggs/8) * 5
 ```
+
+---
+
+##[kyu-7] Occurrences in a string
+###Description
+Write a function that determines how often each character occurs in a given string.
+
+For instance:
+
+```javascript
+occurrences "This is an example string."
+```
+
+would return
+
+```javascript
+{"t":2,"h":1,"i":3,"s":3," ":4,"a":2,"n":2,"e":2,"x":1,"m":1,"p":1,"l":1,"r":1,"g":1,".":1}
+```
+
+Object keys should be lowercase.
+
+###Solution
+
+```javascript
+occurrences = (str) -> new -> @[s] = (@[s] ? 0) + 1 for s in str.toLowerCase();@
+```
+
+---
+
+##[kyu-7] Refactored Greeting
+###Description
+The following code could use a bit of object oriented artistry. While its a simple method and works just fine as it is, in a larger system its best to organize methods into classes/objects. Refactor the following code so that it belongs to a Person class/object. Each Person instance will have a greet method. The Person instance should be instantiated with a name so that it no longer has to be passed into each greet method call.
+
+Here is how the final refactored code would be used:
+
+```javascript
+joe = new Person('Joe')
+joe.greet('Kate') # should return 'Hello Kate, my name is Joe'
+joe.name # should == 'Joe'
+```
+
+###Solution
+```javascript
+class Person
+	constructor: (@name) ->
+	greet: (yourName) -> "Hello #{yourName}, my name is #{@name}"
+```
+
+---
+
+##[kyu-6] Throwing Darts
+###Description
+Description:
+
+You've just recently been hired to calculate scores for a Dart Board game! 
+
+>Scoring specifications:
+
+>0 points - radius above 10
+
+>5 points - radius between 5 and 10 inclusive
+
+>10 points - radius less than 5
+
+>If all radiuses are less than 5, award 100 BONUS POINTS!
+
+Write a function that accepts an array of radiuses (can be integers and/or floats), and returns a total score using the above specification.
+An empty array should return 0.
+
+Examples:
+
+```javascript
+scoreThrows( [1, 5, 11] ) => returns 15 
+scoreThrows( [15, 20, 30] ) => returns 0 
+scoreThrows( [1, 2, 3, 4] ) => returns 140
+```
+
+
+
+
