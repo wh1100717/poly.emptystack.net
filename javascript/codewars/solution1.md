@@ -158,6 +158,16 @@ scoreThrows( [15, 20, 30] ) => returns 0
 scoreThrows( [1, 2, 3, 4] ) => returns 140
 ```
 
+###Solution:
+
+```javascript
+scoreThrows = (radiuses) ->
+	for r in radiuses
+		p = (p ? 0) + 5 if r <= 10
+		p = (p ? 0) + 5 if r < 5
+	p = (p ? 0) + 100 if p and p/10 is radiuses.length
+	return p ? 0
+```
 
 
 
