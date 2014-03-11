@@ -169,5 +169,139 @@ scoreThrows = (radiuses) ->
 	return p ? 0
 ```
 
+---
+
+##[kyu-6] Matrix Addition
+###Description
+Write a function that accepts two square matrices (nxn two dimensional arrays), and return the sum of the two. Both matrices being passed into the function will be of size nxn (square), containing only integers.
+
+How to sum two matrices: 
+
+Take each cell `[n][m]` from the first matrix, and add it with the `[n][m]` cell from the second matrix. This will be cell `[n][m]` in the solution matrix.
+
+```
+Visualization: 
+|1 2 3|
+|3 2 1| 
+|1 1 1|
++
+|2 2 1|
+|3 2 3| 
+|1 1 3|
+=
+|3 4 4|
+|6 4 4| 
+|2 2 4|
+```
+
+Example function call:
+```
+matrixAddition( [ [1, 2, 3], [3, 2, 1,], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] );
+returns [ [3, 4, 4], [6, 4, 4], [2, 2, 4] ]
+```
+
+###Solution
+```javascript
+matrixAddition = (a, b) -> new -> i[jndex] += b[index][jndex] for j,jndex in i for i,index in a
+```
+
+---
+
+##[kyu-6] Arrays Similar
+###Description
+Write a function that determines whether the passed in arrays are similar. Similar means they contain the same elements, and the same number of occurrences of elements.
+```javascript
+var arr1 = [1, 2, 2, 3, 4],
+    arr2 = [2, 1, 2, 4, 3],
+    arr3 = [1, 2, 3, 4],
+    arr4 = [1, 2, 3, "4"]
+
+arraysSimilar(arr1, arr2); // Should equal true
+arraysSimilar(arr2, arr3); // Should equal false
+arraysSimilar(arr3, arr4); // Should equal false
+```
+
+###Solution
+```javascript
+arraysSimilar = (a1, a2) ->
+	a1.sort()
+	a2.sort()
+	return false if a1.length isnt a2.length
+	return false for i, index in a1 when a1[index] isnt a2[index]
+	return true
+```
+
+---
+
+##[keyu-6] Manhattan Distance
+###Description
+The distance formula can be used to find the distance between two points. What if we were trying to walk from point A to point B, but there were buildings in the way? We would need some other formula..but which?
+
+Manhattan Distance
+
+Manhattan distance is the distance between two points in a grid (like the grid-like street geography of the New York borough of Manhattan) calculated by only taking a vertical and/or horizontal path.
+
+Write a function `manhattanDistance` that accepts two points, pointA and pointB, and returns the Manhattan Distance between the two points.
+
+pointA and pointB are arrays containing the x and y coordinate in the grid. You can think of x as the row in the grid, and y as the column.
+
+Examples:
+
+```javascript
+manhattanDistance( [1, 1], [1, 1] ) => returns 0
+manhattanDistance( [5, 4], [3, 2] ) => returns 4
+manhattanDistance( [1, 1], [0, 3] ) => returns 3
+```
+Resources:
+
+http://en.wiktionary.org/wiki/Manhattan_distance
+http://en.wikipedia.org/wiki/Manhattan_distance
+
+###Solution
+```javascript
+manhattanDistance = (pointA, pointB) -> Math.abs(pointA[0] - pointB[0]) + Math.abs(pointA[1] - pointB[1])
+```
+
+---
+
+##[kyu-6] Remove anchor from URL
+###Description
+Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+```javascript
+# returns 'www.codewars.com'
+removeUrlAnchor('www.codewars.com#about')
+
+# returns 'www.codewars.com?page=1' 
+removeUrlAnchor('www.codewars.com?page=1')
+```
+
+###Solution
+```javascript
+removeUrlAnchor = (url) -> url.split('#')[0]
+```
+
+---
+
+##[kyu-6] Array.diff
+###Description
+Your goal in this kata is to implement an array_diff function, which subtracts one array from another.
+
+It should remove all values from array a, which are present in array b.
+```javascript
+array_diff([1,2], [1]) // [2]
+```
+If a value is present in array b, all of its occurrences must be removed from array a.
+```javascript
+array_diff([1,2,2], [2]) // [1]
+```
+
+###Solution
+```javascript
+array_diff = (a, b) -> i for i in a when (i not in b)
+```
+
+
+
 
 
