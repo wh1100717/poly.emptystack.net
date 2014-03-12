@@ -15,12 +15,14 @@ Fellow code warrior, we need your help! We seem to have lost one of our array el
 Write a function called getMissingElement that accepts an array of unique integers between 0 and 9 (inclusive), and returns the missing element.
 
 ###Examples
+
 ```javascript
 getMissingElement( [0, 5, 1, 3, 2, 9, 7, 6, 4] ) // returns 8
 getMissingElement( [9, 2, 4, 5, 7, 0, 8, 6, 1] ) // returns 3
 ```
 
 ###Solution(coffee)
+
 ```javascript
 getMissingElement = (superImportantArray) -> return i for i in [0..9] when i not in superImportantArray
 ```
@@ -40,6 +42,7 @@ pluck([{a:1}, {a:2}], 'a') // -> [1,2]
 If an object is missing the property, you should just leave it as undefined in the output array.
 
 ###Solution(coffee)
+
 ```javascript
 pluck = (objs, name) -> obj[name] for obj in objs
 ```
@@ -57,6 +60,7 @@ Your task is to write a function that takes a string and return a new string wit
 For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
 
 ###Solution
+
 ```javascript
 disemvowel = (s) -> s.replace /[aoeiu]/gi, ''
 ```
@@ -78,6 +82,7 @@ it takes 5 minutes to boil an egg
 we assume, that the water is boiling all the time (no time to heat up)
 for simplicity we also don't consider the time it takes to put eggs into the pot or get them out of it
 ###Solution
+
 ```javascript
 cookingTime = (eggs) -> Math.ceil(eggs/8) * 5
 ```
@@ -123,6 +128,7 @@ joe.name # should == 'Joe'
 ```
 
 ###Solution
+
 ```javascript
 class Person
 	constructor: (@name) ->
@@ -179,7 +185,7 @@ How to sum two matrices:
 
 Take each cell `[n][m]` from the first matrix, and add it with the `[n][m]` cell from the second matrix. This will be cell `[n][m]` in the solution matrix.
 
-```
+```javascript
 Visualization: 
 |1 2 3|
 |3 2 1| 
@@ -195,12 +201,14 @@ Visualization:
 ```
 
 Example function call:
-```
+
+```javascript
 matrixAddition( [ [1, 2, 3], [3, 2, 1,], [1, 1, 1] ], [ [2, 2, 1], [3, 2, 3], [1, 1, 3] ] );
 returns [ [3, 4, 4], [6, 4, 4], [2, 2, 4] ]
 ```
 
 ###Solution
+
 ```javascript
 matrixAddition = (a, b) -> new -> i[jndex] += b[index][jndex] for j,jndex in i for i,index in a
 ```
@@ -210,6 +218,7 @@ matrixAddition = (a, b) -> new -> i[jndex] += b[index][jndex] for j,jndex in i f
 ##[kyu-6] Arrays Similar
 ###Description
 Write a function that determines whether the passed in arrays are similar. Similar means they contain the same elements, and the same number of occurrences of elements.
+
 ```javascript
 var arr1 = [1, 2, 2, 3, 4],
     arr2 = [2, 1, 2, 4, 3],
@@ -222,6 +231,7 @@ arraysSimilar(arr3, arr4); // Should equal false
 ```
 
 ###Solution
+
 ```javascript
 arraysSimilar = (a1, a2) ->
 	a1.sort()
@@ -252,12 +262,14 @@ manhattanDistance( [1, 1], [1, 1] ) => returns 0
 manhattanDistance( [5, 4], [3, 2] ) => returns 4
 manhattanDistance( [1, 1], [0, 3] ) => returns 3
 ```
+
 Resources:
 
 http://en.wiktionary.org/wiki/Manhattan_distance
 http://en.wikipedia.org/wiki/Manhattan_distance
 
 ###Solution
+
 ```javascript
 manhattanDistance = (pointA, pointB) -> Math.abs(pointA[0] - pointB[0]) + Math.abs(pointA[1] - pointB[1])
 ```
@@ -277,6 +289,7 @@ removeUrlAnchor('www.codewars.com?page=1')
 ```
 
 ###Solution
+
 ```javascript
 removeUrlAnchor = (url) -> url.split('#')[0]
 ```
@@ -288,15 +301,19 @@ removeUrlAnchor = (url) -> url.split('#')[0]
 Your goal in this kata is to implement an array_diff function, which subtracts one array from another.
 
 It should remove all values from array a, which are present in array b.
+
 ```javascript
 array_diff([1,2], [1]) // [2]
 ```
+
 If a value is present in array b, all of its occurrences must be removed from array a.
+
 ```javascript
 array_diff([1,2,2], [2]) // [1]
 ```
 
 ###Solution
+
 ```javascript
 array_diff = (a, b) -> i for i in a when (i not in b)
 ```
@@ -312,6 +329,7 @@ Write a function `mineLocation` that accepts a 2D array, and returns the locatio
 The location returned should be an array where the first element is the row index, and the second element is the column index of the bomb location (both should be 0 based). All 2D arrays passed into your function will be square (NxN), and there will only be one mine in the array.
 
 Examples:
+
 ```javascript
 mineLocation( [ [1, 0, 0], [0, 0, 0], [0, 0, 0] ] ) => returns [0, 0] 
 mineLocation( [ [0, 0, 0], [0, 1, 0], [0, 0, 0] ] ) => returns [1, 1] 
@@ -319,6 +337,7 @@ mineLocation( [ [0, 0, 0], [0, 0, 0], [0, 1, 0] ] ) => returns [2, 1]
 ```
 
 ###Solution
+
 ```javascript
 mineLocation = (a) -> 
 	for i,index in a 
@@ -330,12 +349,15 @@ mineLocation = (a) ->
 
 ##[kyu-5] Moving Zeros To The End
 ###Description
+
 Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
 ```javascript
 moveZeros [false,1,0,1,2,0,1,3,"a"] # returns[false,1,1,2,1,3,"a",0,0]
 ```
 
 ##Solution
+
 ```javascript
 moveZeros = (arr) -> arr.filter((a)-> a isnt 0).concat arr.filter((a)-> a is 0)
 ```
@@ -347,12 +369,14 @@ moveZeros = (arr) -> arr.filter((a)-> a isnt 0).concat arr.filter((a)-> a is 0)
 For this exercise you will create a global flatten method. The method takes in any number of arguments and flattens them into a single array. If any of the arguments passed in are an array then the individual objects within the array will be flattened so that they exist at the same level as the other arguments. Any nested arrays, no matter how deep, should be flattened into the single array result.
 
 The following are examples of how this function would be used and what the expected results would be:
+
 ```javascript
 flatten(1, [2, 3], 4, 5, [6, [7]]) # returns [1, 2, 3, 4, 5, 6, 7]
 flatten('a', ['b', 2], 3, null, [[4], ['c']]) # returns ['a', 'b', 2, 3, null, 4, 'c']
 ```
 
 ##Solution
+
 ```javascript
 flatten = (list...)->
 	result = []
@@ -373,6 +397,7 @@ You'll implement once, a function that takes another function as an argument, an
 Subsequent calls to the resulting function should have no effect (and should return undefined).
 
 For example:
+
 ```javascript
 logOnce = once(console.log)
 logOnce("foo") // -> "foo"
@@ -380,6 +405,7 @@ logOnce("bar") // -> no effect
 ```
 
 ###Solution
+
 ```javascript
 once = (fn, flag = true) -> ->
 	if flag
@@ -410,6 +436,7 @@ Method descriptions:
 Examples:
 
 Javascript/CoffeeScript
+
 ```javascript
 var giftList = new HolidayPriorityQueue();
 giftList.addGift( { gift: 'Water gun', priority: 1} );// => returns 1
@@ -422,6 +449,7 @@ giftList.buyGift();// => returns 'Toy truck'
 ```
 
 ###Solution
+
 ```javascript
 class HolidayPriorityQueue
 	constructor: () ->
@@ -452,6 +480,7 @@ HolidayPriorityQueue::buyGift = ->
 ##[kyu-5] Vector class
 ###Description
 Create a Vector object that supports addition, subtraction, dot products, and norms. So, for example:
+
 ```javascript
 a = new Vector([1,2,3])
 b = new Vector([3,4,5])
@@ -462,6 +491,7 @@ a.dot(b) # should return 1*3+2*4+3*5 = 26
 a.norm() # should return sqrt(1^2+2^2+3^2)=sqrt(14)
 a.add(c) # throws an error
 ```
+
 If you try to add, subtract, or dot two vectors with different lengths, you must throw an error!
 
 Also provide:
@@ -472,6 +502,7 @@ Also provide:
 The test cases will utilize the user-provided equals method.
 
 ###Solution
+
 ```javascript
 class Vector
 	constructor: (@v) ->
