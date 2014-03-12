@@ -301,6 +301,238 @@ array_diff([1,2,2], [2]) // [1]
 array_diff = (a, b) -> i for i in a when (i not in b)
 ```
 
+---
+
+##[kyu-6] Find the Mine!
+###Description
+You've just discovered a square (NxN) field and you notice a warning sign. The sign states that there's a single bomb in the 2D grid-like field in front of you.
+
+Write a function `mineLocation` that accepts a 2D array, and returns the location of the mine. The mine is represented as the integer 1 in the 2D array. Areas in the 2D array that are not the mine will be represented as 0s.
+
+The location returned should be an array where the first element is the row index, and the second element is the column index of the bomb location (both should be 0 based). All 2D arrays passed into your function will be square (NxN), and there will only be one mine in the array.
+
+Examples:
+```javascript
+mineLocation( [ [1, 0, 0], [0, 0, 0], [0, 0, 0] ] ) => returns [0, 0] 
+mineLocation( [ [0, 0, 0], [0, 1, 0], [0, 0, 0] ] ) => returns [1, 1] 
+mineLocation( [ [0, 0, 0], [0, 0, 0], [0, 1, 0] ] ) => returns [2, 1]
+```
+
+###Solution
+```javascript
+mineLocation = (a) -> 
+	for i,index in a 
+		for v,vndex in i when v is 1
+			return [index, vndex]
+```
+
+---
+
+##[kyu-5] Moving Zeros To The End
+###Description
+Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+```javascript
+moveZeros [false,1,0,1,2,0,1,3,"a"] # returns[false,1,1,2,1,3,"a",0,0]
+```
+
+##Solution
+```javascript
+moveZeros = (arr) -> arr.filter((a)-> a isnt 0).concat arr.filter((a)-> a is 0)
+```
+
+---
+
+##[kyu-5] flatten()
+###Description
+For this exercise you will create a global flatten method. The method takes in any number of arguments and flattens them into a single array. If any of the arguments passed in are an array then the individual objects within the array will be flattened so that they exist at the same level as the other arguments. Any nested arrays, no matter how deep, should be flattened into the single array result.
+
+The following are examples of how this function would be used and what the expected results would be:
+```javascript
+flatten(1, [2, 3], 4, 5, [6, [7]]) # returns [1, 2, 3, 4, 5, 6, 7]
+flatten('a', ['b', 2], 3, null, [[4], ['c']]) # returns ['a', 'b', 2, 3, null, 4, 'c']
+```
+
+##Solution
+```javascript
+flatten = (list...)->
+	result = []
+	for arg in list
+		if arg instanceof Array
+			result.push flatten(arg...)...
+		else
+			result.push arg
+	return result
+```
+
+---
+
+##[kyu-6] Once
+###Description
+You'll implement once, a function that takes another function as an argument, and returns a new version of that function that can only be called once.
+
+Subsequent calls to the resulting function should have no effect (and should return undefined).
+
+For example:
+```javascript
+logOnce = once(console.log)
+logOnce("foo") // -> "foo"
+logOnce("bar") // -> no effect
+```
+
+###Solution
+```javascript
+once = (fn, flag = true) -> ->
+	if flag
+		flag = false
+		fn(arguments...)
+```
+
+---
+
+##[kyu-6] Holiday Shopping Priority Queue
+###Description
+####Happy Holidays fellow Code Warriors! 
+
+The holidays are just around the corner. You know what that means...Holiday Shopping! I was planning on buying all you Code Warriors a gift, but I don't know which order to buy them! I have a small shopping list that I'm constantly adding to, and all of the items have a certain priority. What if I use a priority queue?
+
+####Holiday Shopping Priority Queue
+
+Priority queues are similar to queues, but they add a priority to each data entry, so items with higher priorities (lower integer values) are processed first.
+
+While I'm running around buying the gifts, I need you to write a few methods for the HolidayPriorityQueue class to help me out. The class needs two methods: addGift and buyGift. For this Kata, all priorities will be unique, so no need to worry about equal priorities.
+
+Method descriptions:
+
+`addGift` (or enqueue) adds a gift to the priority queue. This method should accept one object (or hash in ruby), which has two properties: gift - the name of the gift, and priority - the priority of the gift, and should return the new length of the queue. All gifts will be in this form.
+
+`buyGift` (or dequeue) removes the gift with the highest priority from the priority queue, and returns the gifts name (value of the gift property). If the queue is empty, return the empty string ''
+
+Examples:
+
+Javascript/CoffeeScript
+```javascript
+var giftList = new HolidayPriorityQueue();
+giftList.addGift( { gift: 'Water gun', priority: 1} );// => returns 1
+giftList.addGift( { gift: 'Toy truck', priority: 4 } );// => returns 2
+giftList.addGift( { gift: 'Roller Skates', priority: 3 } );// => returns 3
+
+giftList.buyGift();// => returns 'Water gun'
+giftList.buyGift();// => returns 'Roller Skates'
+giftList.buyGift();// => returns 'Toy truck'
+```
+
+###Solution
+```javascript
+class HolidayPriorityQueue
+	constructor: () ->
+		@gift_list = []
+  
+HolidayPriorityQueue::addGift = (gift) ->
+	@gift_list.push gift
+	return @gift_list.length
+
+HolidayPriorityQueue::buyGift = ->
+	if @gift_list.length is 0
+		return ""
+	max_priority = undefined
+	max_index = 0
+	for gift, index in @gift_list
+		if index is 0
+			max_priority = gift.priority
+		else if gift.priority < max_priority
+			max_index = index
+			max_priority = gift.priority
+	max_name = @gift_list[max_index].gift
+	@gift_list = @gift_list[0...max_index].concat @gift_list[max_index+1...]
+	return max_name
+```
+
+---
+
+##[kyu-5] Vector class
+###Description
+Create a Vector object that supports addition, subtraction, dot products, and norms. So, for example:
+```javascript
+a = new Vector([1,2,3])
+b = new Vector([3,4,5])
+c = new Vector([5,6,7,8])
+a.add(b) # should return Vector([4,6,8])
+a.subtract(b) # should return Vector([-2,-2,-2])
+a.dot(b) # should return 1*3+2*4+3*5 = 26
+a.norm() # should return sqrt(1^2+2^2+3^2)=sqrt(14)
+a.add(c) # throws an error
+```
+If you try to add, subtract, or dot two vectors with different lengths, you must throw an error!
+
+Also provide:
+
+*   a toString function, so that using the vectors from above, a.toString() === '(1,2,3)'
+*   an equals function, so that two vectors who have the same components are equal
+
+The test cases will utilize the user-provided equals method.
+
+###Solution
+```javascript
+class Vector
+	constructor: (@v) ->
+
+	value: -> @v
+
+	toString: -> "(" + @v.join(",") + ")"
+
+	equals: (n) ->
+		n = n.value()
+		return false if @v.length isnt n.length
+		for i in @v
+			return false if i not in n
+		return true
+
+	add: (n) ->
+		n = n.value()
+		throw "error" if n.length isnt @v.length
+		tmp = []
+		for i, index in @v
+			tmp.push i + n[index]
+		return {'equals': (m)->
+			m = m.value()
+			return false if m.length isnt tmp.length
+			for i,index in tmp
+				return false if i isnt m[index]
+			return true
+		}
+
+
+	subtract: (n) ->
+		n = n.value()
+		throw "error" if n.length isnt @v.length
+		tmp = []
+		for i, index in @v
+			tmp.push i - n[index]
+		return {'equals': (m)->
+			m = m.value()
+			return false if m.length isnt tmp.length
+			for i,index in tmp
+				return false if i isnt m[index]
+			return true
+		}
+
+	dot: (n) ->
+		n = n.value()
+		throw "error" if n.length isnt @v.length
+		tmp = 0
+		for i, index in @v
+			tmp += @v[index] * n[index]
+		return tmp
+
+	norm: ()->
+		val = 0
+		for i in @v
+			val += i*i
+		return Math.sqrt(val)
+```
+
+
+
 
 
 
