@@ -562,6 +562,124 @@ class Vector
 		return Math.sqrt(val)
 ```
 
+---
+
+##[kyu-5] Convert CamelCase string into snake_case
+###Description
+Complete the function/method so that it takes CamelCase string and returns the string in snake_case notation. Lowercase characters can be numbers. If method gets number, it should return string.
+
+Examples:
+
+```javascript
+#  returns test_controller
+toUnderscore 'TestController'
+
+# returns movies_and_books
+toUnderscore 'MoviesAndBooks'
+
+# returns app7_test
+toUnderscore 'App7Test'
+
+# returns "1"
+toUnderscore 1
+```
+
+###Solution
+
+```javascript
+toUnderscore = (str) ->
+	return String(str) if typeof str is 'number'
+	return str.replace(/[A-Z]/g, (s)->'_'+s.toLowerCase())[1...]
+```
+
+---
+
+##[kyu-5] Grab CSV Columns
+###Description
+Write a function called csvColumns that takes a CSV (format shown below) and an array of indices, which represents the columns of the CSV, and return a CSV with only the columns specified in the indices array.
+
+CSV format: 
+The CSV passed in will be a string and will have one or more columns, and one or more rows. The CSV will be of size NxM. Each row is separated by a new line character (\n). There will be no spaces in the CSV string.
+
+```javascript
+Example format of passed in CSV: "1,2,3\n4,5,6\n7,8,9\n10,11,12" 
+How it would look: 
+1,2,3
+4,5,6
+7,8,9
+10,11,12
+```
+
+Indices Array info: 
+
+The indices will be zero based, so the first column will be represented as a 0 in the indices array. All values in the indices array will be integers from 0 and up. All test cases will have an indices array of one or more integers. Ignore indices that map to a column that doesn't exist. If all the values in the indices array do NOT map to any existing column, return an empty string ("").
+
+Examples: 
+
+```javascript
+csvColumns( "1,2,3\n4,5,6" , [0, 1] ) => returns "1,2\n4,5" 
+csvColumns( "1,2\n3,4\n5,6" , [5, 6, 7] ) => returns "" 
+csvColumns( "a,b,c,d,e\n1,2,3,4,5\nf,g,h,i,j" , [1, 3, 5, 7] ) => returns "b,d\n2,4\ng,i"
+```
+
+###Solution
+
+```javascript
+csvColumns = (csv, indices) ->
+	csv_list = csv.split("\n")
+	result = []
+	for csv ,index in csv_list
+		numbers = csv.split(",")
+		n = []
+		for number,nndex in numbers
+			n.push number if nndex in indices
+		result.push n if n.join(",") isnt ""
+	return result.join("\n")
+```
+
+---
+
+##[kyu-5] Longest sequence with zero sum
+###Description
+Write a method which takes an array of integers (positive and negative) and returns the longest contiguous sequence in this array, which total sum of elements equal 0.
+
+For example:
+
+```javascript
+maxZeroSequenceLength([25, -35, 12, 6, 92, -115, 17, 2, 2, 2, -7, 2, -9, 16, 2, -11])
+```
+
+Should return `[92, -115, 17, 2, 2, 2]`, because this is the longest zero-sum sequence in the array.
+
+###Solution
+
+```javascript
+maxZeroSequence = (arr) ->
+	sub_arr = []
+	for i in arr
+		last_item = sub_arr.pop()
+		if last_item is undefined
+			sub_arr.push i
+		else
+			sub_arr.push last_item
+			sub_arr.push i + last_item
+	hash_seq = {}
+	max_length = 0
+	start_index = 0
+	end_index = 0
+	for i,index in sub_arr
+		if i is 0 and index > max_length
+			max_length = index
+			start_index = 0
+			end_index = index
+		if hash_seq[i] and index - hash_seq[i] > max_length
+			max_length = index - hash_seq[i]
+			start_index = hash_seq[i] + 1
+			end_index = index
+		else
+			hash_seq[i] = index
+	return arr[start_index..end_index]
+```
 
 
 
