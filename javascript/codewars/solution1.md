@@ -681,6 +681,160 @@ maxZeroSequence = (arr) ->
 	return arr[start_index..end_index]
 ```
 
+---
+
+##[kyu-5] Custom sort function
+###Description
+Complete the sort function so that it returns the items passed into it in alphanumerical order. Conveniently enough, the standard array sort method has been disabled for you so that you are forced to create your own.
+
+Example:
+
+```javascript
+sort([1,3,2]) // should return [1,2,3]
+```
+
+###Solution
+
+```javascript
+sort = (items) ->
+	result = []
+	for item in items
+		if result.length is 0
+			result.push item
+		else
+			for i, index in result
+				if item < i
+					result.splice(0,0,item)
+					break
+				else if item is i
+					result.splice(index+1,0,item)
+					break
+				else if item > i and (index+1 is result.length or item < result[index+1])
+					result.splice(index+1, 0, item);
+					break
+				else if index+1 is result.length
+					result.push item
+	return result
+```
+
+---
+
+##[kyu-5] Valid Binary Christmas Tree
+###Description
+Happy Holidays fellow Code Warriors!
+
+Santa just finished taking a data structures course, and thought it would be a great idea to build a Binary Christmas Tree! All of Santa's helpers created a Binary Christmas Tree, but not all of them meet his requirements. Can you write some code to validate the Binary Christmas Trees?
+
+Valid Binary Christmas Tree
+
+Write a function isValidTree that accepts a Binary Tree, and returns true if it meets Santa's requirements, false otherwise. Since the tree is a binary tree, each node can have 0, 1, or 2 children. The left and right properties can be used to access the current nodes left and right children. All nodes have an ornament property, which is the name of the ornament, and a color property, which represents the color of the ornament.
+
+Santa's Binary Christmas Tree Requirements
+
+A valid Binary Christmas Tree will meet the following requirements:
+
+*   Root node has a 'star' ornament
+*   Nodes with zero children (excluding the root node) have a 'blue' colored ornament
+*   Nodes with one or two children have a 'red' colored ornament
+
+Examples
+
+```javascript
+isValidTree( {
+  ornament: 'star', 
+  color: 'yellow'
+} )// => returns true
+
+isValidTree( {
+  ornament: 'star',
+  color: 'yellow',
+  left: {
+    ornament: 'candy cane',
+    color: 'blue'
+  }
+} )// => returns true
+
+isValidTree( {
+  ornament: 'star',
+  color: 'yellow',
+  right: {
+    ornament: 'stocking',
+    color: 'red'
+  }
+} )// => returns false
+```
+
+###Solution
+
+```javascript
+isValidTree = (tree) ->
+	return false if tree.ornament isnt "star"
+	nodes = []
+	nodes.push tree.left if tree.left
+	nodes.push tree.right if tree.right
+
+	while true
+		node = nodes.pop()
+		return true if not node
+		count = 0
+		if node.left
+			console.log 123
+			count++
+			nodes.push node.left
+		if node.right
+			console.log 234
+			count++
+			nodes.push node.right
+		
+		if count is 0
+			return false if node.color isnt 'blue'
+		else
+			return false if node.color isnt 'red'
+```
+
+---
+
+##[kyu-5] Where my anagrams at?
+###Description
+What is an anagram? Well, two words are anagrams of each other if they both contain the same letters. For example:
+
+```javascript
+'abba' & 'baab' == true
+'abba' & 'bbaa' == true
+'abba' & 'abbba' == false
+```
+
+Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:
+
+```javascript
+anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
+anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', racer']
+anagrams('laser', ['lazing', 'lazy', 'lacer'] => []
+```
+
+###Solution
+
+```javascript
+anagrams = (word, words) ->
+	word_dict = {}
+	for i in word
+		word_dict[i] = (word_dict[i] ? 0) + 1
+	result = []
+	for ws in words
+		flag = true
+		continue if ws.length isnt word.length
+		w_dict = {}
+		for w in ws
+			w_dict[w] = (w_dict[w] ? 0) + 1
+		for key in Object.keys(word_dict)
+			if word_dict[key] isnt w_dict[key]
+				flag = false
+				break
+		result.push ws if flag
+	return result
+```
+
+
 
 
 
