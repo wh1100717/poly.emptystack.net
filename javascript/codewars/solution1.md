@@ -8,6 +8,37 @@ version: 1.0.0
 categories: [release]
 ---
 
+```
+选择题目的顺序是按照codewars上面推荐的难易度从易到难。
+该文档中包含01-20道题目的解题方法和相应Coffee代码，他们分别是：
+*	[kyu 7] Return the Missing Element
+*	[kyu-7] Pluck
+*	[kyu-7] Disemvowel Trolls
+*	[kyu-7] Boiled Eggs
+*	[kyu-7] Occurrences in a string
+*	[kyu-7] Refactored Greeting
+*	[kyu-6] Throwing Darts
+*	[kyu-6] Matrix Addition
+*	[kyu-6] Arrays Similar
+*	[kyu-6] Manhattan Distance
+*	[kyu-6] Remove anchor from URL
+*	[kyu-6] Array.diff
+*	[kyu-6] Find the Mine!
+*	[kyu-5] Moving Zeros To The End
+*	[kyu-5] flatten()
+*	[kyu-6] Once
+*	[kyu-6] Holiday Shopping Priority Queue
+*	[kyu-5] Vector class
+*	[kyu-5] Convert CamelCase string into snake_case
+*	[kyu-5] Grab CSV Columns
+*	[kyu-5] Longest sequence with zero sum
+*	[kyu-5] Custom sort function
+*	[kyu-5] Valid Binary Christmas Tree
+*	[kyu-5] Where my anagrams at?
+*	[kyu-4] Default Arguments
+
+```
+
 ##[kyu 7] Return the Missing Element
 ###Description
 Fellow code warrior, we need your help! We seem to have lost one of our array elements, and we need your help to retrieve it! Our array, superImportantArray, was supposed to contain all of the integers from 0 to 9 (in no particular order), but one of them seems to be missing.
@@ -243,7 +274,7 @@ arraysSimilar = (a1, a2) ->
 
 ---
 
-##[keyu-6] Manhattan Distance
+##[kyu-6] Manhattan Distance
 ###Description
 The distance formula can be used to find the distance between two points. What if we were trying to walk from point A to point B, but there were buildings in the way? We would need some other formula..but which?
 
