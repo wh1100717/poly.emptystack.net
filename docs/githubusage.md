@@ -23,23 +23,23 @@ permalink: /docs/githubusage/
 
 当你不是一个Geek，也对命令行神马的不感兴趣的时候，以下教程可能会使你对Github的操作变得异常简单，下面我来介绍以下如何用[Netbeans](https://netbeans.org/)控制Github。
 
-## 集成GitHub的Netbeans IDE的使用指南
+## SmartGit使用指南
+###安装SmartGit
+* 下载[SmartGit](http://www.syntevo.com/)
+* 安装一直下一步即可
+* 期间或选择使用的平台选择Github，输入用户名密码即可
+###使用SmartGit
+* Project->clone->Remote Git中填写Github中的地址，一直下一步即可
+* 等待项目clone完毕，就可以对项目进行编辑了，编辑之后
+<img src="{{ site.url }}/img/smartgit/smartgit.jpg"  width = "650" alt="">
+* 当编辑之后，我们可以在Directories中看到，被修改的文件的所在文件夹右上角有个箭头，代表文件有过修改，点击该文件夹，可以看到Files中有被修改的文件列表，点击该文件，在changes中会有修改前和修改后的对比。
+* 在每次提交前先点击Pull按钮，确保当前本地是最新版本，避免冲突
+* 确保无误之后，点击commit，会弹出commit框，在这里我们可以选择要提交的文件，然后填写Commit Message。方便其他人了解到你都做了什么修改，然后点击commit&push，就提交上去了
+* Commit Message的格式
+ * Add 添加文件的名称或者方法
+ * Update 更新文件名称或者方法
+ * Delete 删除文件的名称或者方法
 
-首先需要下载最新版本的[Netbeans](https://netbeans.org/)，选择适合自己版本的Netbeans IDE(建议下载ALL版本的)，在安装Netbeans之前需要首先安装不低于v1.7的[JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)。
-安装过程非常简单，[使用方法](https://netbeans.org/kb/docs/java/quickstart.html)不在本文讨论之范围之内。
-
-选择团队开发->Git->克隆，在资源库URL中输入`https://github.com/wh1100717/PolyTechDocs.git`，用户名口令为自己的Github帐号和密码。
-
-<div class="note info">
-  <h5>关于Github帐号和密码</h5>
-  <p>任何一个人都可以Fork该项目，但是修改后想提交该项目必须是该项目小组的成员，否则没有这个权限。想加入该项目小组，请在QQ群99496674中进行申请o(∩_∩)o</p>
-</div>
-
-远程分支选择：gh-pages(Github默认该分支为项目网站代码分支，上传到该分支的源码会被解释成Jekyll类型的网站)
-
-目标目录选项中，远程名称指的是你所提交的代码在Github上显示的名称，另外需要将“克隆后扫描NetBeans项目”选项勾选上
-
-克隆完毕后，选择打开项目，该项目就加入到了Netbeans的项目列表中，接下来就可以进行查看和编辑项目了。
 
 ## GitHub操作
 
