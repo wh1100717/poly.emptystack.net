@@ -24,10 +24,12 @@ permalink: /docs/githubusage/
 当你不是一个Geek，也对命令行神马的不感兴趣的时候，以下教程可能会使你对Github的操作变得异常简单，下面我来介绍以下如何用[Netbeans](https://netbeans.org/)控制Github。
 
 ## SmartGit使用指南
+
 ###安装SmartGit
 * 下载[SmartGit](http://www.syntevo.com/)
 * 安装一直下一步即可
 * 期间或选择使用的平台选择Github，输入用户名密码即可
+* 
 ###使用SmartGit
 * Project->clone->Remote Git中填写Github中的地址，一直下一步即可
 * 等待项目clone完毕，就可以对项目进行编辑了，编辑之后
