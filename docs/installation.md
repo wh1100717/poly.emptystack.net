@@ -83,13 +83,13 @@ sys.setdefaultencoding('gbk')
 
 把默认编码方式改为gbk（网上有写用utf8的，在这个脚本中是无效的，需要改成gbk格式）。重新执行`$ python d:/ez_setup.py`，如果出现刷屏的安装信息，则说明安装成功了。此时，在python目录下多了一个Script文件夹，easy\_install就在里面。
 
-接下来进入easy\_install所在的文件夹，即Python根目录\Scripts执行以下命令进行pygments关联插件的安装：
+执行`$ gem list`来查看pygments版本，如果没有执行
 
 {% highlight bash %}
 C:\Python27\Scripts> easy_install.exe Pygments
 {% endhighlight %}
 
-接下来更改Pygments的版本:
+如果存在pygments,并且版本不为"0.5.0"接下来更改Pygments的版本:
 
 {% highlight bash %}
 $ gem uninstall pygments.rb --version "=0.5.4"
