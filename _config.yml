@@ -3,7 +3,7 @@ pygments: true
 markdown: redcarpet
 name: Poly Tech Docs
 relative_permalinks: false
-baseurl: /PolyTechDocs
-url: /PolyTechDocs
+baseurl: /
+url: /
 permalink: /news/:year/:month/:day/:title/
 repository: https://github.com/wh1100717/PolyTechDocs
