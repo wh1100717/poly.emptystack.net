@@ -1,0 +1,782 @@
+<div class="highlight"><pre><code class="text language-text" data-lang="text">选择题目的顺序是按照codewars上面推荐的难易度从易到难。
+该文档中包含01-20道题目的解题方法和相应Coffee代码，他们分别是：
+*   [kyu 7] Return the Missing Element
+*   [kyu-7] Pluck
+*   [kyu-7] Disemvowel Trolls
+*   [kyu-7] Boiled Eggs
+*   [kyu-7] Occurrences in a string
+*   [kyu-7] Refactored Greeting
+*   [kyu-6] Throwing Darts
+*   [kyu-6] Matrix Addition
+*   [kyu-6] Arrays Similar
+*   [kyu-6] Manhattan Distance
+*   [kyu-6] Remove anchor from URL
+*   [kyu-6] Array.diff
+*   [kyu-6] Find the Mine!
+*   [kyu-5] Moving Zeros To The End
+*   [kyu-5] flatten()
+*   [kyu-6] Once
+*   [kyu-6] Holiday Shopping Priority Queue
+*   [kyu-5] Vector class
+*   [kyu-5] Convert CamelCase string into snake_case
+*   [kyu-5] Grab CSV Columns
+*   [kyu-5] Longest sequence with zero sum
+*   [kyu-5] Custom sort function
+*   [kyu-5] Valid Binary Christmas Tree
+*   [kyu-5] Where my anagrams at?
+*   [kyu-4] Default Arguments
+</code></pre></div>
+<h2>[kyu 7] Return the Missing Element</h2>
+
+<h3>Description</h3>
+
+<p>Fellow code warrior, we need your help! We seem to have lost one of our array elements, and we need your help to retrieve it! Our array, superImportantArray, was supposed to contain all of the integers from 0 to 9 (in no particular order), but one of them seems to be missing.</p>
+
+<p>Write a function called getMissingElement that accepts an array of unique integers between 0 and 9 (inclusive), and returns the missing element.</p>
+
+<h3>Examples</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">getMissingElement</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">)</span> <span class="c1">// returns 8</span>
+<span class="nx">getMissingElement</span><span class="p">(</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="c1">// returns 3</span>
+</code></pre></div>
+<h3>Solution(coffee)</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">getMissingElement</span> <span class="o">=</span> <span class="p">(</span><span class="nx">superImportantArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">return</span> <span class="nx">i</span> <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">..</span><span class="mi">9</span><span class="p">]</span> <span class="nx">when</span> <span class="nx">i</span> <span class="nx">not</span> <span class="k">in</span> <span class="nx">superImportantArray</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-7] Pluck</h2>
+
+<h3>Descript</h3>
+
+<p>Implement pluck, which takes an array of objects and a property name, and returns an array containing the named property of each object.</p>
+
+<p>For example:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">pluck</span><span class="p">([{</span><span class="nx">a</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="nx">a</span><span class="o">:</span><span class="mi">2</span><span class="p">}],</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="c1">// -&gt; [1,2]</span>
+</code></pre></div>
+<p>If an object is missing the property, you should just leave it as undefined in the output array.</p>
+
+<h3>Solution(coffee)</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">pluck</span> <span class="o">=</span> <span class="p">(</span><span class="nx">objs</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="k">for</span> <span class="nx">obj</span> <span class="k">in</span> <span class="nx">objs</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-7] Disemvowel Trolls</h2>
+
+<h3>Description</h3>
+
+<p>Trolls are attacking your comment section!</p>
+
+<p>A common way to deal with this situation is to remove all of the vowels from the trolls&#39; comments, neutralizing the threat.</p>
+
+<p>Your task is to write a function that takes a string and return a new string with all vowels removed.</p>
+
+<p>For example, the string &quot;This website is for losers LOL!&quot; would become &quot;Ths wbst s fr lsrs LL!&quot;.</p>
+
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">disemvowel</span> <span class="o">=</span> <span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span> <span class="o">/</span><span class="p">[</span><span class="nx">aoeiu</span><span class="p">]</span><span class="o">/</span><span class="nx">gi</span><span class="p">,</span> <span class="s1">&#39;&#39;</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-7] Boiled Eggs</h2>
+
+<h3>Description</h3>
+
+<p>You are the greatest chef on earth. No one boils eggs like you! Your restaurant is always full of guests, who love your boiled eggs. But when there is a greater order of boiled eggs, you need some time, because you have only one pot for your job. How much time do you need?</p>
+
+<p>Your Task:</p>
+
+<p>Implement a function, which takes a non-negative integer, representing the number of eggs to boil. It must return the time in minutes (integer), which it takes to have all the eggs boiled.</p>
+
+<p>Rules:</p>
+
+<p>you can put at most 8 eggs into the pot at once
+it takes 5 minutes to boil an egg
+we assume, that the water is boiling all the time (no time to heat up)
+for simplicity we also don&#39;t consider the time it takes to put eggs into the pot or get them out of it</p>
+
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">cookingTime</span> <span class="o">=</span> <span class="p">(</span><span class="nx">eggs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">eggs</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-7] Occurrences in a string</h2>
+
+<h3>Description</h3>
+
+<p>Write a function that determines how often each character occurs in a given string.</p>
+
+<p>For instance:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">occurrences</span> <span class="s2">&quot;This is an example string.&quot;</span>
+</code></pre></div>
+<p>would return</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{</span><span class="s2">&quot;t&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;h&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;s&quot;</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="o">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;n&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;e&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;x&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;m&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;p&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;l&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;g&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+<p>Object keys should be lowercase.</p>
+
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">occurrences</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="o">-&gt;</span> <span class="err">@</span><span class="p">[</span><span class="nx">s</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="err">@</span><span class="p">[</span><span class="nx">s</span><span class="p">]</span> <span class="o">?</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="nx">s</span> <span class="k">in</span> <span class="nx">str</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span><span class="err">@</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-7] Refactored Greeting</h2>
+
+<h3>Description</h3>
+
+<p>The following code could use a bit of object oriented artistry. While its a simple method and works just fine as it is, in a larger system its best to organize methods into classes/objects. Refactor the following code so that it belongs to a Person class/object. Each Person instance will have a greet method. The Person instance should be instantiated with a name so that it no longer has to be passed into each greet method call.</p>
+
+<p>Here is how the final refactored code would be used:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">joe</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="p">)</span>
+<span class="nx">joe</span><span class="p">.</span><span class="nx">greet</span><span class="p">(</span><span class="s1">&#39;Kate&#39;</span><span class="p">)</span> <span class="err">#</span> <span class="nx">should</span> <span class="k">return</span> <span class="s1">&#39;Hello Kate, my name is Joe&#39;</span>
+<span class="nx">joe</span><span class="p">.</span><span class="nx">name</span> <span class="err">#</span> <span class="nx">should</span> <span class="o">==</span> <span class="s1">&#39;Joe&#39;</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Person</span>
+    <span class="nx">constructor</span><span class="o">:</span> <span class="p">(</span><span class="err">@</span><span class="nx">name</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">greet</span><span class="o">:</span> <span class="p">(</span><span class="nx">yourName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Hello #{yourName}, my name is #{@name}&quot;</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-6] Throwing Darts</h2>
+
+<h3>Description</h3>
+
+<p>Description:</p>
+
+<p>You&#39;ve just recently been hired to calculate scores for a Dart Board game! </p>
+
+<blockquote>
+<p>Scoring specifications:</p>
+
+<p>0 points - radius above 10</p>
+
+<p>5 points - radius between 5 and 10 inclusive</p>
+
+<p>10 points - radius less than 5</p>
+
+<p>If all radiuses are less than 5, award 100 BONUS POINTS!</p>
+</blockquote>
+
+<p>Write a function that accepts an array of radiuses (can be integers and/or floats), and returns a total score using the above specification.
+An empty array should return 0.</p>
+
+<p>Examples:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">scoreThrows</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="mi">15</span> 
+<span class="nx">scoreThrows</span><span class="p">(</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="mi">0</span> 
+<span class="nx">scoreThrows</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="mi">140</span>
+</code></pre></div>
+<h3>Solution:</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">scoreThrows</span> <span class="o">=</span> <span class="p">(</span><span class="nx">radiuses</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="k">for</span> <span class="nx">r</span> <span class="k">in</span> <span class="nx">radiuses</span>
+        <span class="nx">p</span> <span class="o">=</span> <span class="p">(</span><span class="nx">p</span> <span class="o">?</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span> <span class="k">if</span> <span class="nx">r</span> <span class="o">&lt;=</span> <span class="mi">10</span>
+        <span class="nx">p</span> <span class="o">=</span> <span class="p">(</span><span class="nx">p</span> <span class="o">?</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span> <span class="k">if</span> <span class="nx">r</span> <span class="o">&lt;</span> <span class="mi">5</span>
+    <span class="nx">p</span> <span class="o">=</span> <span class="p">(</span><span class="nx">p</span> <span class="o">?</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">100</span> <span class="k">if</span> <span class="nx">p</span> <span class="nx">and</span> <span class="nx">p</span><span class="o">/</span><span class="mi">10</span> <span class="nx">is</span> <span class="nx">radiuses</span><span class="p">.</span><span class="nx">length</span>
+    <span class="k">return</span> <span class="nx">p</span> <span class="o">?</span> <span class="mi">0</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-6] Matrix Addition</h2>
+
+<h3>Description</h3>
+
+<p>Write a function that accepts two square matrices (nxn two dimensional arrays), and return the sum of the two. Both matrices being passed into the function will be of size nxn (square), containing only integers.</p>
+
+<p>How to sum two matrices: </p>
+
+<p>Take each cell <code>[n][m]</code> from the first matrix, and add it with the <code>[n][m]</code> cell from the second matrix. This will be cell <code>[n][m]</code> in the solution matrix.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">Visualization</span><span class="o">:</span> 
+<span class="o">|</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="o">|</span>
+<span class="o">|</span><span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="o">|</span> 
+<span class="o">|</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="o">|</span>
+<span class="o">+</span>
+<span class="o">|</span><span class="mi">2</span> <span class="mi">2</span> <span class="mi">1</span><span class="o">|</span>
+<span class="o">|</span><span class="mi">3</span> <span class="mi">2</span> <span class="mi">3</span><span class="o">|</span> 
+<span class="o">|</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">3</span><span class="o">|</span>
+<span class="o">=</span>
+<span class="o">|</span><span class="mi">3</span> <span class="mi">4</span> <span class="mi">4</span><span class="o">|</span>
+<span class="o">|</span><span class="mi">6</span> <span class="mi">4</span> <span class="mi">4</span><span class="o">|</span> 
+<span class="o">|</span><span class="mi">2</span> <span class="mi">2</span> <span class="mi">4</span><span class="o">|</span>
+</code></pre></div>
+<p>Example function call:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">matrixAddition</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">],</span> <span class="p">[</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">]</span> <span class="p">);</span>
+<span class="nx">returns</span> <span class="p">[</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">]</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">matrixAddition</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="o">-&gt;</span> <span class="nx">i</span><span class="p">[</span><span class="nx">jndex</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">[</span><span class="nx">index</span><span class="p">][</span><span class="nx">jndex</span><span class="p">]</span> <span class="k">for</span> <span class="nx">j</span><span class="p">,</span><span class="nx">jndex</span> <span class="k">in</span> <span class="nx">i</span> <span class="k">for</span> <span class="nx">i</span><span class="p">,</span><span class="nx">index</span> <span class="k">in</span> <span class="nx">a</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-6] Arrays Similar</h2>
+
+<h3>Description</h3>
+
+<p>Write a function that determines whether the passed in arrays are similar. Similar means they contain the same elements, and the same number of occurrences of elements.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="nx">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="nx">arr4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">]</span>
+
+<span class="nx">arraysSimilar</span><span class="p">(</span><span class="nx">arr1</span><span class="p">,</span> <span class="nx">arr2</span><span class="p">);</span> <span class="c1">// Should equal true</span>
+<span class="nx">arraysSimilar</span><span class="p">(</span><span class="nx">arr2</span><span class="p">,</span> <span class="nx">arr3</span><span class="p">);</span> <span class="c1">// Should equal false</span>
+<span class="nx">arraysSimilar</span><span class="p">(</span><span class="nx">arr3</span><span class="p">,</span> <span class="nx">arr4</span><span class="p">);</span> <span class="c1">// Should equal false</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">arraysSimilar</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">a1</span><span class="p">.</span><span class="nx">sort</span><span class="p">()</span>
+    <span class="nx">a2</span><span class="p">.</span><span class="nx">sort</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="nx">a1</span><span class="p">.</span><span class="nx">length</span> <span class="nx">isnt</span> <span class="nx">a2</span><span class="p">.</span><span class="nx">length</span>
+    <span class="k">return</span> <span class="kc">false</span> <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">a1</span> <span class="nx">when</span> <span class="nx">a1</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="nx">isnt</span> <span class="nx">a2</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+    <span class="k">return</span> <span class="kc">true</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-6] Manhattan Distance</h2>
+
+<h3>Description</h3>
+
+<p>The distance formula can be used to find the distance between two points. What if we were trying to walk from point A to point B, but there were buildings in the way? We would need some other formula..but which?</p>
+
+<p>Manhattan Distance</p>
+
+<p>Manhattan distance is the distance between two points in a grid (like the grid-like street geography of the New York borough of Manhattan) calculated by only taking a vertical and/or horizontal path.</p>
+
+<p>Write a function <code>manhattanDistance</code> that accepts two points, pointA and pointB, and returns the Manhattan Distance between the two points.</p>
+
+<p>pointA and pointB are arrays containing the x and y coordinate in the grid. You can think of x as the row in the grid, and y as the column.</p>
+
+<p>Examples:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">manhattanDistance</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="mi">0</span>
+<span class="nx">manhattanDistance</span><span class="p">(</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="mi">4</span>
+<span class="nx">manhattanDistance</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="mi">3</span>
+</code></pre></div>
+<p>Resources:</p>
+
+<p>http://en.wiktionary.org/wiki/Manhattan<em>distance
+http://en.wikipedia.org/wiki/Manhattan</em>distance</p>
+
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">manhattanDistance</span> <span class="o">=</span> <span class="p">(</span><span class="nx">pointA</span><span class="p">,</span> <span class="nx">pointB</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">pointA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="nx">pointB</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">pointA</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nx">pointB</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-6] Remove anchor from URL</h2>
+
+<h3>Description</h3>
+
+<p>Complete the function/method so that it returns the url with anything after the anchor (#) removed.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="err">#</span> <span class="nx">returns</span> <span class="s1">&#39;www.codewars.com&#39;</span>
+<span class="nx">removeUrlAnchor</span><span class="p">(</span><span class="s1">&#39;www.codewars.com#about&#39;</span><span class="p">)</span>
+
+<span class="err">#</span> <span class="nx">returns</span> <span class="s1">&#39;www.codewars.com?page=1&#39;</span> 
+<span class="nx">removeUrlAnchor</span><span class="p">(</span><span class="s1">&#39;www.codewars.com?page=1&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">removeUrlAnchor</span> <span class="o">=</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">url</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-6] Array.diff</h2>
+
+<h3>Description</h3>
+
+<p>Your goal in this kata is to implement an array_diff function, which subtracts one array from another.</p>
+
+<p>It should remove all values from array a, which are present in array b.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">array_diff</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">// [2]</span>
+</code></pre></div>
+<p>If a value is present in array b, all of its occurrences must be removed from array a.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">array_diff</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1">// [1]</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">array_diff</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">i</span> <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">a</span> <span class="nx">when</span> <span class="p">(</span><span class="nx">i</span> <span class="nx">not</span> <span class="k">in</span> <span class="nx">b</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-6] Find the Mine!</h2>
+
+<h3>Description</h3>
+
+<p>You&#39;ve just discovered a square (NxN) field and you notice a warning sign. The sign states that there&#39;s a single bomb in the 2D grid-like field in front of you.</p>
+
+<p>Write a function <code>mineLocation</code> that accepts a 2D array, and returns the location of the mine. The mine is represented as the integer 1 in the 2D array. Areas in the 2D array that are not the mine will be represented as 0s.</p>
+
+<p>The location returned should be an array where the first element is the row index, and the second element is the column index of the bomb location (both should be 0 based). All 2D arrays passed into your function will be square (NxN), and there will only be one mine in the array.</p>
+
+<p>Examples:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">mineLocation</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> 
+<span class="nx">mineLocation</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> 
+<span class="nx">mineLocation</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">mineLocation</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="o">-&gt;</span> 
+    <span class="k">for</span> <span class="nx">i</span><span class="p">,</span><span class="nx">index</span> <span class="k">in</span> <span class="nx">a</span> 
+        <span class="k">for</span> <span class="nx">v</span><span class="p">,</span><span class="nx">vndex</span> <span class="k">in</span> <span class="nx">i</span> <span class="nx">when</span> <span class="nx">v</span> <span class="nx">is</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">vndex</span><span class="p">]</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-5] Moving Zeros To The End</h2>
+
+<h3>Description</h3>
+
+<p>Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">moveZeros</span> <span class="p">[</span><span class="kc">false</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="err">#</span> <span class="nx">returns</span><span class="p">[</span><span class="kc">false</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<h2>Solution</h2>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">moveZeros</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">a</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nx">a</span> <span class="nx">isnt</span> <span class="mi">0</span><span class="p">).</span><span class="nx">concat</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">a</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nx">a</span> <span class="nx">is</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-5] flatten()</h2>
+
+<h3>Description</h3>
+
+<p>For this exercise you will create a global flatten method. The method takes in any number of arguments and flattens them into a single array. If any of the arguments passed in are an array then the individual objects within the array will be flattened so that they exist at the same level as the other arguments. Any nested arrays, no matter how deep, should be flattened into the single array result.</p>
+
+<p>The following are examples of how this function would be used and what the expected results would be:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">flatten</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">]])</span> <span class="err">#</span> <span class="nx">returns</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="nx">flatten</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="p">[[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]])</span> <span class="err">#</span> <span class="nx">returns</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</code></pre></div>
+<h2>Solution</h2>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">flatten</span> <span class="o">=</span> <span class="p">(</span><span class="nx">list</span><span class="p">...)</span><span class="o">-&gt;</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nx">arg</span> <span class="k">in</span> <span class="nx">list</span>
+        <span class="k">if</span> <span class="nx">arg</span> <span class="k">instanceof</span> <span class="nb">Array</span>
+            <span class="nx">result</span><span class="p">.</span><span class="nx">push</span> <span class="nx">flatten</span><span class="p">(</span><span class="nx">arg</span><span class="p">...)...</span>
+        <span class="k">else</span>
+            <span class="nx">result</span><span class="p">.</span><span class="nx">push</span> <span class="nx">arg</span>
+    <span class="k">return</span> <span class="nx">result</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-6] Once</h2>
+
+<h3>Description</h3>
+
+<p>You&#39;ll implement once, a function that takes another function as an argument, and returns a new version of that function that can only be called once.</p>
+
+<p>Subsequent calls to the resulting function should have no effect (and should return undefined).</p>
+
+<p>For example:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">logOnce</span> <span class="o">=</span> <span class="nx">once</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">)</span>
+<span class="nx">logOnce</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span> <span class="c1">// -&gt; &quot;foo&quot;</span>
+<span class="nx">logOnce</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">)</span> <span class="c1">// -&gt; no effect</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">once</span> <span class="o">=</span> <span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">-&gt;</span>
+    <span class="k">if</span> <span class="nx">flag</span>
+        <span class="nx">flag</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="nx">fn</span><span class="p">(</span><span class="nx">arguments</span><span class="p">...)</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-6] Holiday Shopping Priority Queue</h2>
+
+<h3>Description</h3>
+
+<h4>Happy Holidays fellow Code Warriors!</h4>
+
+<p>The holidays are just around the corner. You know what that means...Holiday Shopping! I was planning on buying all you Code Warriors a gift, but I don&#39;t know which order to buy them! I have a small shopping list that I&#39;m constantly adding to, and all of the items have a certain priority. What if I use a priority queue?</p>
+
+<h4>Holiday Shopping Priority Queue</h4>
+
+<p>Priority queues are similar to queues, but they add a priority to each data entry, so items with higher priorities (lower integer values) are processed first.</p>
+
+<p>While I&#39;m running around buying the gifts, I need you to write a few methods for the HolidayPriorityQueue class to help me out. The class needs two methods: addGift and buyGift. For this Kata, all priorities will be unique, so no need to worry about equal priorities.</p>
+
+<p>Method descriptions:</p>
+
+<p><code>addGift</code> (or enqueue) adds a gift to the priority queue. This method should accept one object (or hash in ruby), which has two properties: gift - the name of the gift, and priority - the priority of the gift, and should return the new length of the queue. All gifts will be in this form.</p>
+
+<p><code>buyGift</code> (or dequeue) removes the gift with the highest priority from the priority queue, and returns the gifts name (value of the gift property). If the queue is empty, return the empty string &#39;&#39;</p>
+
+<p>Examples:</p>
+
+<p>Javascript/CoffeeScript</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">giftList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HolidayPriorityQueue</span><span class="p">();</span>
+<span class="nx">giftList</span><span class="p">.</span><span class="nx">addGift</span><span class="p">(</span> <span class="p">{</span> <span class="nx">gift</span><span class="o">:</span> <span class="s1">&#39;Water gun&#39;</span><span class="p">,</span> <span class="nx">priority</span><span class="o">:</span> <span class="mi">1</span><span class="p">}</span> <span class="p">);</span><span class="c1">// =&gt; returns 1</span>
+<span class="nx">giftList</span><span class="p">.</span><span class="nx">addGift</span><span class="p">(</span> <span class="p">{</span> <span class="nx">gift</span><span class="o">:</span> <span class="s1">&#39;Toy truck&#39;</span><span class="p">,</span> <span class="nx">priority</span><span class="o">:</span> <span class="mi">4</span> <span class="p">}</span> <span class="p">);</span><span class="c1">// =&gt; returns 2</span>
+<span class="nx">giftList</span><span class="p">.</span><span class="nx">addGift</span><span class="p">(</span> <span class="p">{</span> <span class="nx">gift</span><span class="o">:</span> <span class="s1">&#39;Roller Skates&#39;</span><span class="p">,</span> <span class="nx">priority</span><span class="o">:</span> <span class="mi">3</span> <span class="p">}</span> <span class="p">);</span><span class="c1">// =&gt; returns 3</span>
+
+<span class="nx">giftList</span><span class="p">.</span><span class="nx">buyGift</span><span class="p">();</span><span class="c1">// =&gt; returns &#39;Water gun&#39;</span>
+<span class="nx">giftList</span><span class="p">.</span><span class="nx">buyGift</span><span class="p">();</span><span class="c1">// =&gt; returns &#39;Roller Skates&#39;</span>
+<span class="nx">giftList</span><span class="p">.</span><span class="nx">buyGift</span><span class="p">();</span><span class="c1">// =&gt; returns &#39;Toy truck&#39;</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">HolidayPriorityQueue</span>
+    <span class="nx">constructor</span><span class="o">:</span> <span class="p">()</span> <span class="o">-&gt;</span>
+        <span class="err">@</span><span class="nx">gift_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nx">HolidayPriorityQueue</span><span class="o">::</span><span class="nx">addGift</span> <span class="o">=</span> <span class="p">(</span><span class="nx">gift</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="err">@</span><span class="nx">gift_list</span><span class="p">.</span><span class="nx">push</span> <span class="nx">gift</span>
+    <span class="k">return</span> <span class="err">@</span><span class="nx">gift_list</span><span class="p">.</span><span class="nx">length</span>
+
+<span class="nx">HolidayPriorityQueue</span><span class="o">::</span><span class="nx">buyGift</span> <span class="o">=</span> <span class="o">-&gt;</span>
+    <span class="k">if</span> <span class="err">@</span><span class="nx">gift_list</span><span class="p">.</span><span class="nx">length</span> <span class="nx">is</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+    <span class="nx">max_priority</span> <span class="o">=</span> <span class="kc">undefined</span>
+    <span class="nx">max_index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="nx">gift</span><span class="p">,</span> <span class="nx">index</span> <span class="k">in</span> <span class="err">@</span><span class="nx">gift_list</span>
+        <span class="k">if</span> <span class="nx">index</span> <span class="nx">is</span> <span class="mi">0</span>
+            <span class="nx">max_priority</span> <span class="o">=</span> <span class="nx">gift</span><span class="p">.</span><span class="nx">priority</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="nx">gift</span><span class="p">.</span><span class="nx">priority</span> <span class="o">&lt;</span> <span class="nx">max_priority</span>
+            <span class="nx">max_index</span> <span class="o">=</span> <span class="nx">index</span>
+            <span class="nx">max_priority</span> <span class="o">=</span> <span class="nx">gift</span><span class="p">.</span><span class="nx">priority</span>
+    <span class="nx">max_name</span> <span class="o">=</span> <span class="err">@</span><span class="nx">gift_list</span><span class="p">[</span><span class="nx">max_index</span><span class="p">].</span><span class="nx">gift</span>
+    <span class="err">@</span><span class="nx">gift_list</span> <span class="o">=</span> <span class="err">@</span><span class="nx">gift_list</span><span class="p">[</span><span class="mi">0</span><span class="p">...</span><span class="nx">max_index</span><span class="p">].</span><span class="nx">concat</span> <span class="err">@</span><span class="nx">gift_list</span><span class="p">[</span><span class="nx">max_index</span><span class="o">+</span><span class="mi">1</span><span class="p">...]</span>
+    <span class="k">return</span> <span class="nx">max_name</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-5] Vector class</h2>
+
+<h3>Description</h3>
+
+<p>Create a Vector object that supports addition, subtraction, dot products, and norms. So, for example:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vector</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vector</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vector</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="err">#</span> <span class="nx">should</span> <span class="k">return</span> <span class="nx">Vector</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="err">#</span> <span class="nx">should</span> <span class="k">return</span> <span class="nx">Vector</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">dot</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="err">#</span> <span class="nx">should</span> <span class="k">return</span> <span class="mi">1</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="mi">5</span> <span class="o">=</span> <span class="mi">26</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">norm</span><span class="p">()</span> <span class="err">#</span> <span class="nx">should</span> <span class="k">return</span> <span class="nx">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="nx">sqrt</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="err">#</span> <span class="kr">throws</span> <span class="nx">an</span> <span class="nx">error</span>
+</code></pre></div>
+<p>If you try to add, subtract, or dot two vectors with different lengths, you must throw an error!</p>
+
+<p>Also provide:</p>
+
+<ul>
+<li>  a toString function, so that using the vectors from above, a.toString() === &#39;(1,2,3)&#39;</li>
+<li>  an equals function, so that two vectors who have the same components are equal</li>
+</ul>
+
+<p>The test cases will utilize the user-provided equals method.</p>
+
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Vector</span>
+    <span class="nx">constructor</span><span class="o">:</span> <span class="p">(</span><span class="err">@</span><span class="nx">v</span><span class="p">)</span> <span class="o">-&gt;</span>
+
+    <span class="nx">value</span><span class="o">:</span> <span class="o">-&gt;</span> <span class="err">@</span><span class="nx">v</span>
+
+    <span class="nx">toString</span><span class="o">:</span> <span class="o">-&gt;</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="err">@</span><span class="nx">v</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+
+    <span class="nx">equals</span><span class="o">:</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">-&gt;</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span><span class="p">.</span><span class="nx">value</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="err">@</span><span class="nx">v</span><span class="p">.</span><span class="nx">length</span> <span class="nx">isnt</span> <span class="nx">n</span><span class="p">.</span><span class="nx">length</span>
+        <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="err">@</span><span class="nx">v</span>
+            <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="nx">i</span> <span class="nx">not</span> <span class="k">in</span> <span class="nx">n</span>
+        <span class="k">return</span> <span class="kc">true</span>
+
+    <span class="nx">add</span><span class="o">:</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">-&gt;</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span><span class="p">.</span><span class="nx">value</span><span class="p">()</span>
+        <span class="k">throw</span> <span class="s2">&quot;error&quot;</span> <span class="k">if</span> <span class="nx">n</span><span class="p">.</span><span class="nx">length</span> <span class="nx">isnt</span> <span class="err">@</span><span class="nx">v</span><span class="p">.</span><span class="nx">length</span>
+        <span class="nx">tmp</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">index</span> <span class="k">in</span> <span class="err">@</span><span class="nx">v</span>
+            <span class="nx">tmp</span><span class="p">.</span><span class="nx">push</span> <span class="nx">i</span> <span class="o">+</span> <span class="nx">n</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;equals&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span><span class="o">-&gt;</span>
+            <span class="nx">m</span> <span class="o">=</span> <span class="nx">m</span><span class="p">.</span><span class="nx">value</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="nx">m</span><span class="p">.</span><span class="nx">length</span> <span class="nx">isnt</span> <span class="nx">tmp</span><span class="p">.</span><span class="nx">length</span>
+            <span class="k">for</span> <span class="nx">i</span><span class="p">,</span><span class="nx">index</span> <span class="k">in</span> <span class="nx">tmp</span>
+                <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="nx">i</span> <span class="nx">isnt</span> <span class="nx">m</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span>
+
+
+    <span class="nx">subtract</span><span class="o">:</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">-&gt;</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span><span class="p">.</span><span class="nx">value</span><span class="p">()</span>
+        <span class="k">throw</span> <span class="s2">&quot;error&quot;</span> <span class="k">if</span> <span class="nx">n</span><span class="p">.</span><span class="nx">length</span> <span class="nx">isnt</span> <span class="err">@</span><span class="nx">v</span><span class="p">.</span><span class="nx">length</span>
+        <span class="nx">tmp</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">index</span> <span class="k">in</span> <span class="err">@</span><span class="nx">v</span>
+            <span class="nx">tmp</span><span class="p">.</span><span class="nx">push</span> <span class="nx">i</span> <span class="o">-</span> <span class="nx">n</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;equals&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">m</span><span class="p">)</span><span class="o">-&gt;</span>
+            <span class="nx">m</span> <span class="o">=</span> <span class="nx">m</span><span class="p">.</span><span class="nx">value</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="nx">m</span><span class="p">.</span><span class="nx">length</span> <span class="nx">isnt</span> <span class="nx">tmp</span><span class="p">.</span><span class="nx">length</span>
+            <span class="k">for</span> <span class="nx">i</span><span class="p">,</span><span class="nx">index</span> <span class="k">in</span> <span class="nx">tmp</span>
+                <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="nx">i</span> <span class="nx">isnt</span> <span class="nx">m</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span>
+
+    <span class="nx">dot</span><span class="o">:</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">-&gt;</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">n</span><span class="p">.</span><span class="nx">value</span><span class="p">()</span>
+        <span class="k">throw</span> <span class="s2">&quot;error&quot;</span> <span class="k">if</span> <span class="nx">n</span><span class="p">.</span><span class="nx">length</span> <span class="nx">isnt</span> <span class="err">@</span><span class="nx">v</span><span class="p">.</span><span class="nx">length</span>
+        <span class="nx">tmp</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">index</span> <span class="k">in</span> <span class="err">@</span><span class="nx">v</span>
+            <span class="nx">tmp</span> <span class="o">+=</span> <span class="err">@</span><span class="nx">v</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">*</span> <span class="nx">n</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+        <span class="k">return</span> <span class="nx">tmp</span>
+
+    <span class="nx">norm</span><span class="o">:</span> <span class="p">()</span><span class="o">-&gt;</span>
+        <span class="nx">val</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="err">@</span><span class="nx">v</span>
+            <span class="nx">val</span> <span class="o">+=</span> <span class="nx">i</span><span class="o">*</span><span class="nx">i</span>
+        <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-5] Convert CamelCase string into snake_case</h2>
+
+<h3>Description</h3>
+
+<p>Complete the function/method so that it takes CamelCase string and returns the string in snake_case notation. Lowercase characters can be numbers. If method gets number, it should return string.</p>
+
+<p>Examples:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="err">#</span>  <span class="nx">returns</span> <span class="nx">test_controller</span>
+<span class="nx">toUnderscore</span> <span class="s1">&#39;TestController&#39;</span>
+
+<span class="err">#</span> <span class="nx">returns</span> <span class="nx">movies_and_books</span>
+<span class="nx">toUnderscore</span> <span class="s1">&#39;MoviesAndBooks&#39;</span>
+
+<span class="err">#</span> <span class="nx">returns</span> <span class="nx">app7_test</span>
+<span class="nx">toUnderscore</span> <span class="s1">&#39;App7Test&#39;</span>
+
+<span class="err">#</span> <span class="nx">returns</span> <span class="s2">&quot;1&quot;</span>
+<span class="nx">toUnderscore</span> <span class="mi">1</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">toUnderscore</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="k">return</span> <span class="nb">String</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="k">if</span> <span class="k">typeof</span> <span class="nx">str</span> <span class="nx">is</span> <span class="s1">&#39;number&#39;</span>
+    <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[A-Z]/g</span><span class="p">,</span> <span class="p">(</span><span class="nx">s</span><span class="p">)</span><span class="o">-&gt;</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="nx">s</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())[</span><span class="mi">1</span><span class="p">...]</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-5] Grab CSV Columns</h2>
+
+<h3>Description</h3>
+
+<p>Write a function called csvColumns that takes a CSV (format shown below) and an array of indices, which represents the columns of the CSV, and return a CSV with only the columns specified in the indices array.</p>
+
+<p>CSV format: 
+The CSV passed in will be a string and will have one or more columns, and one or more rows. The CSV will be of size NxM. Each row is separated by a new line character (\n). There will be no spaces in the CSV string.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">Example</span> <span class="nx">format</span> <span class="nx">of</span> <span class="nx">passed</span> <span class="k">in</span> <span class="nx">CSV</span><span class="o">:</span> <span class="s2">&quot;1,2,3\n4,5,6\n7,8,9\n10,11,12&quot;</span> 
+<span class="nx">How</span> <span class="nx">it</span> <span class="nx">would</span> <span class="nx">look</span><span class="o">:</span> 
+<span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+<span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
+<span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span>
+<span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span>
+</code></pre></div>
+<p>Indices Array info: </p>
+
+<p>The indices will be zero based, so the first column will be represented as a 0 in the indices array. All values in the indices array will be integers from 0 and up. All test cases will have an indices array of one or more integers. Ignore indices that map to a column that doesn&#39;t exist. If all the values in the indices array do NOT map to any existing column, return an empty string (&quot;&quot;).</p>
+
+<p>Examples: </p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">csvColumns</span><span class="p">(</span> <span class="s2">&quot;1,2,3\n4,5,6&quot;</span> <span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="s2">&quot;1,2\n4,5&quot;</span> 
+<span class="nx">csvColumns</span><span class="p">(</span> <span class="s2">&quot;1,2\n3,4\n5,6&quot;</span> <span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="s2">&quot;&quot;</span> 
+<span class="nx">csvColumns</span><span class="p">(</span> <span class="s2">&quot;a,b,c,d,e\n1,2,3,4,5\nf,g,h,i,j&quot;</span> <span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">returns</span> <span class="s2">&quot;b,d\n2,4\ng,i&quot;</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">csvColumns</span> <span class="o">=</span> <span class="p">(</span><span class="nx">csv</span><span class="p">,</span> <span class="nx">indices</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">csv_list</span> <span class="o">=</span> <span class="nx">csv</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">)</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nx">csv</span> <span class="p">,</span><span class="nx">index</span> <span class="k">in</span> <span class="nx">csv_list</span>
+        <span class="nx">numbers</span> <span class="o">=</span> <span class="nx">csv</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="nx">number</span><span class="p">,</span><span class="nx">nndex</span> <span class="k">in</span> <span class="nx">numbers</span>
+            <span class="nx">n</span><span class="p">.</span><span class="nx">push</span> <span class="nx">number</span> <span class="k">if</span> <span class="nx">nndex</span> <span class="k">in</span> <span class="nx">indices</span>
+        <span class="nx">result</span><span class="p">.</span><span class="nx">push</span> <span class="nx">n</span> <span class="k">if</span> <span class="nx">n</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="nx">isnt</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">return</span> <span class="nx">result</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;\n&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-5] Longest sequence with zero sum</h2>
+
+<h3>Description</h3>
+
+<p>Write a method which takes an array of integers (positive and negative) and returns the longest contiguous sequence in this array, which total sum of elements equal 0.</p>
+
+<p>For example:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">maxZeroSequenceLength</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">35</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="o">-</span><span class="mi">115</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">])</span>
+</code></pre></div>
+<p>Should return <code>[92, -115, 17, 2, 2, 2]</code>, because this is the longest zero-sum sequence in the array.</p>
+
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">maxZeroSequence</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">sub_arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">arr</span>
+        <span class="nx">last_item</span> <span class="o">=</span> <span class="nx">sub_arr</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nx">last_item</span> <span class="nx">is</span> <span class="kc">undefined</span>
+            <span class="nx">sub_arr</span><span class="p">.</span><span class="nx">push</span> <span class="nx">i</span>
+        <span class="k">else</span>
+            <span class="nx">sub_arr</span><span class="p">.</span><span class="nx">push</span> <span class="nx">last_item</span>
+            <span class="nx">sub_arr</span><span class="p">.</span><span class="nx">push</span> <span class="nx">i</span> <span class="o">+</span> <span class="nx">last_item</span>
+    <span class="nx">hash_seq</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nx">max_length</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nx">start_index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nx">end_index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="nx">i</span><span class="p">,</span><span class="nx">index</span> <span class="k">in</span> <span class="nx">sub_arr</span>
+        <span class="k">if</span> <span class="nx">i</span> <span class="nx">is</span> <span class="mi">0</span> <span class="nx">and</span> <span class="nx">index</span> <span class="o">&gt;</span> <span class="nx">max_length</span>
+            <span class="nx">max_length</span> <span class="o">=</span> <span class="nx">index</span>
+            <span class="nx">start_index</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="nx">end_index</span> <span class="o">=</span> <span class="nx">index</span>
+        <span class="k">if</span> <span class="nx">hash_seq</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="nx">and</span> <span class="nx">index</span> <span class="o">-</span> <span class="nx">hash_seq</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">max_length</span>
+            <span class="nx">max_length</span> <span class="o">=</span> <span class="nx">index</span> <span class="o">-</span> <span class="nx">hash_seq</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+            <span class="nx">start_index</span> <span class="o">=</span> <span class="nx">hash_seq</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="nx">end_index</span> <span class="o">=</span> <span class="nx">index</span>
+        <span class="k">else</span>
+            <span class="nx">hash_seq</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">index</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">start_index</span><span class="p">..</span><span class="nx">end_index</span><span class="p">]</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-5] Custom sort function</h2>
+
+<h3>Description</h3>
+
+<p>Complete the sort function so that it returns the items passed into it in alphanumerical order. Conveniently enough, the standard array sort method has been disabled for you so that you are forced to create your own.</p>
+
+<p>Example:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">sort</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="c1">// should return [1,2,3]</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">sort</span> <span class="o">=</span> <span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nx">item</span> <span class="k">in</span> <span class="nx">items</span>
+        <span class="k">if</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span> <span class="nx">is</span> <span class="mi">0</span>
+            <span class="nx">result</span><span class="p">.</span><span class="nx">push</span> <span class="nx">item</span>
+        <span class="k">else</span>
+            <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">result</span>
+                <span class="k">if</span> <span class="nx">item</span> <span class="o">&lt;</span> <span class="nx">i</span>
+                    <span class="nx">result</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nx">item</span><span class="p">)</span>
+                    <span class="k">break</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="nx">item</span> <span class="nx">is</span> <span class="nx">i</span>
+                    <span class="nx">result</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nx">item</span><span class="p">)</span>
+                    <span class="k">break</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="nx">item</span> <span class="o">&gt;</span> <span class="nx">i</span> <span class="nx">and</span> <span class="p">(</span><span class="nx">index</span><span class="o">+</span><span class="mi">1</span> <span class="nx">is</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span> <span class="nx">or</span> <span class="nx">item</span> <span class="o">&lt;</span> <span class="nx">result</span><span class="p">[</span><span class="nx">index</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="nx">result</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">item</span><span class="p">);</span>
+                    <span class="k">break</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="nx">index</span><span class="o">+</span><span class="mi">1</span> <span class="nx">is</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span>
+                    <span class="nx">result</span><span class="p">.</span><span class="nx">push</span> <span class="nx">item</span>
+    <span class="k">return</span> <span class="nx">result</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-5] Valid Binary Christmas Tree</h2>
+
+<h3>Description</h3>
+
+<p>Happy Holidays fellow Code Warriors!</p>
+
+<p>Santa just finished taking a data structures course, and thought it would be a great idea to build a Binary Christmas Tree! All of Santa&#39;s helpers created a Binary Christmas Tree, but not all of them meet his requirements. Can you write some code to validate the Binary Christmas Trees?</p>
+
+<p>Valid Binary Christmas Tree</p>
+
+<p>Write a function isValidTree that accepts a Binary Tree, and returns true if it meets Santa&#39;s requirements, false otherwise. Since the tree is a binary tree, each node can have 0, 1, or 2 children. The left and right properties can be used to access the current nodes left and right children. All nodes have an ornament property, which is the name of the ornament, and a color property, which represents the color of the ornament.</p>
+
+<p>Santa&#39;s Binary Christmas Tree Requirements</p>
+
+<p>A valid Binary Christmas Tree will meet the following requirements:</p>
+
+<ul>
+<li>  Root node has a &#39;star&#39; ornament</li>
+<li>  Nodes with zero children (excluding the root node) have a &#39;blue&#39; colored ornament</li>
+<li>  Nodes with one or two children have a &#39;red&#39; colored ornament</li>
+</ul>
+
+<p>Examples</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">isValidTree</span><span class="p">(</span> <span class="p">{</span>
+  <span class="nx">ornament</span><span class="o">:</span> <span class="s1">&#39;star&#39;</span><span class="p">,</span> 
+  <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;yellow&#39;</span>
+<span class="p">}</span> <span class="p">)</span><span class="c1">// =&gt; returns true</span>
+
+<span class="nx">isValidTree</span><span class="p">(</span> <span class="p">{</span>
+  <span class="nx">ornament</span><span class="o">:</span> <span class="s1">&#39;star&#39;</span><span class="p">,</span>
+  <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span>
+  <span class="nx">left</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">ornament</span><span class="o">:</span> <span class="s1">&#39;candy cane&#39;</span><span class="p">,</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span> <span class="p">)</span><span class="c1">// =&gt; returns true</span>
+
+<span class="nx">isValidTree</span><span class="p">(</span> <span class="p">{</span>
+  <span class="nx">ornament</span><span class="o">:</span> <span class="s1">&#39;star&#39;</span><span class="p">,</span>
+  <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span>
+  <span class="nx">right</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">ornament</span><span class="o">:</span> <span class="s1">&#39;stocking&#39;</span><span class="p">,</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span> <span class="p">)</span><span class="c1">// =&gt; returns false</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">isValidTree</span> <span class="o">=</span> <span class="p">(</span><span class="nx">tree</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">ornament</span> <span class="nx">isnt</span> <span class="s2">&quot;star&quot;</span>
+    <span class="nx">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">left</span> <span class="k">if</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">left</span>
+    <span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">right</span> <span class="k">if</span> <span class="nx">tree</span><span class="p">.</span><span class="nx">right</span>
+
+    <span class="k">while</span> <span class="kc">true</span>
+        <span class="nx">node</span> <span class="o">=</span> <span class="nx">nodes</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">true</span> <span class="k">if</span> <span class="nx">not</span> <span class="nx">node</span>
+        <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="nx">node</span><span class="p">.</span><span class="nx">left</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="mi">123</span>
+            <span class="nx">count</span><span class="o">++</span>
+            <span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span> <span class="nx">node</span><span class="p">.</span><span class="nx">left</span>
+        <span class="k">if</span> <span class="nx">node</span><span class="p">.</span><span class="nx">right</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="mi">234</span>
+            <span class="nx">count</span><span class="o">++</span>
+            <span class="nx">nodes</span><span class="p">.</span><span class="nx">push</span> <span class="nx">node</span><span class="p">.</span><span class="nx">right</span>
+
+        <span class="k">if</span> <span class="nx">count</span> <span class="nx">is</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="nx">node</span><span class="p">.</span><span class="nx">color</span> <span class="nx">isnt</span> <span class="s1">&#39;blue&#39;</span>
+        <span class="k">else</span>
+            <span class="k">return</span> <span class="kc">false</span> <span class="k">if</span> <span class="nx">node</span><span class="p">.</span><span class="nx">color</span> <span class="nx">isnt</span> <span class="s1">&#39;red&#39;</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-5] Where my anagrams at?</h2>
+
+<h3>Description</h3>
+
+<p>What is an anagram? Well, two words are anagrams of each other if they both contain the same letters. For example:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="s1">&#39;abba&#39;</span> <span class="o">&amp;</span> <span class="s1">&#39;baab&#39;</span> <span class="o">==</span> <span class="kc">true</span>
+<span class="s1">&#39;abba&#39;</span> <span class="o">&amp;</span> <span class="s1">&#39;bbaa&#39;</span> <span class="o">==</span> <span class="kc">true</span>
+<span class="s1">&#39;abba&#39;</span> <span class="o">&amp;</span> <span class="s1">&#39;abbba&#39;</span> <span class="o">==</span> <span class="kc">false</span>
+</code></pre></div>
+<p>Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">anagrams</span><span class="p">(</span><span class="s1">&#39;abba&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;aabb&#39;</span><span class="p">,</span> <span class="s1">&#39;abcd&#39;</span><span class="p">,</span> <span class="s1">&#39;bbaa&#39;</span><span class="p">,</span> <span class="s1">&#39;dada&#39;</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;aabb&#39;</span><span class="p">,</span> <span class="s1">&#39;bbaa&#39;</span><span class="p">]</span>
+<span class="nx">anagrams</span><span class="p">(</span><span class="s1">&#39;racer&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;crazer&#39;</span><span class="p">,</span> <span class="s1">&#39;carer&#39;</span><span class="p">,</span> <span class="s1">&#39;racar&#39;</span><span class="p">,</span> <span class="s1">&#39;caers&#39;</span><span class="p">,</span> <span class="s1">&#39;racer&#39;</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;carer&#39;</span><span class="p">,</span> <span class="nx">racer</span><span class="s1">&#39;]</span>
+<span class="s1">anagrams(&#39;</span><span class="nx">laser</span><span class="s1">&#39;, [&#39;</span><span class="nx">lazing</span><span class="s1">&#39;, &#39;</span><span class="nx">lazy</span><span class="s1">&#39;, &#39;</span><span class="nx">lacer</span><span class="err">&#39;</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">[]</span>
+</code></pre></div>
+<h3>Solution</h3>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">anagrams</span> <span class="o">=</span> <span class="p">(</span><span class="nx">word</span><span class="p">,</span> <span class="nx">words</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">word_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">word</span>
+        <span class="nx">word_dict</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">word_dict</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">?</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nx">ws</span> <span class="k">in</span> <span class="nx">words</span>
+        <span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="k">continue</span> <span class="k">if</span> <span class="nx">ws</span><span class="p">.</span><span class="nx">length</span> <span class="nx">isnt</span> <span class="nx">word</span><span class="p">.</span><span class="nx">length</span>
+        <span class="nx">w_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="nx">w</span> <span class="k">in</span> <span class="nx">ws</span>
+            <span class="nx">w_dict</span><span class="p">[</span><span class="nx">w</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">w_dict</span><span class="p">[</span><span class="nx">w</span><span class="p">]</span> <span class="o">?</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="nx">key</span> <span class="k">in</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">word_dict</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nx">word_dict</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="nx">isnt</span> <span class="nx">w_dict</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+                <span class="nx">flag</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="k">break</span>
+        <span class="nx">result</span><span class="p">.</span><span class="nx">push</span> <span class="nx">ws</span> <span class="k">if</span> <span class="nx">flag</span>
+    <span class="k">return</span> <span class="nx">result</span>
+</code></pre></div>
+<hr>
+
+<h2>[kyu-4] Default Arguments</h2>
+
+<h3>Description</h3>
+
+<p>Write a function <code>defaultArguments</code>. It takes a function as an argument, along with a JSON containing default values for that function&#39;s arguments, and returns another function which defaults to the right values.</p>
+
+<p>You cannot assume that the function&#39;s arguments have any particular names.</p>
+
+<p>You should be able to call <code>defaultArguments</code> repeatedly to change the defaults.</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+
+<span class="nx">add_</span> <span class="o">=</span> <span class="nx">defaultArguments</span><span class="p">(</span><span class="nx">add</span><span class="p">,</span> <span class="p">{</span><span class="nx">b</span><span class="o">:</span> <span class="mi">9</span><span class="p">})</span>
+<span class="nx">add_</span> <span class="mi">10</span> <span class="err">#</span> <span class="nx">returns</span> <span class="mi">19</span>
+<span class="nx">add_</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">7</span> <span class="err">#</span> <span class="nx">returns</span> <span class="mi">17</span>
+<span class="nx">add_</span><span class="p">()</span> <span class="err">#</span> <span class="nx">returns</span> <span class="kc">undefined</span>
+
+<span class="nx">add_</span> <span class="o">=</span> <span class="nx">defaultArguments</span><span class="p">(</span><span class="nx">add_</span><span class="p">,</span> <span class="p">{</span><span class="nx">b</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">a</span><span class="o">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="nx">add_</span> <span class="mi">10</span> <span class="err">#</span> <span class="nx">returns</span> <span class="mi">13</span> <span class="nx">now</span>
+<span class="nx">add_</span><span class="p">()</span> <span class="err">#</span> <span class="nx">returns</span> <span class="mi">5</span>
+
+<span class="nx">add_</span> <span class="o">=</span> <span class="nx">defaultArguments</span><span class="p">(</span><span class="nx">add_</span><span class="p">,</span> <span class="p">{</span><span class="nx">c</span><span class="o">:</span><span class="mi">3</span><span class="p">})</span> <span class="err">#</span> <span class="nx">doesn</span><span class="s1">&#39;t do anything, since c isn&#39;</span><span class="nx">t</span> <span class="nx">an</span> <span class="nx">argument</span> <span class="nx">of</span> <span class="nx">add_</span>
+<span class="nx">add_</span> <span class="mi">10</span> <span class="err">#</span> <span class="nx">returns</span> <span class="kc">undefined</span>
+<span class="nx">add_</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> <span class="err">#</span> <span class="nx">returns</span> <span class="mi">20</span>
+</code></pre></div>
+<p>HINT: This problem requires using <code>Fuction.prototype.toString()</code> in order to extract a functions argument list</p>

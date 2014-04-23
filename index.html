@@ -1,52 +1,60 @@
 ---
-layout: default
+layout: start
 title: Poly Technical Documentation
 overview: true
 ---
 
-<section class="intro">
-    <div class="grid">
-        <div class="unit whole center-on-mobiles">
+<section class=intro>
+    <div class=intro-container>
+        <div class=" whole center-on-mobiles">
             <p class="first">协同文档开发方案</p>
         </div>
     </div>
 </section>
-<section class="features">
-    <div class="grid">
-        <div class="unit one-third">
+<section class=features>
+    <div class=features-container>
+        <a class=unit features-left href="{{ site.url }}/docs/installation/">
             <h2>多人协作</h2>
             <p>
                 专注于团队撰写技术培训内容。<br>欢迎同事加入进来一同开发和维护该文档，为Fresher提供最好的培训支持
             </p>
-            <a href="{{ site.url }}/docs/installation/" class="">本地环境配置 &rarr;</a>
-        </div>
-        <div class="unit one-third">
+            <div>
+                <span>本地环境配置 &rarr;</span>
+            </div>
+        </a>
+        <a class=unit features-mid href="{{ site.url }}/docs/jekyllusage/">
             <h2>多语言支持</h2>
             <p>
-                <a href="http://daringfireball.net/projects/markdown/">Markdown</a>
-                (or <a href="http://textile.sitemonks.com/">Textile</a>), <a href="http://wiki.shopify.com/Liquid">Liquid</a>, 
-                HTML <span class="amp">&amp;CSS</span> 任意语言嵌套使用.
+                Markdown
+                (or Textile), Liquid, 
+                HTML &amp;CSS 任意语言嵌套使用.
                 轻松实现文档撰写，不再为字体样式等内容烦恼
-            <p>
-                <a href="{{ site.url }}/docs/jekyllusage/" class="">框架及语言介绍 &rarr;</a>
-        </div>
-        <div class="unit one-third">
+            </p>
+            <div>
+                <span>框架及语言介绍 &rarr;</span>
+            </div>
+        </a>
+        <a class=unit features-right href="{{ site.url }}/docs/home/">
             <h2>易于使用</h2>
             <p>
                 该开源文档挂载于Github Pages，不需要翻墙，任何人在任何地点都可以访问并撰写该文档，便于学习和记录。
             </p>
-            <a href="{{ site.url }}/docs/home/" class="">快速开始学习 &rarr;</a>
-        </div>
+            <div>
+                <span>快速开始学习 &rarr;</span>
+            </div>
+        </a>
         <div class="clear"></div>
     </div>
 </section>
-<section class="quickstart">
-    <div class="grid">
-        <div class="unit golden-small center-on-mobiles">
-            <h4>jekyll安装步骤(windows环境下请参看<a href="{{ site.url }}/docs/installation">这里</a>).</h4>
+<section class=quickstart>
+    <div class=quickstart-container>
+        <div class=quickstart-left>
+            <h4>jekyll安装步骤(windows环境下请参看这里 &rarr;).</h4>
         </div>
-        <div class="unit golden-large code">
-            <p class="title">快速安装指南</p>
+        <a class=quickstart-right href="{{ site.url }}/docs/installation">
+            <div class=title>
+                <span>快速安装指南</span>
+            </div>
             <div class="shell">
                 <p class="line">
                     <span class="path">~</span>
@@ -72,15 +80,15 @@ overview: true
                     <span class="output"># => 现在可以通过浏览器访问 http://localhost:4000</span>
                 </p>
             </div>
-        </div>
+        </a>
         <div class="clear"></div>
     </div>
 </section>
-<section class="free-hosting">
-    <div class="grid">
-        <div class="unit whole">
+<section class=free-hosting>
+    <div class=free-hosting-container>
+        <div class=" whole">
             <div class="grid pane">
-                <div class="unit whole center-on-mobiles">
+                <div class=" whole center-on-mobiles">
                     <img src="img/octojekyll.png" alt="Free Jekyll hosting on GitHub Pages">
                     <div class="pane-content">
                         <h2 class="center-on-mobiles">GitHub Pages提供的<strong>免费服务器支持</strong></h2>

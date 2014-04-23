@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="/newPolyTechDocs/css/animation.css"/>
+		<link rel="stylesheet" type="text/css" href="/newPolyTechDocs/css/base.css"/>
+		<script src="/newPolyTechDocs/js/jquery-2.0.3.min.js"></script>
+		<script src="/newPolyTechDocs/js/dropdown.js"></script>
+	</head>
+
+<body class="wrap">
+    <header>
+	<div class=top>
+		<div class=top-container>
+			<div class=top-icon></div>
+			<div class=top-navs>
+				<a href="/newPolyTechDocs/home.html" data-hover="HOME">HOME</a>
+				<a href="/newPolyTechDocs/docs/home/" data-hover="INTRO">INTRO</a>
+				<a href="#" data-hover="PYTHON">PYTHON</a>
+				<a href="#" data-hover="JAVASCRIPT">JAVASCRIPT</a>
+				<a href="#" data-hover="AIRWATCH">AIRWATCH</a>
+				<a href="#" data-hover="EMM">EMM</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+    <div class=container>
+	<div class=main>
+		<a href="#">fdkalsjfalskjdf</a>
+		<blockquote>
+<p>该文档描述了本地撰写该项目所需要安装的软件以及在不同平台下的安装步骤。开始安装的时候可能需要一些时间来进行配置。</p>
+
+<p>如果安装过程中出现任何问题，可以在QQ群中提出来，我们可以一起研究、解决并更新文档，让安装更便捷。</p>
+</blockquote>
+
+<h2>Requirements</h2>
+
+<hr>
+
+<p>我们需要一些软件来支持该环境的运行</p>
+
+<ul>
+<li><a href="http://www.railsinstaller.org/en">RubyRails</a></li>
+<li><a href="http://www.python.org/">Python</a></li>
+<li>Linux, Unix, Mac OS X 或者 Windwos</li>
+</ul>
+
+<div class="note info">
+  <h5>在非Windows平台上运行jekyll</h5>
+  <p>
+    相对来说，在Windows平台搭建环境难度要大一些，并且没有官方的说明文档，所以我们接下来着重介绍Windows平台下环境的jekyll的安装过程，其它平台的安装请查看<a href="http://jekyllrb.com/docs/installation/">这里</a>
+  </p>
+</div>
+
+<h2>安装RubyGems</h2>
+
+<hr>
+
+<p>安装Jekyll最好的方式就是通过RubyGems安装，在Windows下最佳方案是利用Rails来安装Ruby以及Ruby所需的工具包。</p>
+
+<ul>
+<li>首先下载<a href="http://www.railsinstaller.org/en">RailsInstaller</a></li>
+<li>在选择optional Tasks时勾选(Install Git)和(Add executables for Ruby, DevKit and Git to the PATH)选项</li>
+<li>安装完毕后，Rails会提进行Git配置，输入相应用户名和邮箱即可</li>
+<li>在终端执行<code>$ ruby -v</code>来查看是否安装成功，安装成功会返回ruby的具体版本信息</li>
+</ul>
+
+<h2>更改Gem源</h2>
+
+<hr>
+
+<p>Ruby的默认Gem Sources为http://rubygems.org/，而该源部署在Amazon S3上，由于国内网络原因访问非常不稳定，所以需要更换源，执行以下命令来替换Ruby的默认源：</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>gem sources --remove http://rubygems.org/
+<span class="nv">$ </span>gem sources -a http://ruby.taobao.org
+</code></pre></div>
+
+<p>终端输入<code>$ gem sources -l</code>查看默认源是否替换成功，成功则显示为:</p>
+
+<div class="highlight"><pre><code class="bash">*** CURRENT SOURCES ***
+http://ruby.taobao.org/
+</code></pre></div>
+
+<h2>安装Jekyll</h2>
+
+<hr>
+
+<p>该项目采用Jekyll转换器，可以将多种标签的标记语言转换成最终的HTML文档格式并在GitHub编译运行。为了在本地测试所编写的文档，需要在本地安装Jekyll。</p>
+
+<p>利用gems进行jekyll的安装，具体命令如下，<code>$ jekyll -v</code>查看是否安装成功</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>gem install jekyll
+<span class="nv">$ </span>gem install rdiscount kramdown wdm
+</code></pre></div>
+
+<h2>安装Python</h2>
+
+<hr>
+
+<p>Jekyll转换器使用了pygments实现对多种程序代码类型的格式转换及上色支持，Jekyll默认支持Pygments的版本为0.5.0，但是在安装rails的时候自带的版本是0.5.4，并且部分Dependencies也没有安装，所以需要重新安装pygments及其dependencies。</p>
+
+<p>Pygments支持easy_install安装，而easy_install是用Python编写的脚本工具，所以为了安装Pygments需要先安装Python。</p>
+
+<ul>
+<li>下载并安装<a href="http://www.python.org/">Python</a></li>
+<li>安装后在系统环境变量PATH中<a href="http://blog.csdn.net/liguo9860/article/details/6829610">配置Python相关的环境变量</a></li>
+<li><code>$ python -V</code>查看是否安装并配置成功（注意：是大写的-V）</li>
+<li>easy_install实际上是setupTools里面的一个子工具，我们需要安装SetupTools来包含easy_install工具</li>
+<li>下载脚本<a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a>至本地，例如D盘根目录</li>
+<li>终端执行<code>$ python d:/ez_setup.py</code>进行SetupTools的安装</li>
+</ul>
+
+<p>在运行的时候会发生一个错误，该错误为<code>ascii codec can&#39;t decode byte 0xe8 in position 0:ordinal not in range(128)</code>大意为ascii编码不能解析byte 0xe8。解决方法：找到并打开python根目录/Lib/mimetypes.py文件，在<code>import urllib</code>后，添加代码:</p>
+
+<div class="highlight"><pre><code class="python"><span class="nb">reload</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">setdefaultencoding</span><span class="p">(</span><span class="s">&#39;gbk&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>把默认编码方式改为gbk（网上有写用utf8的，在这个脚本中是无效的，需要改成gbk格式）。重新执行<code>$ python d:/ez_setup.py</code>，如果出现刷屏的安装信息，则说明安装成功了。此时，在python目录下多了一个Script文件夹，easy_install就在里面。</p>
+
+<p>接下来进入easy_install所在的文件夹，即Python根目录\Scripts执行以下命令进行pygments关联插件的安装：</p>
+
+<div class="highlight"><pre><code class="bash">C:<span class="se">\P</span>ython27<span class="se">\S</span>cripts&gt; easy_install.exe Pygments
+</code></pre></div>
+
+<p>接下来更改Pygments的版本:</p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>gem uninstall pygments.rb --version <span class="s2">&quot;=0.5.4&quot;</span>
+<span class="nv">$ </span>gem install pygments.rb --version <span class="s2">&quot;=0.5.0&quot;</span>
+</code></pre></div>
+
+<p>执行<code>$ gem list</code>来查看pygments版本是否更换为0.5.0</p>
+
+<p>至此，Windows平台上基本环境的搭建就完成了。<br>
+接下来会具体讲解如何应用GitHub来获取最新的项目和文档。</p>
+
+	</div>
+	<div id="kk" class=container-navs>
+	<span id="jj">Transport</span>
+	<ul class="dropdown">
+		<li><a href="#">Classic mail</a></li>
+		<li><a href="#">UPS Delivery</a></li>
+		<li><a href="#">Private jet</a></li>
+	</ul>
+</div>
+					
+	<div class=clear></div>
+</div>
+
+    <footer>
+    <div class=footer>
+        <div class=footer-container>
+            <div class=footer-left>
+                <p>By <a href="http://github.com/wh1100717">Eric Wang</a>
+                    <script type="text/javascript">
+                        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                        document.write(unescape("%3Cspan id='cnzz_stat_icon_5744809'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D5744809%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+                    </script>
+                    <br>
+                    and many more <a href="https://github.com/wh1100717/PolyTechDocs/graphs/contributors">awesome&nbsp;contributors</a>.
+                </p>
+            </div>
+            <div class=footer-right>
+                <p>
+                    hosted by
+                    <a href="https://github.com/wh1100717/PolyTechDocs">
+                        <img width = '100' height="30" src="/newPolyTechDocs/img/footer-logo.png" alt="GitHub | Social coding">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

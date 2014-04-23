@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_items
 title: Welcome
 next_section: invovled
 permalink: /docs/home/

@@ -1,0 +1,1162 @@
+<div class="highlight"><pre><code class="text language-text" data-lang="text">选择题目的顺序是按照CodeForces上面Sovled排序而得到的。
+该文档中包含前21-40道题目的解题方法和相应Python代码，他们分别是：
+110A   236A   281A   339A    144A   266B   271A  136A   268A   263A
+122A   61A    237A   69A     141A   268B   58A   155A   118B   208A
+</code></pre></div>
+<div class="note info">
+  <h5>关于Sample Test样式的问题</h5>
+  <p>目前我是直接用的pygments bash类型来对test进行处理，实际上我觉得input和output如果能带上颜色，那么会更直观一些。</p>
+  <p>如果有人对<a href="http://pygments.org/" target=_blank>Hacking For Pygments</a>感兴趣，可以试着增加对input和output的过滤识别并上色，或者也可以试着尝试一下pygments支持的哪种语言可以对其上色。</p>
+</div>
+
+<hr>
+
+<h1>110A Nearly Lucky Number</h1>
+
+<blockquote>
+<p>Petya loves lucky numbers. We all know that lucky numbers are the positive integers whose decimal representations contain only the lucky digits 4 and 7. For example, numbers 47, 744, 4 are lucky and 5, 17, 467 are not.</p>
+<p>Unfortunately, not all numbers are lucky. Petya calls a number nearly lucky if the number of lucky digits in it is a lucky number. He wonders whether number n is a nearly lucky number.</p>
+
+<strong>Input</strong><br>
+The only line contains an integer n (1 ≤ n ≤ 10**18).
+
+Please do not use the %lld specificator to read or write 64-bit numbers in С++. It is preferred to use the cin, cout streams or the %I64d specificator.
+<br>
+<br>
+<strong>Output</strong><br>
+Print on the single line "YES" if n is a nearly lucky number. Otherwise, print "NO" (without the quotes).
+<br>
+<br>
+<strong>Note</strong><br>
+In the first sample there are 3 lucky digits (first one and last two), so the answer is "NO".<br>
+In the second sample there are 7 lucky digits, 7 is lucky number, so the answer is "YES".<br>
+In the third sample there are no lucky digits, so the answer is "NO".
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+40047
+output
+NO
+
+input
+7747774
+output
+YES
+
+input
+1000000000000000000
+output
+NO
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#实际上就是统计出现4或者7的位数的个数是否为4或7</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="c">#用n来记录出现4或者7的个数</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">number</span><span class="p">)):</span>
+    <span class="n">digit</span> <span class="o">=</span> <span class="n">number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">digit</span> <span class="ow">in</span> <span class="s">&quot;47&quot;</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="ow">in</span> <span class="s">&quot;47&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;YES&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;NO&quot;</span>
+</code></pre></div>
+<hr>
+
+<h1>236A Boy or Girl</h1>
+
+<blockquote>
+<p>Those days, many boys use beautiful girls' photos as avatars in forums. So it is pretty hard to tell the gender of a user at the first glance. Last year, our hero went to a forum and had a nice chat with a beauty (he thought so). After that they talked very often and eventually they became a couple in the network.</p>
+
+<p>But yesterday, he came to see "her" in the real world and found out "she" is actually a very strong man! Our hero is very sad and he is too tired to love again now. So he came up with a way to recognize users' genders by their user names.</p>
+
+<p>This is his method: if the number of distinct characters in one's user name is odd, then he is a male, otherwise she is a female. You are given the string that denotes the user name, please help our hero to determine the gender of this user by his method.</p>
+
+<strong>Input</strong><br>
+The first line contains a non-empty string, that contains only lowercase English letters — the user name. This string contains at most 100 letters.
+
+<br>
+<br>
+<strong>Output</strong><br>
+If it is a female by our hero's method, print "CHAT WITH HER!" (without the quotes), otherwise, print "IGNORE HIM!" (without the quotes).
+<br>
+<br>
+<strong>Note</strong><br>
+For the first example. There are 6 distinct characters in "wjmzbmr". These characters are: "w", "j", "m", "z", "b", "r". So wjmzbmr is a female and you should print "CHAT WITH HER!".
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+wjmzbmr
+output
+CHAT WITH HER!
+
+input
+xiaodao
+output
+IGNORE HIM!
+
+input
+sevenkplus
+output
+CHAT WITH HER!
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#统计输入的名字不重复的字母有多少个</span>
+<span class="c">#如果是偶数个，则输出&quot;CHAT WITH HER!&quot;</span>
+<span class="c">#如果是基数个，则输出&quot;IGNORE HIM!&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">distinctN</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)):</span>
+    <span class="n">char</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">distinctN</span><span class="p">:</span>
+        <span class="n">distinctN</span> <span class="o">=</span> <span class="n">distinctN</span> <span class="o">+</span> <span class="n">char</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">distinctN</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;CHAT WITH HER!&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;IGNORE HIM!&quot;</span>
+</code></pre></div>
+<hr>
+
+<h1>281A Word Capitalization</h1>
+
+<blockquote>
+<p>Capitalization is writing a word with its first letter as a capital letter. Your task is to capitalize the given word.</p>
+<p>Note, that during capitalization all the letters except the first one remains unchanged.</p>
+<strong>Input</strong><br>
+A single line contains a non-empty word. This word consists of lowercase and uppercase English letters. The length of the word will not exceed 103.
+<br>
+<br>
+<strong>Output</strong><br>
+Output the given word after capitalization.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+ApPLe
+output
+ApPLe
+
+input
+konjac
+output
+Konjac
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#直接将输入的字符串第一个字母大写再输出出去</span>
+<span class="c">#史上最简单题目，没有之一，不用解释==！</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</code></pre></div>
+<hr>
+
+<h1>339A Helpful Maths</h1>
+
+<blockquote>
+<p>Xenia the beginner mathematician is a third year student at elementary school. She is now learning the addition operation.</p>
+
+<p>The teacher has written down the sum of multiple numbers. Pupils should calculate the sum. To make the calculation easier, the sum only contains numbers 1, 2 and 3. Still, that isn't enough for Xenia. She is only beginning to count, so she can calculate a sum only if the summands follow in non-decreasing order. For example, she can't calculate sum 1+3+2+1 but she can calculate sums 1+1+2 and 3+3.</p>
+
+<p>You've got the sum that was written on the board. Rearrange the summans and print the sum in such a way that Xenia can calculate the sum.</p>
+
+<strong>Input</strong><br>
+The first line contains a non-empty string s — the sum Xenia needs to count. String s contains no spaces. It only contains digits and characters "+". Besides, string s is a correct sum of numbers 1, 2 and 3. String s is at most 100 characters long.
+<br>
+<br>
+<strong>Output</strong><br>
+Print the new sum that Xenia can count.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+3+2+1
+output
+1+2+3
+
+input
+1+1+3+1+3
+output
+1+1+1+3+3
+
+input
+2
+output
+2
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#该题目要求将加法多项式转换成按被加数有序递增的加法多项式</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#将输入按照&quot;+&quot;切割成数组</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;+&quot;</span><span class="p">)</span>
+<span class="c">#数组排序</span>
+<span class="n">inputs</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="c">#重新拼接成字符串并输出</span>
+<span class="k">print</span> <span class="s">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h1>144A Arrival of the General</h1>
+
+<blockquote>
+<p>A Ministry for Defense sent a general to inspect the Super Secret Military Squad under the command of the Colonel SuperDuper. Having learned the news, the colonel ordered to all n squad soldiers to line up on the parade ground.</p>
+
+<p>By the military charter the soldiers should stand in the order of non-increasing of their height. But as there's virtually no time to do that, the soldiers lined up in the arbitrary order. However, the general is rather short-sighted and he thinks that the soldiers lined up correctly if the first soldier in the line has the maximum height and the last soldier has the minimum height. Please note that the way other solders are positioned does not matter, including the case when there are several soldiers whose height is maximum or minimum. Only the heights of the first and the last soldier are important.</p>
+
+<p>For example, the general considers the sequence of heights (4, 3, 4, 2, 1, 1) correct and the sequence (4, 3, 1, 2, 2) wrong.</p>
+
+<p>Within one second the colonel can swap any two neighboring soldiers. Help him count the minimum time needed to form a line-up which the general will consider correct.</p>
+
+<strong>Input</strong><br>
+The first input line contains the only integer n (2 ≤ n ≤ 100) which represents the number of soldiers in the line. The second line contains integers a1, a2, ..., an (1 ≤ ai ≤ 100) the values of the soldiers' heights in the order of soldiers' heights' increasing in the order from the beginning of the line to its end. The numbers are space-separated. Numbers a1, a2, ..., an are not necessarily different.
+<br>
+<br>
+<strong>Output</strong><br>
+Print the only integer — the minimum number of seconds the colonel will need to form a line-up the general will like.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first sample the colonel will need to swap the first and second soldier and then the third and fourth soldier. That will take 2 seconds. The resulting position of the soldiers is (44, 33, 22, 11).
+<br><br>
+In the second sample the colonel may swap the soldiers in the following sequence:
+<br><br>
+(10, 10, 58, 31, 63, 40, 76)<br>
+(10, 58, 10, 31, 63, 40, 76)<br>
+(10, 58, 10, 31, 63, 76, 40)<br>
+(10, 58, 10, 31, 76, 63, 40)<br>
+(10, 58, 31, 10, 76, 63, 40)<br>
+(10, 58, 31, 76, 10, 63, 40)<br>
+(10, 58, 31, 76, 63, 10, 40)<br>
+(10, 58, 76, 31, 63, 10, 40)<br>
+(10, 76, 58, 31, 63, 10, 40)<br>
+(76, 10, 58, 31, 63, 10, 40)<br>
+(76, 10, 58, 31, 63, 40, 10)<br>
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+4
+33 44 11 22
+output
+2
+
+input
+7
+10 10 58 31 63 40 76
+output
+10
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#给定一个包含n个士兵身高的队列</span>
+<span class="c">#身高最高的在最左边，身高最矮的在最右边</span>
+<span class="c">#输出最少的调整位置的次数，每次只能临着的两个互换</span>
+<span class="c">#</span>
+<span class="c">#其实就在从左到由，记录第一次出现的最高身高位置和最后一次出现得到最矮身高位置</span>
+<span class="c">#如果最高身高位置大于最矮身高位置，则少一次互换过程(因为他俩互换多算了一次)</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">soilderCount</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">sHeights</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">soilderCount</span><span class="p">):</span>
+    <span class="n">sHeights</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">maxIndex</span> <span class="o">=</span> <span class="n">sHeights</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">sHeights</span><span class="p">))</span>
+<span class="n">minHeight</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">sHeights</span><span class="p">)</span>
+<span class="n">minIndex</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">soilderCount</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">sHeights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">minHeight</span><span class="p">:</span>
+        <span class="n">minIndex</span> <span class="o">=</span> <span class="n">i</span>
+<span class="k">if</span><span class="p">(</span><span class="n">maxIndex</span> <span class="o">&gt;</span> <span class="n">minIndex</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">maxIndex</span> <span class="o">+</span> <span class="n">soilderCount</span> <span class="o">-</span> <span class="n">minIndex</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">maxIndex</span> <span class="o">+</span> <span class="n">soilderCount</span> <span class="o">-</span> <span class="n">minIndex</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
+<hr>
+
+<h1>266B Queue at the School</h1>
+
+<blockquote>
+<p>During the break the schoolchildren, boys and girls, formed a queue of n people in the canteen. Initially the children stood in the order they entered the canteen. However, after a while the boys started feeling awkward for standing in front of the girls in the queue and they started letting the girls move forward each second.</p>
+
+<p>Let's describe the process more precisely. Let's say that the positions in the queue are sequentially numbered by integers from 1 to n, at that the person in the position number 1 is served first. Then, if at time x a boy stands on the i-th position and a girl stands on the (i + 1)-th position, then at time x + 1 the i-th position will have a girl and the (i + 1)-th position will have a boy. The time is given in seconds.</p>
+
+<p>You've got the initial position of the children, at the initial moment of time. Determine the way the queue is going to look after t seconds.</p>
+
+<strong>Input</strong><br>
+The first line contains two integers n and t (1 ≤ n, t ≤ 50), which represent the number of children in the queue and the time after which the queue will transform into the arrangement you need to find.
+<br><br>
+The next line contains string s, which represents the schoolchildren's initial arrangement. If the i-th position in the queue contains a boy, then the i-th character of string s equals "B", otherwise the i-th character equals "G".
+<br>
+<br>
+<strong>Output</strong><br>
+Print string a, which describes the arrangement after t seconds. If the i-th position has a boy after the needed time, then the i-th character a must equal "B", otherwise it must equal "G".
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+5 1
+BGGBG
+output
+GBGGB
+
+input
+5 2
+BGGBG
+output
+GGBGB
+
+input
+4 1
+GGGB
+output
+GGGB
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#输入为一个队列，站着男孩和女孩，B for Boy, G for Girl</span>
+<span class="c">#男孩觉得不好意思，每隔一个时间段，男孩会让后面的女孩站到自己的前面去</span>
+<span class="c">#第一行输入为总人数n和经过了t个时间段</span>
+<span class="c">#第二行输入为初始男孩女孩所战队列的样子</span>
+<span class="c">#输出经过t个时间段以后，队列的样子</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">t</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">sQueue</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">sec</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">flag</span><span class="p">:</span> 
+            <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="k">continue</span>
+            <span class="c">#如果当前是男孩，并且他不是最后一个人，并且他后面是女孩的话</span>
+            <span class="c">#他和女孩互换位置</span>
+        <span class="k">if</span> <span class="n">sQueue</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;B&quot;</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">n</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">sQueue</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;G&quot;</span><span class="p">:</span>
+            <span class="n">sQueue</span> <span class="o">=</span> <span class="n">sQueue</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">sQueue</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">sQueue</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">sQueue</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">:]</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">print</span> <span class="n">sQueue</span>
+</code></pre></div>
+<hr>
+
+<h1>271A Beautiful Year</h1>
+
+<blockquote>
+<p>It seems like the year of 2013 came only yesterday. Do you know a curious fact? The year of 2013 is the first year after the old 1987 with only distinct digits.</p>
+<p>Now you are suggested to solve the following problem: given a year number, find the minimum year number which is strictly larger than the given one and has only distinct digits.</p>
+<strong>Input</strong><br>
+The single line contains integer y (1000 ≤ y ≤ 9000) — the year number.
+<br>
+<br>
+<strong>Output</strong><br>
+Print a single integer — the minimum year number that is strictly larger than y and all it's digits are distinct. It is guaranteed that the answer exists.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+1987
+output
+2013
+
+input
+2013
+output
+2014
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#给定输入年份计算下一个拥有不同数字的年份是多少</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#定义检测当前年份是否由不同数字组成的函数</span>
+<span class="c">#如果数字均不相同则返回True，比如1987包含1,9,8,7四个不同数字</span>
+<span class="c">#如果数字有相同则返回False，比如1988包含1，9和2个8</span>
+<span class="k">def</span> <span class="nf">checkBeautifulYear</span><span class="p">(</span><span class="n">yearN</span><span class="p">):</span>
+    <span class="n">yearN</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">yearN</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">yearN</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">yearN</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span> <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">yearN</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">yearN</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">yearN</span><span class="p">[</span><span class="mi">2</span><span class="p">:]):</span> <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">yearN</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="n">yearN</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">yearN</span><span class="p">[</span><span class="mi">3</span><span class="p">]):</span> <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">yearN</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="ow">in</span> <span class="n">yearN</span><span class="p">[:</span><span class="mi">3</span><span class="p">]):</span> <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">return</span> <span class="bp">True</span>
+<span class="n">yearN</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="c">#循环判断，根据当前输入年份找到下一个包含不同数字的年份</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">yearN</span> <span class="o">=</span> <span class="n">yearN</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">checkBeautifulYear</span><span class="p">(</span><span class="n">yearN</span><span class="p">):</span> 
+        <span class="k">print</span> <span class="n">yearN</span>
+        <span class="k">break</span>
+</code></pre></div>
+<hr>
+
+<h1>136A Presents</h1>
+
+<blockquote>
+<p>Little Petya very much likes gifts. Recently he has received a new laptop as a New Year gift from his mother. He immediately decided to give it to somebody else as what can be more pleasant than giving somebody gifts. And on this occasion he organized a New Year party at his place and invited n his friends there.</p>
+
+<p>If there's one thing Petya likes more that receiving gifts, that's watching others giving gifts to somebody else. Thus, he safely hid the laptop until the next New Year and made up his mind to watch his friends exchanging gifts while he does not participate in the process. He numbered all his friends with integers from 1 to n. Petya remembered that a friend number i gave a gift to a friend number pi. He also remembered that each of his friends received exactly one gift.</p>
+
+<p>Now Petya wants to know for each friend i the number of a friend who has given him a gift.</p>
+
+<strong>Input</strong><br>
+The first line contains one integer n (1 ≤ n ≤ 100) — the quantity of friends Petya invited to the party. The second line contains n space-separated integers: the i-th number is pi — the number of a friend who gave a gift to friend number i. It is guaranteed that each friend received exactly one gift. It is possible that some friends do not share Petya's ideas of giving gifts to somebody else. Those friends gave the gifts to themselves.
+<br>
+<br>
+<strong>Output</strong><br>
+Print n space-separated integers: the i-th number should equal the number of the friend who gave a gift to friend number i.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+4
+2 3 4 1
+output
+4 1 2 3
+
+input
+3
+1 3 2
+output
+1 3 2
+
+input
+2
+1 2
+output
+1 2
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这道题第一行输入表示有多少个人参加互送礼品的聚会</span>
+<span class="c">#第二行表示每个人分别把礼物送给了谁</span>
+<span class="c">#要求输出的是每个人的礼物都是谁送的==！</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">4</span>
+<span class="sd">2 3 4 1</span>
+<span class="sd">4表示总共有4个人</span>
+<span class="sd">·2·表示1号送给了2号礼物</span>
+<span class="sd">·3·表示2号送给了3号礼物</span>
+<span class="sd">·4·表示3号送给了4号礼物</span>
+<span class="sd">·1·表示4号送给了1号礼物</span>
+
+<span class="sd">输出的是谁分别收到了谁的礼物，即</span>
+<span class="sd">4 1 2 3</span>
+<span class="sd">·4·表示1号收到了4号送的礼物</span>
+<span class="sd">·1·表示2号收到了1号送的礼物</span>
+<span class="sd">·2·表示3号收到了2号送的礼物</span>
+<span class="sd">·3·表示4号收到了3号送的礼物</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">peopleAmount</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">gifts</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">getGifts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;0&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">peopleAmount</span>
+<span class="c">#循环将读入的送礼物的人对应到getGifts数组中</span>
+<span class="c">#比如1号送给了4号礼物，那么是就上就是getGifts[4] = &#39;1&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">peopleAmount</span><span class="p">):</span>
+    <span class="n">getGifts</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">gifts</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">getGifts</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h1>268A Games</h1>
+
+<blockquote>
+<p>Manao works on a sports TV. He's spent much time watching the football games of some country. After a while he began to notice different patterns. For example, each team has two sets of uniforms: home uniform and guest uniform. When a team plays a game at home, the players put on the home uniform. When a team plays as a guest on somebody else's stadium, the players put on the guest uniform. The only exception to that rule is: when the home uniform color of the host team matches the guests' uniform, the host team puts on its guest uniform as well. For each team the color of the home and guest uniform is different.</p>
+
+<p>There are n teams taking part in the national championship. The championship consists of n·(n - 1) games: each team invites each other team to its stadium. At this point Manao wondered: how many times during the championship is a host team going to put on the guest uniform? Note that the order of the games does not affect this number.</p>
+
+<p>You know the colors of the home and guest uniform for each team. For simplicity, the colors are numbered by integers in such a way that no two distinct colors have the same number. Help Manao find the answer to his question.</p>
+
+<strong>Input</strong><br>
+The first line contains an integer n (2 ≤ n ≤ 30). Each of the following n lines contains a pair of distinct space-separated integers hi, ai (1 ≤ hi, ai ≤ 100) — the colors of the i-th team's home and guest uniforms, respectively.
+<br>
+<br>
+<strong>Output</strong><br>
+In a single line print the number of games where the host team is going to play in the guest uniform.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first test case the championship consists of 6 games. The only game with the event in question is the game between teams 2 and 1 on the stadium of team 2.
+<br><br>
+In the second test sample the host team will have to wear guest uniform in the games between teams: 1 and 2, 2 and 1, 2 and 3, 3 and 4, 4 and 2 (the host team is written first).
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+3
+1 2
+2 4
+3 4
+output
+1
+
+input
+4
+100 42
+42 100
+5 42
+100 5
+output
+5
+
+input
+2
+1 2
+1 2
+output
+0
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#当主场球队遇到客场球队球服颜色相同时，主场球队更换成客场球服</span>
+<span class="c">#统计有多少场比赛主场需要更换客场球服</span>
+<span class="c">#两层循环判断每个球队的主场球服和别的球队的客场球服相同的数量</span>
+<span class="c">#该数量就是主场球队需要更换球服的场次数，即最终结果</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">teamAmount</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">team</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">teamAmount</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">teamAmount</span><span class="p">):</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">team</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputs</span>
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">teamAmount</span><span class="p">):</span>
+    <span class="n">hostC</span> <span class="o">=</span> <span class="n">team</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">teamAmount</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">):</span> <span class="k">continue</span>
+        <span class="n">guestC</span> <span class="o">=</span> <span class="n">team</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">hostC</span> <span class="o">==</span> <span class="n">guestC</span><span class="p">:</span> <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span> <span class="n">result</span>
+</code></pre></div>
+<hr>
+
+<h1>263A Beautiful Matrix</h1>
+
+<blockquote>
+<p>You've got a 5 × 5 matrix, consisting of 24 zeroes and a single number one. Let's index the matrix rows by numbers from 1 to 5 from top to bottom, let's index the matrix columns by numbers from 1 to 5 from left to right. In one move, you are allowed to apply one of the two following transformations to the matrix:</p>
+
+1. Swap two neighboring matrix rows, that is, rows with indexes i and i + 1 for some integer i (1 ≤ i < 5).<br>
+2. Swap two neighboring matrix columns, that is, columns with indexes j and j + 1 for some integer j (1 ≤ j < 5).
+
+<p>You think that a matrix looks beautiful, if the single number one of the matrix is located in its middle (in the cell that is on the intersection of the third row and the third column). Count the minimum number of moves needed to make the matrix beautiful.</p>
+<strong>Input</strong><br>
+The input consists of five lines, each line contains five integers: the j-th integer in the i-th line of the input represents the element of the matrix that is located on the intersection of the i-th row and the j-th column. It is guaranteed that the matrix consists of 24 zeroes and a single number one.
+<br>
+<br>
+<strong>Output</strong><br>
+Print a single integer — the minimum number of moves needed to make the matrix beautiful.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+0 0 0 0 0
+0 0 0 0 1
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+output
+3
+
+input
+0 0 0 0 0
+0 0 0 0 0
+0 1 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+output
+1
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#有一个5X5的矩阵，只有一个数字为1，其它数字都为0</span>
+<span class="c">#题目要求输入把1移动到矩阵中心最少要多少步</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#首先获得1在矩阵中的位置</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s">&#39;1&#39;</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">:</span>
+        <span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">inputs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;1&#39;</span><span class="p">:</span>
+                <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+                <span class="k">break</span>
+<span class="c">#直接输出该位置距离中心的距离就好了</span>
+<span class="c">#中心坐标为(2,2)(以0,0为起点)</span>
+<span class="c">#那么距离就是abs(x-2) + abs(y-2)</span>
+<span class="c">#abs()是python求绝对值的内置函数</span>
+<span class="k">print</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h1>122A Lucky Division</h1>
+
+<blockquote>
+<p>Petya loves lucky numbers. Everybody knows that lucky numbers are positive integers whose decimal representation contains only the lucky digits 4 and 7. For example, numbers 47, 744, 4 are lucky and 5, 17, 467 are not.</p>
+<p>Petya calls a number almost lucky if it could be evenly divided by some lucky number. Help him find out if the given number n is almost lucky.</p>
+<strong>Input</strong><br>
+The single line contains an integer n (1 ≤ n ≤ 1000) — the number that needs to be checked.
+<br>
+<br>
+<strong>Output</strong><br>
+In the only line print "YES" (without the quotes), if number n is almost lucky. Otherwise, print "NO" (without the quotes).
+<br>
+<br>
+<strong>Note</strong><br>
+Note that all lucky numbers are almost lucky as any number is evenly divisible by itself.In the first sample 47 is a lucky number. In the second sample 16 is divisible by 4.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+47
+output
+YES
+
+input
+16
+output
+YES
+
+input
+78
+output
+NO
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#本题要去判断输入的数字能否被Lucky Number整除</span>
+<span class="c">#因为输入范围为1~1000，所以直接先列出来这个范围内的luckyNumber再相除就好了</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">luckyN</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">444</span><span class="p">,</span><span class="mi">447</span><span class="p">,</span><span class="mi">474</span><span class="p">,</span><span class="mi">477</span><span class="p">,</span><span class="mi">744</span><span class="p">,</span><span class="mi">747</span><span class="p">,</span><span class="mi">774</span><span class="p">,</span><span class="mi">777</span><span class="p">]</span>
+<span class="n">inputN</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">inputN</span> <span class="o">%</span> <span class="n">luckyN</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;YES&quot;</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">break</span>
+<span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;NO&quot;</span>
+</code></pre></div>
+<hr>
+
+<h1>61A Ultra-Fast Mathematician</h1>
+
+<blockquote>
+<p>Shapur was an extremely gifted student. He was great at everything including Combinatorics, Algebra, Number Theory, Geometry, Calculus, etc. He was not only smart but extraordinarily fast! He could manage to sum 10**18 numbers in a single second.</p>
+
+<p>One day in 230 AD Shapur was trying to find out if any one can possibly do calculations faster than him. As a result he made a very great contest and asked every one to come and take part.</p>
+
+<p>In his contest he gave the contestants many different pairs of numbers. Each number is made from digits 0 or 1. The contestants should write a new number corresponding to the given pair of numbers. The rule is simple: The i-th digit of the answer is 1 if and only if the i-th digit of the two given numbers differ. In the other case the i-th digit of the answer is 0.</p>
+
+<p>Shapur made many numbers and first tried his own speed. He saw that he can perform these operations on numbers of length ∞ (length of a number is number of digits in it) in a glance! He always gives correct answers so he expects the contestants to give correct answers, too. He is a good fellow so he won't give anyone very big numbers and he always gives one person numbers of same length.</p>
+
+<p>Now you are going to take part in Shapur's contest. See if you are faster and more accurate.</p>
+
+<strong>Input</strong><br>
+There are two lines in each input. Each of them contains a single number. It is guaranteed that the numbers are made from 0 and 1 only and that their length is same. The numbers may start with 0. The length of each number doesn't exceed 100.
+<br>
+<br>
+<strong>Output</strong><br>
+Write one line — the corresponding answer. Do not omit the leading 0s.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+1010100
+0100101
+output
+1110001
+
+input
+000
+111
+output
+111
+
+input
+1110
+1010
+output
+0100
+
+input
+01110
+01100
+output
+00010
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#逐位比较，相同为1，不同为0</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">firstN</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">secondN</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">firstN</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">firstN</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">secondN</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="s">&quot;1&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="s">&quot;0&quot;</span>
+<span class="k">print</span> <span class="n">result</span>
+</code></pre></div>
+<hr>
+
+<h1>237A Free Cash</h1>
+
+<blockquote>
+<p>Valera runs a 24/7 fast food cafe. He magically learned that next day n people will visit his cafe. For each person we know the arrival time: the i-th person comes exactly at hi hours mi minutes. The cafe spends less than a minute to serve each client, but if a client comes in and sees that there is no free cash, than he doesn't want to wait and leaves the cafe immediately.</p>
+
+<p>Valera is very greedy, so he wants to serve all n customers next day (and get more profit). However, for that he needs to ensure that at each moment of time the number of working cashes is no less than the number of clients in the cafe.</p>
+
+<p>Help Valera count the minimum number of cashes to work at his cafe next day, so that they can serve all visitors.</p>
+
+<strong>Input</strong><br>
+The first line contains a single integer n (1 ≤ n ≤ 10**5), that is the number of cafe visitors.
+<br><br>
+Each of the following n lines has two space-separated integers hi and mi (0 ≤ hi ≤ 23; 0 ≤ mi ≤ 59), representing the time when the i-th person comes into the cafe.
+<br><br>
+Note that the time is given in the chronological order. All time is given within one 24-hour period.
+<br>
+<br>
+<strong>Output</strong><br>
+Print a single integer — the minimum number of cashes, needed to serve all clients next day.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first sample it is not enough one cash to serve all clients, because two visitors will come into cafe in 8:10. Therefore, if there will be one cash in cafe, then one customer will be served by it, and another one will not wait and will go away.
+<br><br>
+In the second sample all visitors will come in different times, so it will be enough one cash.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+4
+8 0
+8 10
+8 10
+8 45
+output
+2
+
+input
+3
+0 12
+10 11
+22 22
+output
+1
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#该题要求计算出到底有几个收银台才能保证来的顾客第一时间就能服务到</span>
+<span class="c">#第一行输入为明天到底要来几个顾客</span>
+<span class="c">#第二行输入为顾客分别在几点几分来</span>
+<span class="c">#每个顾客的服务时间小于一分钟</span>
+<span class="c">#所以实际上就相当于判断同一时间来的顾客最多有多少个</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">visitors</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">cashes</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">lastServedTime</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">served</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">visitors</span><span class="p">):</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">currentServedTime</span> <span class="o">=</span> <span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">lastServedTime</span> <span class="o">==</span> <span class="n">currentServedTime</span><span class="p">:</span>
+        <span class="n">served</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">served</span> <span class="o">&gt;</span> <span class="n">cashes</span><span class="p">:</span>
+            <span class="n">cashes</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">served</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">lastServedTime</span> <span class="o">=</span> <span class="n">currentServedTime</span>
+<span class="k">print</span> <span class="n">cashes</span>
+</code></pre></div>
+<hr>
+
+<h1>69A Young Physicist</h1>
+
+<blockquote>
+<p>A guy named Vasya attends the final grade of a high school. One day Vasya decided to watch a match of his favorite hockey team. And, as the boy loves hockey very much, even more than physics, he forgot to do the homework. Specifically, he forgot to complete his physics tasks. Next day the teacher got very angry at Vasya and decided to teach him a lesson. He gave the lazy student a seemingly easy task: You are given an idle body in space and the forces that affect it. The body can be considered as a material point with coordinates (0; 0; 0). Vasya had only to answer whether it is in equilibrium. "Piece of cake" — thought Vasya, we need only to check if the sum of all vectors is equal to 0. So, Vasya began to solve the problem. But later it turned out that there can be lots and lots of these forces, and Vasya can not cope without your help. Help him. Write a program that determines whether a body is idle or is moving by the given vectors of forces.</p>
+
+<strong>Input</strong><br>
+The first line contains a positive integer n (1 ≤ n ≤ 100), then follow n lines containing three integers each: the xi coordinate, the yi coordinate and the zi coordinate of the force vector, applied to the body ( - 100 ≤ xi, yi, zi ≤ 100).
+<br>
+<br>
+<strong>Output</strong><br>
+Print the word "YES" if the body is in equilibrium, or the word "NO" if it is not.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+3
+4 1 7
+-2 4 -1
+1 -5 -3
+output
+NO
+
+input
+3
+3 -1 7
+-5 2 -4
+2 -1 -3
+output
+YES
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#所有方向的力如果互相抵消，那么这个物质点就是平衡的</span>
+<span class="c">#也就是计算出每个方向的和，如果都为0，则输出YES，否则输出NO</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">forces</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">forces</span><span class="p">):</span>
+    <span class="n">force</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">force</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">y</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">force</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">z</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">force</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;YES&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;NO&quot;</span>
+</code></pre></div>
+<hr>
+
+<h1>141A Amusing Joke</h1>
+
+<blockquote>
+<p>So, the New Year holidays are over. Santa Claus and his colleagues can take a rest and have guests at last. When two "New Year and Christmas Men" meet, thear assistants cut out of cardboard the letters from the guest's name and the host's name in honor of this event. Then the hung the letters above the main entrance. One night, when everyone went to bed, someone took all the letters of our characters' names. Then he may have shuffled the letters and put them in one pile in front of the door.</p>
+
+<p>The next morning it was impossible to find the culprit who had made the disorder. But everybody wondered whether it is possible to restore the names of the host and his guests from the letters lying at the door? That is, we need to verify that there are no extra letters, and that nobody will need to cut more letters.</p>
+
+<p>Help the "New Year and Christmas Men" and their friends to cope with this problem. You are given both inscriptions that hung over the front door the previous night, and a pile of letters that were found at the front door next morning.</p>
+
+<strong>Input</strong><br>
+The input file consists of three lines: the first line contains the guest's name, the second line contains the name of the residence host and the third line contains letters in a pile that were found at the door in the morning. All lines are not empty and contain only uppercase Latin letters. The length of each line does not exceed 100.
+<br>
+<br>
+<strong>Output</strong><br>
+Print "YES" without the quotes, if the letters in the pile could be permuted to make the names of the "New Year and Christmas Men". Otherwise, print "NO" without the quotes.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first sample the letters written in the last line can be used to write the names and there won't be any extra letters left.
+<br><br>
+In the second sample letter "P" is missing from the pile and there's an extra letter "L".
+<br><br>
+In the third sample there's an extra letter "L".
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+SANTACLAUS
+DEDMOROZ
+SANTAMOROZDEDCLAUS
+output
+YES
+
+input
+PAPAINOEL
+JOULUPUKKI
+JOULNAPAOILELUPUKKI
+output
+NO
+
+input
+BABBONATALE
+FATHERCHRISTMAS
+BABCHRISTMASBONATALLEFATHER
+output
+NO
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#简单理解成判断第三行输入是否为第一二行输入字母的组合</span>
+<span class="c">#多一个字母少一个字母或者有一个字母不同都输出NO</span>
+<span class="c">#反之完全一样则输出YES</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">firstS</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">secondS</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">thirdS</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">firstS</span> <span class="o">+</span> <span class="n">secondS</span>
+<span class="c">#如果第一行和第二行字母的总长度与第三行不等，则直接输出NO</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">thirdS</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;NO&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">thirdS</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">thirdS</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+                <span class="n">thirdS</span> <span class="o">=</span> <span class="n">thirdS</span><span class="p">[:</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">thirdS</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span> <span class="c">#表示找到了这个字母在thirdS中的对应字母</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">flag</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;NO&quot;</span>
+            <span class="k">break</span>
+    <span class="k">if</span> <span class="n">flag</span><span class="p">:</span> <span class="k">print</span>  <span class="s">&quot;YES&quot;</span>
+</code></pre></div>
+<hr>
+
+<h1>268B Buttons</h1>
+
+<blockquote>
+<p>Manao is trying to open a rather challenging lock. The lock has n buttons on it and to open it, you should press the buttons in a certain order to open the lock. When you push some button, it either stays pressed into the lock (that means that you've guessed correctly and pushed the button that goes next in the sequence), or all pressed buttons return to the initial position. When all buttons are pressed into the lock at once, the lock opens.</p>
+
+<p>Consider an example with three buttons. Let's say that the opening sequence is: {2, 3, 1}. If you first press buttons 1 or 3, the buttons unpress immediately. If you first press button 2, it stays pressed. If you press 1 after 2, all buttons unpress. If you press 3 after 2, buttons 3 and 2 stay pressed. As soon as you've got two pressed buttons, you only need to press button 1 to open the lock.</p>
+
+<p>Manao doesn't know the opening sequence. But he is really smart and he is going to act in the optimal way. Calculate the number of times he's got to push a button in order to open the lock in the worst-case scenario.</p>
+
+<strong>Input</strong><br>
+A single line contains integer n (1 ≤ n ≤ 2000) — the number of buttons the lock has.
+<br>
+<br>
+<strong>Output</strong><br>
+In a single line print the number of times Manao has to push a button in the worst-case scenario.
+<br>
+<br>
+<strong>Note</strong><br>
+Consider the first test sample. Manao can fail his first push and push the wrong button. In this case he will already be able to guess the right one with his second push. And his third push will push the second right button. Thus, in the worst-case scenario he will only need 3 pushes.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+2
+output
+3
+
+input
+3
+output
+7
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这道题主要是需要推导出相应的数学公式...</span>
+<span class="c">#锁上有n个按键，按对，继续按下一个，按错则弹起，需要重新按</span>
+<span class="c">#最坏情况下需要按多少次按键才可以把锁打开</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">total</span>
+</code></pre></div>
+<hr>
+
+<h1>58A Chat room</h1>
+
+<blockquote>
+<p>Vasya has recently learned to type and log on to the Internet. He immediately entered a chat room and decided to say hello to everybody. Vasya typed the word s. It is considered that Vasya managed to say hello if several letters can be deleted from the typed word so that it resulted in the word "hello". For example, if Vasya types the word "ahhellllloou", it will be considered that he said hello, and if he types "hlelo", it will be considered that Vasya got misunderstood and he didn't manage to say hello. Determine whether Vasya managed to say hello by the given word s.</p>
+
+<strong>Input</strong><br>
+The first and only line contains the word s, which Vasya typed. This word consisits of small Latin letters, its length is no less that 1 and no more than 100 letters.
+<br>
+<br>
+<strong>Output</strong><br>
+If Vasya managed to say hello, print "YES", otherwise print "NO".
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+ahhellllloou
+output
+YES
+
+input
+hlelo
+output
+NO
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这道题判断给定的输入字符串，如果删掉一些字母是否可以变成hello</span>
+<span class="c">#按顺序去找就好了==！</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">word</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">:</span> <span class="k">break</span>
+    <span class="k">if</span> <span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;YES&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;NO&quot;</span>
+</code></pre></div>
+<hr>
+
+<h1>155A I love %username%</h1>
+
+<blockquote>
+<p>Vasya adores sport programming. He can't write programs but he loves to watch the contests' progress. Vasya even has a favorite coder and Vasya pays special attention to him.</p>
+
+<p>One day Vasya decided to collect the results of all contests where his favorite coder participated and track the progress of his coolness. For each contest where this coder participated, he wrote out a single non-negative number — the number of points his favorite coder earned in the contest. Vasya wrote out the points for the contest in the order, in which the contests run (naturally, no two contests ran simultaneously).</p>
+
+<p>Vasya considers a coder's performance in a contest amazing in two situations: he can break either his best or his worst performance record. First, it is amazing if during the contest the coder earns strictly more points that he earned on each past contest. Second, it is amazing if during the contest the coder earns strictly less points that he earned on each past contest. A coder's first contest isn't considered amazing. Now he wants to count the number of amazing performances the coder had throughout his whole history of participating in contests. But the list of earned points turned out long and Vasya can't code... That's why he asks you to help him.</p>
+
+<strong>Input</strong><br>
+The first line contains the single integer n (1 ≤ n ≤ 1000) — the number of contests where the coder participated.
+<br><br>
+The next line contains n space-separated non-negative integer numbers — they are the points which the coder has earned. The points are given in the chronological order. All points do not exceed 10000.
+<br>
+<br>
+<strong>Output</strong><br>
+Print the single number — the number of amazing performances the coder has had during his whole history of participating in the contests.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first sample the performances number 2 and 3 are amazing.
+<br><br>
+In the second sample the performances number 2, 4, 9 and 10 are amazing.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+5
+100 50 200 150 200
+output
+2
+
+input
+10
+4664 6496 5814 7010 5762 5736 6944 4850 3698 7242
+output
+4
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这道题用来求都有哪些成绩比之前的成绩都要高或者都要低</span>
+<span class="c">#比如第二个例子中 2, 4, 9 and 10的成绩就比之前的成绩高或者低</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">contestN</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">#定义一个最高成绩，一个最低成绩</span>
+<span class="n">maxScore</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">minScore</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c">#从头开始判断每次的成绩</span>
+<span class="c">#如果比之前的最高成绩高，或者最低成绩低，那么result加1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">contestN</span><span class="p">):</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="n">maxScore</span><span class="p">):</span>
+        <span class="n">maxScore</span> <span class="o">=</span> <span class="n">score</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span><span class="p">(</span><span class="n">score</span> <span class="o">&lt;</span> <span class="n">minScore</span><span class="p">):</span>
+        <span class="n">minScore</span> <span class="o">=</span> <span class="n">score</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span> <span class="n">result</span>
+</code></pre></div>
+<hr>
+
+<h1>118B Present from Lena</h1>
+
+<blockquote>
+<p>Vasya's birthday is approaching and Lena decided to sew a patterned handkerchief to him as a present. Lena chose digits from 0 to n as the pattern. The digits will form a rhombus. The largest digit n should be located in the centre. The digits should decrease as they approach the edges. For example, for n = 5 the handkerchief pattern should look like that:</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0<br>
+0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+<p>Your task is to determine the way the handkerchief will look like by the given n.</p>
+
+<strong>Input</strong><br>
+The first line contains the single integer n (2 ≤ n ≤ 9).
+<br>
+<br>
+<strong>Output</strong><br>
+Print a picture for the given n. You should strictly observe the number of spaces before the first digit on each line. Every two adjacent digits in the same line should be separated by exactly one space. There should be no spaces after the last digit at the end of each line.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+2
+output
+    0
+  0 1 0
+0 1 2 1 0
+  0 1 0
+    0
+
+input
+3
+output
+      0
+    0 1 0
+  0 1 2 1 0
+0 1 2 3 2 1 0
+  0 1 2 1 0
+    0 1 0
+      0
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这道题根据要求输出一个数字图形..看例子应该很容易理解。</span>
+<span class="c">#我的做法就是两次循环分别把上中间行上面和下面的分别进行输出</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="s">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">outputs</span> <span class="o">+</span> <span class="s">&quot;0&quot;</span>
+        <span class="k">continue</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="n">outputs</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; &quot;</span>
+    <span class="n">outputs</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">outputs</span> <span class="o">+=</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">outputs</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="s">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">outputs</span> <span class="o">+</span> <span class="s">&quot;0&quot;</span>
+        <span class="k">continue</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="n">outputs</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; &quot;</span>
+    <span class="n">outputs</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">outputs</span> <span class="o">+=</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">outputs</span>
+</code></pre></div>
+<hr>
+
+<h1>208A Dubstep</h1>
+
+<blockquote>
+<p>Vasya works as a DJ in the best Berland nightclub, and he often uses dubstep music in his performance. Recently, he has decided to take a couple of old songs and make dubstep remixes from them.</p>
+
+<p>Let's assume that a song consists of some number of words. To make the dubstep remix of this song, Vasya inserts a certain number of words "WUB" before the first word of the song (the number may be zero), after the last word (the number may be zero), and between words (at least one between any pair of neighbouring words), and then the boy glues together all the words, including "WUB", in one string and plays the song at the club.</p>
+
+<p>For example, a song with words "I AM X" can transform into a dubstep remix as "WUBWUBIWUBAMWUBWUBX" and cannot transform into "WUBWUBIAMWUBX".</p>
+
+<p>Recently, Petya has heard Vasya's new dubstep track, but since he isn't into modern music, he decided to find out what was the initial song that Vasya remixed. Help Petya restore the original song.</p>
+
+<strong>Input</strong><br>
+The input consists of a single non-empty string, consisting only of uppercase English letters, the string's length doesn't exceed 200 characters. It is guaranteed that before Vasya remixed the song, no word contained substring "WUB" in it; Vasya didn't change the word order. It is also guaranteed that initially the song had at least one word.
+<br>
+<br>
+<strong>Output</strong><br>
+Print the words of the initial song that Vasya used to make a dubsteb remix. Separate the words with a space.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first sample: "WUBWUBABCWUB" = "WUB" + "WUB" + "ABC" + "WUB". That means that the song originally consisted of a single word "ABC", and all words "WUB" were added by Vasya.
+<br><br>
+In the second sample Vasya added a single word "WUB" between all neighbouring words, in the beginning and in the end, except for words "ARE" and "THE" — between them Vasya added two "WUB".
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+WUBWUBABCWUB
+output
+ABC 
+
+input
+WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB
+output
+WE ARE THE CHAMPIONS MY FRIEND 
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#简单来说，就是把输入的字符串中的WUB全部替换成空格</span>
+<span class="c">#然后做去多余空格处理进行输出</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s">&quot;WUB&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span> <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">location</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;WUB&quot;</span><span class="p">)</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">words</span><span class="p">[:</span><span class="n">location</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">words</span><span class="p">[</span><span class="n">location</span><span class="o">+</span><span class="mi">3</span><span class="p">:]</span>
+<span class="k">print</span> <span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</code></pre></div>
+<hr>

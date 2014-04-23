@@ -1,0 +1,205 @@
+<h1>Windows下Scrapy环境搭建</h1>
+
+<h2>Python安装</h2>
+
+<ul>
+<li>  下载并安装<a href="http://www.python.org/">Python</a></li>
+<li>  安装后在系统环境变量PATH中<a href="http://blog.csdn.net/liguo9860/article/details/6829610">配置Python相关的环境变量</a></li>
+<li>  <code>$ python -V</code>查看是否安装并配置成功（注意：是大写的-V）</li>
+</ul>
+
+<hr>
+
+<h2>SetupTools安装</h2>
+
+<ul>
+<li>  easy_install实际上是setupTools里面的一个子工具，我们需要安装SetupTools来包含easy_install工具</li>
+<li>  下载脚本<a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a>至本地，例如D盘根目录</li>
+<li>  终端执行<code>$ python d:/ez_setup.py</code>进行SetupTools的安装</li>
+<li>  在运行的时候会发生一个错误，该错误为&quot;ascii codec can&#39;t decode byte 0xe8 in position 0:ordinal not in range(128)&quot;,大意为ascii编码不能解析byte 0xe8。解决方法：找到并打开python根目录/Lib/mimetypes.py文件，在<code>import urllib</code>后，添加代码:</li>
+</ul>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="nb">reload</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">setdefaultencoding</span><span class="p">(</span><span class="s">&#39;gbk&#39;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>  把默认编码方式改为gbk（网上有写用utf8的，在这个脚本中是无效的，需要改成gbk格式）。重新执行<code>$ python d:/ez_setup.py</code>，如果出现刷屏的安装信息，则说明安装成功了。此时，在python目录下多了一个Script文件夹，easy_install就在里面。</li>
+</ul>
+
+<hr>
+
+<h2>Pip安装</h2>
+
+<ul>
+<li>  接下来进入easy_install所在的文件夹，即Python根目录\Scripts执行以下命令进行pygments关联插件的安装：</li>
+<li>  执行<code>$ pip -V</code>来查看pip是否安装成功以及相应的安装版本</li>
+</ul>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">C:<span class="se">\P</span>ython27<span class="se">\S</span>cripts&gt; easy_install.exe pip
+</code></pre></div>
+<hr>
+
+<h2>环境变量设置和检查</h2>
+
+<ul>
+<li>      检查PATH中是否添加了<code>C:\Python27;</code>，如果没有则添加上。</li>
+<li>      检查PATH中是否添加了<code>C:\Python27\Scripts;</code>，如果没有则添加上。</li>
+<li>      检查PATHEXT中是否添加了<code>.EXE;</code>，如果没有则添加上。</li>
+<li>      检查PATHEXT中是否添加了<code>.PY;</code>，如果没有则添加上。</li>
+<li>      检查PATHEXT中是否添加了<code>.PYM</code>，如果没有则添加上。</li>
+</ul>
+
+<hr>
+
+<h2>Dependencies的预安装</h2>
+
+<p>以下所有程序都可以到我分享的<a href="http://pan.baidu.com/s/13oRlq">云盘</a>中找到,具体是在/polysaas/python/lib/目录下</p>
+
+<div class="note warning">
+  <h5>出现提示不能在注册表中识别出来python2.7的解决方法</h5>
+  <p>
+        新建一个register.py 文件，把文档尾部的代码贴进去，保存并执行
+  </p>
+</div>
+
+<p>在cmd中到该文件所在目录下，执行<code>$ python register.py</code><br>
+安装完成后会提示<code>--- Python 2.7 is now registered</code></p>
+
+<ul>
+<li>  安装lxml-3.2.4.win32-py2.7.exe(64位系统需要安装lxml-3.2.4.win-amd64-py2.7.exe)</li>
+<li>  安装pywin32-218.win32-py2.7.exe(64位系统需要安装pywin32-218.win-amd64-py2.7.exe)</li>
+<li>  安装Twisted-13.2.0.win32-py2.7.exe(64位系统需要安装Twisted-13.2.0.win-amd64-py2.7.exe)</li>
+<li>  安装pyOpenSSL-0.13.1.win32-py2.7.exe(64位系统需要安装pyOpenSSL-0.13.1.win-amd64-py2.7.exe)</li>
+<li>  将zope.interface-4.0.5-py2.7-win32.egg拷贝到C:\Python27\Scripts目录下，执行<code>$ easy_install.exe zope.interface-4.0.5-py2.7-win32.egg</code></li>
+<li>      执行<code>pip install pyYaml</code> YAML for Python库</li>
+<li>      执行<code>pip install requests==2.0.1</code> 安装requests库(upyun的依赖库)</li>
+<li>      执行<code>pip install upyun</code> 安装又拍云接口库</li>
+<li>      执行<code>pip install pybcs</code> 安装百度云接口库</li>
+<li>      执行<code>pip install progressbar</code> 安装依赖库</li>
+</ul>
+
+<p>验证dependecy是否安装成功的方法：<br></p>
+
+<ul>
+<li>  cmd执行<code>$ python</code>进入python控制台</li>
+<li>  执行<code>import lxml</code>，如果没报错，则说明lxml安装成功</li>
+<li>  执行<code>import twisted</code>，如果没报错，则说明twisted安装成功</li>
+<li>  执行<code>import OpenSSL</code>，如果没报错，则说明OpenSSL安装成功</li>
+<li>  执行<code>import zope.interface</code>，如果没报错，则说明zope.interface安装成功</li>
+</ul>
+
+<p>如果安装成功，那么在cmd中执行<code>&amp; python</code>，然后执行<code>import lxml</code>，如果没有报错，则说明lxml安装成功。</p>
+
+<hr>
+
+<h2>终于要安装Scrapy了....</h2>
+
+<p>解压缩Scrapy-0.20.2.tar.gz，在其目录下执行<code>$ python setup.py install</code>进行Scrapy的安装。至此......Scrapy就成功安装了。Linux系统的小盆友就不用这么麻烦了，几行命令搞定，自行搜索....</p>
+
+<p>检查Scrapy是否安装成功，可以在cmd控制台执行<code>$ scrapy</code> 如果没有报错，则说明安装成功</p>
+
+<hr>
+
+<h2>无法识别Python2.7的解决方法的代码</h2>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#</span>
+<span class="c"># script to register Python 2.0 or later for use with win32all</span>
+<span class="c"># and other extensions that require Python registry settings</span>
+<span class="c">#</span>
+<span class="c"># written by Joakim Loew for Secret Labs AB / PythonWare</span>
+<span class="c">#</span>
+<span class="c"># source:</span>
+<span class="c"># http://www.pythonware.com/products/works/articles/regpy20.htm</span>
+<span class="c">#</span>
+<span class="c"># modified by Valentine Gogichashvili as described in http://www.mail-archive.com/distutils-sig@python.org/msg10512.html</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">_winreg</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c"># tweak as necessary</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">installpath</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">prefix</span>
+
+<span class="n">regpath</span> <span class="o">=</span> <span class="s">&quot;SOFTWARE</span><span class="se">\\</span><span class="s">Python</span><span class="se">\\</span><span class="s">Pythoncore</span><span class="se">\\</span><span class="si">%s</span><span class="se">\\</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">version</span><span class="p">)</span>
+<span class="n">installkey</span> <span class="o">=</span> <span class="s">&quot;InstallPath&quot;</span>
+<span class="n">pythonkey</span> <span class="o">=</span> <span class="s">&quot;PythonPath&quot;</span>
+<span class="n">pythonpath</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">;</span><span class="si">%s</span><span class="se">\\</span><span class="s">Lib</span><span class="se">\\</span><span class="s">;</span><span class="si">%s</span><span class="se">\\</span><span class="s">DLLs</span><span class="se">\\</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+    <span class="n">installpath</span><span class="p">,</span> <span class="n">installpath</span><span class="p">,</span> <span class="n">installpath</span>
+<span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">RegisterPy</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">reg</span> <span class="o">=</span> <span class="n">OpenKey</span><span class="p">(</span><span class="n">HKEY_CURRENT_USER</span><span class="p">,</span> <span class="n">regpath</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">EnvironmentError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">reg</span> <span class="o">=</span> <span class="n">CreateKey</span><span class="p">(</span><span class="n">HKEY_CURRENT_USER</span><span class="p">,</span> <span class="n">regpath</span><span class="p">)</span>
+            <span class="n">SetValue</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">installkey</span><span class="p">,</span> <span class="n">REG_SZ</span><span class="p">,</span> <span class="n">installpath</span><span class="p">)</span>
+            <span class="n">SetValue</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">pythonkey</span><span class="p">,</span> <span class="n">REG_SZ</span><span class="p">,</span> <span class="n">pythonpath</span><span class="p">)</span>
+            <span class="n">CloseKey</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;*** Unable to register!&quot;</span>
+            <span class="k">return</span>
+        <span class="k">print</span> <span class="s">&quot;--- Python&quot;</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="s">&quot;is now registered!&quot;</span>
+        <span class="k">return</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">QueryValue</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">installkey</span><span class="p">)</span> <span class="o">==</span> <span class="n">installpath</span> <span class="ow">and</span>
+        <span class="n">QueryValue</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">pythonkey</span><span class="p">)</span> <span class="o">==</span> <span class="n">pythonpath</span><span class="p">):</span>
+        <span class="n">CloseKey</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">&quot;=== Python&quot;</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="s">&quot;is already registered!&quot;</span>
+        <span class="k">return</span>
+    <span class="n">CloseKey</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;*** Unable to register!&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;*** You probably have another Python installation!&quot;</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">RegisterPy</span><span class="p">()</span>
+</code></pre></div>
+<p><br></p>
+
+<h1>CentOS 6.4 64Bit下Scrapy环境搭建</h1>
+
+<h2>Pre-requisites</h2>
+
+<ul>
+<li>  update centOS lib to latest version by <code>yum -y update</code></li>
+<li>  install development tools by <code>yum groupinstall -y development</code></li>
+<li>  install additional pakage <code>yum install -y zlib-dev openssl-devel sqlite-devel bzip2-devel</code></li>
+<li>  download python v2.7.6 <code>wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz</code></li>
+<li>  unzip downloaded file <br>
+<code>xz -d Python-3.3.3.tar.xz</code><br> 
+<code>tar -xvf Python-3.3.3.tar</code></li>
+<li>  step into Python file by <code>cd Python-2.7.6</code></li>
+<li>  take installation by <code>./configure</code> and then <code>make &amp;&amp; make altinstall</code></li>
+</ul>
+
+<h2>Fix Yum python-2.7 unsurpported problem</h2>
+
+<p><code>mv /usr/bin/python /usr/bin/python2.6.6</code>
+<code>ln -s /usr/local/bin/python2.7 /usr/bin/python</code><br>
+change the first line code <code>#!/usr/bin/python</code> to <code>#!/usr/bin/python2.6.6</code></p>
+
+<h2>setuptools and pip installation</h2>
+<div class="highlight"><pre><code class="text language-text" data-lang="text"># Let&#39;s download the installation file using wget:
+wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-1.4.2.tar.gz
+
+# Extract the files from the archive:
+tar -xvf setuptools-1.4.2.tar.gz
+
+# Enter the extracted directory:
+cd setuptools-1.4.2
+
+# Install setuptools using the Python we&#39;ve installed (2.7.6)
+python setup.py install
+
+# Install pip
+easy_install pip
+#alternative
+curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python2.7 -
+</code></pre></div>
+<h2>Fix lxml installation error problem</h2>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">yum install libxslt-devel
+</code></pre></div>
+<h2>Scrapy Installation</h2>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">pip install scrapy
+</code></pre></div>
+<h2>Others</h2>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">pip install supervisor
+pip install web.py
+</code></pre></div>

@@ -1,0 +1,157 @@
+<h1>Javascript学习笔记(一)</h1>
+
+<hr>
+
+<h2>创建Object实例</h2>
+
+<ol>
+<li><p>使用new操作符后跟Object构造函数</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">persion</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">()</span>
+<span class="nx">persion</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Eric&quot;</span>
+<span class="nx">persion</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">27</span>
+</code></pre></div></li>
+<li><p><strong>对象字面量</strong>表示法</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">persion</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="o">:</span> <span class="s2">&quot;Eric&quot;</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">27</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li><p>利用<strong>对象字面量</strong>表示法先创建一个Object对象，再赋值</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">persion</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nx">persion</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Eric&quot;</span>
+<span class="nx">persion</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">27</span>
+</code></pre></div></li>
+</ol>
+
+<p><strong>Note</strong>: 使用对象字面量表示法定义对象时，不会调用Object构造函数(Firefox除外)</p>
+
+<hr>
+
+<h2>创建Array类型数组</h2>
+
+<ol>
+<li><p>基本方式，使用Array构造函数</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">colors_empty</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">()</span>              <span class="err">#创建空数组</span>
+</code></pre></div>
+<p>当给Array()传递的参数为一个值的时候，如果传递的参数为数字，则根据传入的数字生成相应长度的数组；如果传入的是其它类型的参数，则生成包含该参数的长度为1的数组。</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">colors_with_20_length</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>   <span class="err">#创建长度为</span><span class="mi">20</span><span class="err">的数组，每一项初始值为</span><span class="kc">undefined</span>
+<span class="kd">var</span> <span class="nx">colors_with_1_arg</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">&#39;Eric&#39;</span><span class="p">)</span>   <span class="err">#创建长度为</span><span class="mi">1</span><span class="err">的数组，</span><span class="nx">colors_with_1_arg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="err">为</span><span class="s1">&#39;Eric&#39;</span>
+</code></pre></div>
+<p>使用Array构造函数时，new操作符可以省略：</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">colors</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">names</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">&#39;Eric&#39;</span><span class="p">)</span>
+</code></pre></div></li>
+<li><p>字面量表示法</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">]</span>         <span class="err">#创建包含</span><span class="mi">3</span><span class="err">个字符串的数组</span>
+<span class="kd">var</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[]</span>                              <span class="err">#创建一个空数组</span>
+<span class="kd">var</span> <span class="nx">do_not_create_array_like_this</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,]</span>  <span class="err">#在不同的解释器下数组长度可能不同，容易产生异常错误，不要如此定义！</span>
+</code></pre></div></li>
+</ol>
+
+<p><strong>Note</strong>: 使用对象字面量表示法定义对象时，不会调用Array构造函数(Firefox除外)</p>
+
+<hr>
+
+<h2>数组的一些操作</h2>
+
+<h3>转换方法</h3>
+
+<p><code>toLocalString()</code> | <code>toString()</code> | <code>valueOf()</code> | <code>join()</code></p>
+
+<ul>
+<li><p><code>toString()</code>和<code>valueOf()</code>的区别：<code>toString()</code>偏重于显示，默认情况下它会将数据类型转换成String类型；<code>valueOf</code>会返回数据类型原本所拥有的数据类型。例如如下代码可以做一些区分。</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">test_type_of_number</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">test_type_of_number</span><span class="p">)</span>                 <span class="err">#</span><span class="nb">String</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">test_type_of_number</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">())</span>       <span class="err">#</span><span class="nx">number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">test_type_of_number</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span>      <span class="err">#</span><span class="nb">String</span>
+</code></pre></div></li>
+<li><p>在JavaScript高级程序设计(V2)中描述&quot;调用数组的<code>toString()</code>和<code>valuOf()</code>方法会返回相同的值，我认为是错误的。实际执行过程中发现:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">test_list</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">())</span>                        <span class="err">#</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">test_list</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span>                       <span class="err">#</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">test_list</span><span class="p">.</span><span class="nx">join</span><span class="p">())</span>                           <span class="err">#</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">test_list</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>                        <span class="err">#</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span>
+</code></pre></div></li>
+<li><p>从这点上来看，Array中的<code>toString()</code>方法会调用数组中每一项数据的<code>toString()</code>方法来获取所对应的字符串再用<code>,</code>链接起来。而<code>join()</code>和<code>join(&#39;,&#39;)</code>的执行过程与<code>toString()</code>完全一样。</p></li>
+<li><p><code>toLocalString()</code>和<code>toString()</code>的不同之处在于，他会调用数组中每一个子项的<code>toLocalString()</code>方法，而不是<code>toString()</code>，所以在使用的时候需要注意区分。利用<code>toLocalString()</code>可以实现不同格式的格式化。</p></li>
+</ul>
+
+<p><strong>Note</strong>: 利用<code>alert(xxx)</code>来查看的时候他会自动调用对应的toString()方法来进行显示。因此<code>alert(list.valueOf())</code>实际执行的是<code>alert(&#39;list.valueOf().toString()&#39;)</code></p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>                                             <span class="err">#</span><span class="mi">1</span><span class="err">，</span><span class="mi">2</span><span class="err">，</span><span class="mi">3</span><span class="err">，</span><span class="mi">4</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">())</span>                                   <span class="err">#</span><span class="mi">1</span><span class="err">，</span><span class="mi">2</span><span class="err">，</span><span class="mi">3</span><span class="err">，</span><span class="mi">4</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span>                                  <span class="err">#</span><span class="mi">1</span><span class="err">，</span><span class="mi">2</span><span class="err">，</span><span class="mi">3</span><span class="err">，</span><span class="mi">4</span>
+</code></pre></div>
+<h3>栈方法</h3>
+
+<p><code>push()</code> | <code>pop()</code></p>
+
+<ul>
+<li>  无难点，LIFO(Last-In-Frist-Out)栈结构的具体实现和操作方式</li>
+</ul>
+
+<h3>队列方法</h3>
+
+<p><code>push()</code> | <code>shift()</code> | <code>unshift()</code> | <code>pop()</code></p>
+
+<ul>
+<li>  FIFO(First-In-Frist-Out)队列结构的具体实现和操作</li>
+<li>  <code>push()</code>和<code>shift()</code>配合使用可以实现队列结构的具体操作</li>
+<li><p>&#39;unshift()&#39;和&#39;pop()&#39;配合使用可以实现逆序队列结构的具体操作</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>                                       <span class="err">#</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">shift</span><span class="p">())</span>                               <span class="err">#</span><span class="mi">1</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>                                       <span class="err">#</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>                                       <span class="err">#</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">pop</span><span class="p">())</span>                                 <span class="err">#</span><span class="mi">5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>                                       <span class="err">#</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div></li>
+</ul>
+
+<h3>排序方法</h3>
+
+<p><code>reverse()</code> | <code>sort()</code></p>
+
+<ul>
+<li>  <code>reverse()</code>方法就是将数组逆序排序</li>
+<li>  <code>sort()</code>方法相对复杂很多。首先<code>sort()</code>会调用数组中每一项元素的<code>toString</code>方法将其转换成String类型，然后对字符串的首字母进行排序比较。因此5和&#39;10&#39;排序，&#39;10&#39;会排在5前面。</li>
+<li><p><code>sort(function(value1,value2){})</code>可以接收一个比较函数，来改变<code>sort()</code>的默认比较行为。</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">sort</span><span class="p">()</span>                                             <span class="err">#</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span><span class="k">return</span> <span class="nx">x</span><span class="o">-</span><span class="nx">y</span><span class="p">})</span>                    <span class="err">#</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
+</code></pre></div></li>
+</ul>
+
+<h3>操作方法</h3>
+
+<p><code>concat()</code> | <code>slice()</code> | <code>splice()</code></p>
+
+<ul>
+<li><p><code>concat()</code>可以合并数组</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>                                      <span class="err">#</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">list_2</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">concat</span><span class="p">()</span>                              <span class="err">#</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">list_3</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>                   <span class="err">#</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+</code></pre></div></li>
+<li><p><code>slice()</code>切片方法接受1~2个参数。1个参数的表示返回从当前位置到末尾的新数组，类似于<code>list[index:]</code>; 2个参数表示返回从第一个参数到第二个参数（不包含第二个参数）的新数组，类似于<code>list[start,end]</code>。如果输入的参数为负数，表示从数组末尾往前数。</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">new_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                            <span class="err">#</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nx">new_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>                              <span class="err">#</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nx">new_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>                               <span class="err">#</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nx">new_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>                            <span class="err">#</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></li>
+<li><p><code>splice()</code>是对数组的操作方法，可以实现数组的增删改查功能，其输入参数格式如下：<code>splice(起始位置，要删除的项数，要插入的项)</code>，其中起始位置表示操作的起始index，要删除的项目表示从其实位置要删除几条数据，要插入的项表示都有哪些数据要插入(可以插入多项)</p>
+
+<ul>
+<li>  删除: <code>splice(起始位置, 删除的项数)</code></li>
+<li>  插入：<code>splice(起始位置, 0, 插入的数据)</code></li>
+<li>  替换：<code>splice(起始位置, 1, 替换的数据)</code></li>
+</ul></li>
+<li><p>测试代码如下：</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                                        <span class="err">#</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                                    <span class="err">#</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>                                    <span class="err">#</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div></li>
+</ul>

@@ -1,0 +1,1243 @@
+<div class="highlight"><pre><code class="text language-text" data-lang="text">选择题目的顺序是按照CodeForces上面Sovled排序而得到的。
+该文档中包含01-20道题目的解题方法和相应Python代码，他们分别是：
+1A     4A     158A   71A    118A   158B   50A    116A   231A   82A
+131A   282A   266A   119A   112A   133A   148A   96A    160A   228A
+</code></pre></div>
+<div class="note info">
+  <h5>关于Sample Test样式的问题</h5>
+  <p>目前我是直接用的pygments bash类型来对test进行处理，实际上我觉得input和output如果能带上颜色，那么会更直观一些。</p>
+  <p>如果有人对<a href="http://pygments.org/" target=_blank>Hacking For Pygments</a>感兴趣，可以试着增加对input和output的过滤识别并上色，或者也可以试着尝试一下pygments支持的哪种语言可以对其上色。</p>
+</div>
+
+<hr>
+
+<h1>1A Theatre Square</h1>
+
+<blockquote>
+<p>Theatre Square in the capital city of Berland has a rectangular shape with the size n × m meters. On the occasion of the city's anniversary, a decision was taken to pave the Square with square granite flagstones. Each flagstone is of the size a × a.</p>
+
+<p>What is the least number of flagstones needed to pave the Square? It's allowed to cover the surface larger than the Theatre Square, but the Square has to be covered. It's not allowed to break the flagstones. The sides of flagstones should be parallel to the sides of the Square.</p>
+
+<strong>Input</strong><br>
+The input contains three positive integer numbers in the first line: n,  m and a (1 ≤  n, m, a ≤ 10**9).
+<br>
+<br>
+<strong>Output</strong><br>
+Write the needed number of flagstones.<br>
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+6 6 4
+output
+4
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="c">#读取输入并将所输入的内容按照空格进行切片分割成数组</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="c">#分别获取n,m和a的值，并且转换为int类型</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="c">#math.ceil函数表示向上取整</span>
+<span class="c">#因为n和a都是整数，所以如果直接使用除法，则得到的是舍去小数的整数部分</span>
+<span class="c">#所以需要先将其转换为浮点数</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">a</span><span class="p">)</span>
+<span class="k">print</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h1>4A Watermelon</h1>
+
+<blockquote>
+<p>One hot summer day Pete and his friend Billy decided to buy a watermelon. They chose the biggest and the ripest one, in their opinion. After that the watermelon was weighed, and the scales showed w kilos. They rushed home, dying of thirst, and decided to divide the berry, however they faced a hard problem.</p>
+
+<p>Pete and Billy are great fans of even numbers, that's why they want to divide the watermelon in such a way that each of the two parts weighs even number of kilos, at the same time it is not obligatory that the parts are equal. The boys are extremely tired and want to start their meal as soon as possible, that's why you should help them and find out, if they can divide the watermelon in the way they want. For sure, each of them should get a part of positive weight.</p>
+
+<strong>Input</strong><br>
+The first (and the only) input line contains integer number w (1 ≤ w ≤ 100) — the weight of the watermelon bought by the boys.
+<br>
+<br>
+<strong>Output</strong><br>
+Print YES, if the boys can divide the watermelon into two parts, each of them weighing even number of kilos; and NO in the opposite case.
+<br>
+<br>
+<strong>Note</strong><br>
+For example, the boys can divide the watermelon into two parts of 2 and 6 kilos respectively (another variant — two parts of 4 and 4 kilos).
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+8
+output
+YES
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这道题实际上就是来判断一个数是否可以分成2个偶数</span>
+<span class="c">#因为偶数+偶数一定是一个偶数，所以任意奇数都一定不可分</span>
+<span class="c">#另外偶数为2只能分成1和1，故如果w为2也返回NO</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">w</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">w</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="k">print</span> <span class="s">&quot;NO&quot;</span>
+<span class="k">else</span><span class="p">:</span> <span class="k">print</span> <span class="s">&quot;YES&quot;</span>
+</code></pre></div>
+<hr>
+
+<h1>158A Next Round</h1>
+
+<blockquote>
+<p>"Contestant who earns a score equal to or greater than the k-th place finisher's score will advance to the next round, as long as the contestant earns a positive score..." — an excerpt from contest rules.</p>
+
+<p>A total of n participants took part in the contest (n ≥ k), and you already know their scores. Calculate how many participants will advance to the next round.</p>
+
+<strong>Input</strong><br>
+The first line of the input contains two integers n and k (1 ≤ k ≤ n ≤ 50) separated by a single space.
+
+The second line contains n space-separated integers a1, a2, ..., an (0 ≤ ai ≤ 100), where ai is the score earned by the participant who got the i-th place. The given sequence is non-increasing (that is, for all i from 1 to n - 1 the following condition is fulfilled: ai ≥ ai + 1).
+<br>
+<br>
+<strong>Output</strong><br>
+Output the number of participants who advance to the next round.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first example the participant on the 5th place earned 7 points. As the participant on the 6th place also earned 7 points, there are 6 advancers.
+
+In the second example nobody got a positive score.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+8 5
+10 9 8 7 7 7 5 5
+output
+6
+
+input
+4 2
+0 0 0 0
+output
+0
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#第一行输入为n和k,n表示第二行输入有n个数字</span>
+<span class="c">#输出第二行有多少输入的数字的值大于等于第k个数的值，即ak</span>
+<span class="c">#ak如果为0，则输出的是有多少数大于ak的值</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#获得第一行输入</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c">#获得第二行输入</span>
+<span class="n">an</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="c">#获得ak的值</span>
+<span class="n">ak</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">an</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">#如果ak为0，则计算大于ak的数字总共有多少个</span>
+<span class="k">if</span> <span class="n">ak</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">an</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
+            <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+<span class="c">#如果ak不为0，则计算大于等于ak的数字总共有多少个</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">an</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">&gt;=</span><span class="n">ak</span><span class="p">):</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+<span class="k">print</span> <span class="n">count</span>
+</code></pre></div>
+<hr>
+
+<h1>71A Way Too Long Words</h1>
+
+<blockquote>
+<p>Sometimes some words like "localization" or "internationalization" are so long that writing them many times in one text is quite tiresome.</p>
+
+<p>Let's consider a word too long, if its length is strictly more than 10 characters. All too long words should be replaced with a special abbreviation.</p>
+
+<p>This abbreviation is made like this: we write down the first and the last letter of a word and between them we write the number of letters between the first and the last letters. That number is in decimal system and doesn't contain any leading zeroes.</p>
+
+<p>Thus, "localization" will be spelt as "l10n", and "internationalization» will be spelt as "i18n".</p>
+
+<p>You are suggested to automatize the process of changing the words with abbreviations. At that all too long words should be replaced by the abbreviation and the words that are not too long should not undergo any changes.</p>
+
+<strong>Input</strong><br>
+The first line contains an integer n (1 ≤ n ≤ 100). Each of the following n lines contains one word. All the words consist of lowercase Latin letters and possess the lengths of from 1 to 100 characters.
+<br>
+<br>
+<strong>Output</strong><br>
+Print n lines. The i-th line should contain the result of replacing of the i-th word from the input data.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+4
+word
+localization
+internationalization
+pneumonoultramicroscopicsilicovolcanoconiosis
+output
+word
+l10n
+i18n
+p43s
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这道题主要是对输入的单词进行缩写</span>
+<span class="c">#缩写的格式为：</span>
+<span class="c">#如果单词小于10个字母，那么正常输出该单词</span>
+<span class="c">#如果单词大于10个字母，那么输出首字母+中间字母的个数+尾字母</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#读入第一行输入，第一行输入用来确定总共数据几行单词进行转换</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="c">#进行循环读取</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+    <span class="c">#readline()函数会将一行中的换行符读取进来，所以需要strip()进行格式化</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="c">#len()函数用来统计字符串长度</span>
+    <span class="n">wordLenght</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="c">#如果单词长度大于10，则按照首字母+中间字母的个数+尾字母进行输出</span>
+    <span class="k">if</span> <span class="n">wordLenght</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s%d%s</span><span class="s">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">wordLenght</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">word</span><span class="p">[</span><span class="n">wordLenght</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c">#如果单词长度小于10，则直接输出该单词</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">word</span>
+</code></pre></div>
+<hr>
+
+<h1>118A String Task</h1>
+
+<blockquote>
+<p>Petya started to attend programming lessons. On the first lesson his task was to write a simple program. The program was supposed to do the following: in the given string, consisting if uppercase and lowercase Latin letters, it:</p>
+* deletes all the vowels,<br>
+* inserts a character "." before each consonant,<br>
+* replaces all uppercase consonants with corresponding lowercase ones.<br>
+<p>Vowels are letters "A", "O", "Y", "E", "U", "I", and the rest are consonants. The program's input is exactly one string, it should return the output as a single string, resulting after the program's processing the initial string.</p>
+<p>Help Petya cope with this easy task.</p>
+
+<strong>Input</strong><br>
+The first line represents input string of Petya's program. This string only consists of uppercase and lowercase Latin letters and its length is from 1 to 100, inclusive.
+<br>
+<br>
+<strong>Output</strong><br>
+Print the resulting string. It is guaranteed that this string is not empty.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+tour
+output
+.t.r
+
+input
+Codeforces
+output
+.c.d.f.r.c.s
+
+input
+aBAcAba
+output
+.b.c.b
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#给定输入的单词，对其进行去元音并在辅音前面加上&quot;.&quot;</span>
+<span class="c">#另外需要将其变成小写字母</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#读取输入的单词，并把每个字母转换成小写字母</span>
+<span class="n">word</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="c">#建立一个map，key是aoyeui这些元音</span>
+<span class="n">vowels</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;o&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;e&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;u&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;i&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
+    <span class="c">#遍历输入的单词的字母</span>
+    <span class="c">#如果字母为原因则忽略，如果不是原因则加上&quot;.&quot;拼接到result字符串上</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">vowels</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="s">&quot;.&quot;</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">result</span>
+</code></pre></div>
+<hr>
+
+<h1>158B Taxi</h1>
+
+<blockquote>
+<p>After the lessons n groups of schoolchildren went outside and decided to visit Polycarpus to celebrate his birthday. We know that the i-th group consists of si friends (1 ≤ si ≤ 4), and they want to go to Polycarpus together. They decided to get there by taxi. Each car can carry at most four passengers. What minimum number of cars will the children need if all members of each group should ride in the same taxi (but one taxi can take more than one group)?</p>
+
+<strong>Input</strong><br>
+The first line contains integer n (1 ≤ n ≤ 10**5) — the number of groups of schoolchildren. The second line contains a sequence of integers s1, s2, ..., sn (1 ≤ si ≤ 4). The integers are separated by a space, si is the number of children in the i-th group.
+<br>
+<br>
+<strong>Output</strong><br>
+Print the single number — the minimum number of taxis necessary to drive all children to Polycarpus.
+<br>
+<br>
+<strong>Note</strong><br>
+<p>In the first test we can sort the children into four cars like this:</p>
+* the third group (consisting of four children),<br>
+* the fourth group (consisting of three children),<br>
+* the fifth group (consisting of three children),<br>
+* the first and the second group (consisting of one and two children, correspondingly).
+<br>
+<br>
+There are other ways to sort the groups into four cars.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+5
+1 2 4 3 3
+output
+4
+
+input
+8
+2 3 4 4 2 1 3 1
+output
+5
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#题目还是很简单清晰的</span>
+<span class="c">#第一行输入表示有几组人要去打车</span>
+<span class="c">#第二行输入表示每组有多少个人</span>
+<span class="c">#题目要求计算最少需要打多少辆车(每组人必须坐一辆车，车上最多坐4个人)</span>
+<span class="c">#也就是说：</span>
+<span class="c">#4人组的肯定是自己一辆车</span>
+<span class="c">#如果还有1人组，那么3人组需要和1人组合乘一辆车，否则3人组自己一辆车</span>
+<span class="c">#2人组可以和2个1人组合乘，也可以和另外一个两人组合乘</span>
+<span class="c">#1人组可以和其它的一人组合乘</span>
+<span class="c">#额...我觉得自己做麻烦了...自己都不愿意看了==！</span>
+<span class="c">#这个有人有更简介的做法吗？</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">groupN</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">cars</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">#对组进行排序</span>
+<span class="n">groups</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="c">#处理4人组</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;4&#39;</span><span class="p">:</span>
+        <span class="n">cars</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">del</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="c">#print &quot;4 | %d&quot; %cars</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="c">#处理3人组</span>
+<span class="n">threeCount</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;3&#39;</span><span class="p">:</span>
+        <span class="n">cars</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c">#print &quot;3 | %d&quot; %cars</span>
+        <span class="k">del</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">threeCount</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;1&#39;</span> <span class="ow">and</span> <span class="n">threeCount</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">del</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">threeCount</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="c">#处理两人组</span>
+<span class="n">twoStart</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">twoEnd</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;2&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">twoStart</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="n">twoStart</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">twoEnd</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="k">if</span> <span class="n">twoStart</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">twoCount</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">twoCount</span> <span class="o">=</span> <span class="n">twoStart</span> <span class="o">-</span> <span class="n">twoEnd</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">twoCount</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">twoCount</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cars</span> <span class="o">+=</span> <span class="n">twoCount</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="c">#print &quot;2 | %d &quot; %(cars)</span>
+        <span class="k">del</span> <span class="n">groups</span><span class="p">[</span><span class="n">twoEnd</span><span class="p">:]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">cars</span> <span class="o">+=</span> <span class="p">(</span><span class="n">twoCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="c">#print &quot;2 | %d&quot; %(cars) </span>
+    <span class="k">del</span> <span class="n">groups</span><span class="p">[</span><span class="n">twoEnd</span> <span class="p">:]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;1&#39;</span><span class="p">:</span>
+            <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">twoEnd</span><span class="p">:</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">break</span>
+<span class="c">#处理一人组</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">groups</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;1&#39;</span><span class="p">:</span>
+        <span class="n">oneCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span>
+        <span class="k">if</span> <span class="n">oneCount</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">cars</span> <span class="o">+=</span> <span class="n">oneCount</span> <span class="o">/</span> <span class="mi">4</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cars</span> <span class="o">+=</span> <span class="p">(</span><span class="n">oneCount</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">break</span>
+<span class="c">#输出需要多少量车</span>
+<span class="k">print</span> <span class="n">cars</span>
+<span class="c">#################################################</span>
+<span class="c">#以下是晓琳给出的代码(看不明白的去找张晓琳同学哦)</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">math</span>
+<span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">num</span><span class="p">,</span><span class="n">num1</span><span class="p">,</span><span class="n">num3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()),[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()],</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span> <span class="n">num1</span><span class="p">,</span><span class="n">num3</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">num1</span><span class="p">,</span> <span class="n">num3</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">else</span> <span class="n">num3</span> 
+<span class="k">if</span> <span class="p">(</span><span class="n">num3</span> <span class="o">&gt;=</span> <span class="n">num1</span><span class="p">):</span> <span class="n">num</span> <span class="o">=</span> <span class="n">num3</span> <span class="o">-</span> <span class="n">num1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="k">print</span> <span class="nb">int</span><span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">((</span><span class="n">s</span> <span class="o">-</span> <span class="n">num</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">num</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h1>50A Domino piling</h1>
+
+<blockquote>
+<p>You are given a rectangular board of M × N squares. Also you are given an unlimited number of standard domino pieces of 2 × 1 squares. You are allowed to rotate the pieces. You are asked to place as many dominoes as possible on the board so as to meet the following conditions:</p>
+
+1. Each domino completely covers two squares.<br>
+2. No two dominoes overlap.<br>
+3. Each domino lies entirely inside the board. It is allowed to touch the edges of the board.<br>
+
+<p>Find the maximum number of dominoes, which can be placed under these restrictions.</p>
+
+<strong>Input</strong><br>
+In a single line you are given two integers M and N — board sizes in squares (1 ≤ M ≤ N ≤ 16).
+<br>
+<br>
+<strong>Output</strong><br>
+Output one number — the maximal number of dominoes, which can be placed.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+2 4
+output
+4
+
+input
+3 3
+output
+4
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这个题目理解了还是比较容易的...</span>
+<span class="c">#其实就是domino铺满整个方形区域，不能覆盖，不能超出，所以能铺多少是多少。</span>
+<span class="c">#区域面积是m*n...domino面即使1*2...所以可以铺m*n/2块</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<hr>
+
+<h1>116A Tram</h1>
+
+<blockquote>
+<p>Linear Kingdom has exactly one tram line. It has n stops, numbered from 1 to n in the order of tram's movement. At the i-th stop ai passengers exit the tram, while bi passengers enter it. The tram is empty before it arrives at the first stop. Also, when the tram arrives at the last stop, all passengers exit so that it becomes empty.</p>
+
+<p>Your task is to calculate the tram's minimum capacity such that the number of people inside the tram at any time never exceeds this capacity. Note that at each stop all exiting passengers exit before any entering passenger enters the tram.</p>
+
+<strong>Input</strong><br>
+The first line contains a single number n (2 ≤ n ≤ 1000) — the number of the tram's stops.<br>
+
+<p>Then n lines follow, each contains two integers ai and bi (0 ≤ ai, bi ≤ 1000) — the number of passengers that exits the tram at the i-th stop, and the number of passengers that enter the tram at the i-th stop. The stops are given from the first to the last stop in the order of tram's movement.</p>
+
+* The number of people who exit at a given stop does not exceed the total number of people in the tram immediately before it arrives at the stop. More formally, <img src="http://espresso.codeforces.com/eb1e20fd58cc4373d8f42eb7e743d3ea232d1a19.png"/>. This particularly means that a1 = 0.<br>
+* At the last stop, all the passengers exit the tram and it becomes empty. More formally, <img src="http://espresso.codeforces.com/8cbe43ecd252bf7d670f9a3956cbe50263d2f09b.png"/><br>
+* No passenger will enter the train at the last stop. That is, bn = 0.
+<br>
+<br>
+<strong>Output</strong><br>
+Print a single integer denoting the minimum possible capacity of the tram (0 is allowed).
+<br>
+<br>
+<strong>Note</strong><br>
+For the first example, a capacity of 6 is sufficient:
+<br>
+<br>
+* At the first stop, the number of passengers inside the tram before arriving is 0. Then, 3 passengers enter the tram, and the number of passengers inside the tram becomes 3.<br>
+* At the second stop, 2 passengers exit the tram (1 passenger remains inside). Then, 5 passengers enter the tram. There are 6 passengers inside the tram now.<br>
+* At the third stop, 4 passengers exit the tram (2 passengers remain inside). Then, 2 passengers enter the tram. There are 4 passengers inside the tram now.<br>
+* Finally, all the remaining passengers inside the tram exit the tram at the last stop. There are no passenger inside the tram now, which is in line with the constraints.<br>
+<p>Since the number of passengers inside the tram never exceeds 6, a capacity of 6 is sufficient. Furthermore it is not possible for the tram to have a capacity less than 6. Hence, 6 is the correct answer.</p>
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+4
+0 3
+2 5
+4 2
+4 0
+output
+6
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这道题主要是阅读题...</span>
+<span class="c">#第一行输入为总共有几站</span>
+<span class="c">#接下来的输入就分别是下了多少人，上了多少人</span>
+<span class="c">#最后输出的是这个Tram可以容纳多少人</span>
+<span class="c">#实际上就是求出一路上下旅客中，旅客最多的时候是多少人</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#第一行输入有多少站</span>
+<span class="n">stops</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">maxCapacity</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">capacity</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">#循环输入</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stops</span><span class="p">):</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">stepOut</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">stepIn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="c">#算出当前车上的人数</span>
+        <span class="c">#当前车上人数 = 之前车上人数 - 下车的人数 + 上车的人数</span>
+    <span class="n">capacity</span> <span class="o">=</span> <span class="n">capacity</span> <span class="o">-</span> <span class="n">stepOut</span> <span class="o">+</span> <span class="n">stepIn</span>
+    <span class="c">#和最大人数进行比较并保存最大人数</span>
+        <span class="n">maxCapacity</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxCapacity</span><span class="p">,</span> <span class="n">capacity</span><span class="p">)</span>
+<span class="c">#输出车上最大人数</span>
+<span class="k">print</span> <span class="n">maxCapacity</span>
+</code></pre></div>
+<hr>
+
+<h1>231A Team</h1>
+
+<blockquote>
+<p>One day three best friends Petya, Vasya and Tonya decided to form a team and take part in programming contests. Participants are usually offered several problems during programming contests. Long before the start the friends decided that they will implement a problem if at least two of them are sure about the solution. Otherwise, the friends won't write the problem's solution.</p>
+
+<p>This contest offers n problems to the participants. For each problem we know, which friend is sure about the solution. Help the friends find the number of problems for which they will write a solution.</p>
+
+<strong>Input</strong><br>
+The first input line contains a single integer n (1 ≤ n ≤ 1000) — the number of problems in the contest. Then n lines contain three integers each, each integer is either 0 or 1. If the first number in the line equals 1, then Petya is sure about the problem's solution, otherwise he isn't sure. The second number shows Vasya's view on the solution, the third number shows Tonya's view. The numbers on the lines are separated by spaces.
+<br>
+<br>
+<strong>Output</strong><br>
+Print a single integer — the number of problems the friends will implement on the contest.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first sample Petya and Vasya are sure that they know how to solve the first problem and all three of them know how to solve the second problem. That means that they will write solutions for these problems. Only Petya is sure about the solution for the third problem, but that isn't enough, so the friends won't take it.
+<br>
+<p>In the second sample the friends will only implement the second problem, as Vasya and Tonya are sure about the solution.</p>
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+3
+1 1 0
+1 1 1
+1 0 0
+output
+2
+
+input
+2
+1 0 0
+0 1 1
+output
+1
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#当三个人中至少有两个人确定能做出来竞赛题目，他们才会去做这道题</span>
+<span class="c">#题目要求统计总共有多少行输入里面至少包含2个1</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">sovled</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">unsure</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)):</span>
+        <span class="c">#注意直接用split()获取的inputs存放的是字符串而不是数字</span>
+        <span class="k">if</span> <span class="n">inputs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;0&quot;</span><span class="p">:</span> <span class="n">unsure</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">unsure</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="n">sovled</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span> <span class="n">sovled</span>
+</code></pre></div>
+<hr>
+
+<h1>82A Double Cola</h1>
+
+<blockquote>
+<p>Sheldon, Leonard, Penny, Rajesh and Howard are in the queue for a "Double Cola" drink vending machine; there are no other people in the queue. The first one in the queue (Sheldon) buys a can, drinks it and doubles! The resulting two Sheldons go to the end of the queue. Then the next in the queue (Leonard) buys a can, drinks it and gets to the end of the queue as two Leonards, and so on. This process continues ad infinitum.</p>
+
+<p>For example, Penny drinks the third can of cola and the queue will look like this: Rajesh, Howard, Sheldon, Sheldon, Leonard, Leonard, Penny, Penny.</p>
+
+<p>Write a program that will print the name of a man who will drink the n-th can.</p>
+
+<p>Note that in the very beginning the queue looks like that: Sheldon, Leonard, Penny, Rajesh, Howard. The first person is Sheldon.</p>
+
+<strong>Input</strong><br>
+The input data consist of a single integer n (1 ≤ n ≤ 10**9).
+<br>
+<p>It is guaranteed that the pretests check the spelling of all the five names, that is, that they contain all the five possible answers.</p>
+<strong>Output</strong><br>
+Print the single line — the name of the person who drinks the n-th can of cola. The cans are numbered starting from 1. Please note that you should spell the names like this: "Sheldon", "Leonard", "Penny", "Rajesh", "Howard" (without the quotes). In that order precisely the friends are in the queue initially.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+1
+output
+Sheldon
+
+input
+6
+output
+Sheldon
+
+input
+1802
+output
+Penny
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#简单中文描述就是：</span>
+<span class="c">#5个人排队喝神奇可乐，分别是Sheldon,Lenard,Penny,Rajesh,Howard</span>
+<span class="c">#每个人喝完可乐以后会分裂成2个同样的人，并且到队尾排队继续等待喝可乐。</span>
+<span class="c">#比如最开始的时候，首先是Sheldon去喝可乐，喝完以后</span>
+<span class="c">#这时候队列就变成了Lenard,Penny,Rajesh,Howard,Sheldon,Sheldon</span>
+<span class="c">#这道题要求输出第n个人应该是谁在喝可乐</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="c">#我的做法是定义一个因子factor</span>
+<span class="c">#factor表示的第几轮，没经过一轮实际上队列就会翻倍</span>
+<span class="c">#第一轮结束，就有1*5个人加入到队列中</span>
+<span class="c">#第二轮结束，就有2*5个人假如到队列中</span>
+<span class="c">#以此类推</span>
+<span class="n">drinked</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">drinked</span> <span class="o">+</span> <span class="n">factor</span> <span class="o">*</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">people</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">((</span><span class="n">n</span> <span class="o">-</span> <span class="n">drinked</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">people</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">print</span> <span class="s">&quot;Sheldon&quot;</span>
+        <span class="k">elif</span> <span class="n">people</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="k">print</span> <span class="s">&quot;Leonard&quot;</span>
+        <span class="k">elif</span> <span class="n">people</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> <span class="k">print</span> <span class="s">&quot;Penny&quot;</span>
+        <span class="k">elif</span> <span class="n">people</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span> <span class="k">print</span> <span class="s">&quot;Rajesh&quot;</span>
+        <span class="k">elif</span> <span class="n">people</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span> <span class="k">print</span> <span class="s">&quot;Howard&quot;</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">drinked</span> <span class="o">=</span> <span class="n">drinked</span> <span class="o">+</span> <span class="n">factor</span> <span class="o">*</span> <span class="mi">5</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="n">factor</span> <span class="o">*</span> <span class="mi">2</span>
+        <span class="c">#print &quot;drinked = %d | facotr = %d&quot; %(drinked, factor)</span>
+</code></pre></div>
+<hr>
+
+<h1>131A cAPS lOCK</h1>
+
+<blockquote>
+<p>wHAT DO WE NEED cAPS LOCK FOR?</p>
+
+<p>Caps lock is a computer keyboard key. Pressing it sets an input mode in which typed letters are capital by default. If it is pressed by accident, it leads to accidents like the one we had in the first passage.</p>
+
+<p>Let's consider that a word has been typed with the Caps lock key accidentally switched on, if:</p>
+
+* either it only contains uppercase letters;
+* or all letters except for the first one are uppercase.
+
+<p>In this case we should automatically change the case of all letters. For example, the case of the letters that form words "hELLO", "HTTP", "z" should be changed.</p>
+
+<p>Write a program that applies the rule mentioned above. If the rule cannot be applied, the program should leave the word unchanged.</p>
+
+<strong>Input</strong><br>
+The first line of the input data contains a word consisting of uppercase and lowercase Latin letters. The word's length is from 1 to 100 characters, inclusive.
+<br>
+<br>
+<strong>Output</strong><br>
+Print the result of the given word's processing.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+cAPS
+output
+Caps
+
+input
+Lock
+output
+Lock
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#当大写Caps Lock无意中被按中的话，输出的字母都是反的</span>
+<span class="c">#正常一个单词Caps可以就变成了cACPS</span>
+<span class="c">#这道题就是要把这种错误纠正过来。</span>
+<span class="c">#第一种情况是全是大写字母，要变成小写字母</span>
+<span class="c">#第二种情况是除了首字母以外都是大写，要将其反过来，就像cAPS一样</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">word</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="c">#设置一个布尔类型，用来判断首字母是否为大写</span>
+<span class="n">firstCharLower</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">result</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
+    <span class="c">#如果是首字母，则判断是否为大写并设置firstCharLower</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span> 
+            <span class="n">firstCharLower</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">firstCharLower</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c">#如果不是首字母</span>
+        <span class="c">#则根据firstCharLower来采取不同的判断方式</span>
+        <span class="k">if</span> <span class="n">firstCharLower</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">word</span>
+                <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">():</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">word</span>
+                <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">result</span>
+</code></pre></div>
+<hr>
+
+<h1>282A Bit++</h1>
+
+<blockquote>
+<p>The classic programming language of Bitland is Bit++. This language is so peculiar and complicated.</p>
+
+<p>The language is that peculiar as it has exactly one variable, called x. Also, there are two operations:</p>
+
+* Operation ++ increases the value of variable x by 1.<br>
+* Operation -- decreases the value of variable x by 1.
+<p>A statement in language Bit++ is a sequence, consisting of exactly one operation and one variable x. The statement is written without spaces, that is, it can only contain characters "+", "-", "X". Executing a statement means applying the operation it contains.
+
+<p>A programme in Bit++ is a sequence of statements, each of them needs to be executed. Executing a programme means executing all the statements it contains.</p>
+
+<p>You're given a programme in language Bit++. The initial value of x is 0. Execute the programme and find its final value (the value of the variable when this programme is executed).</p>
+
+<strong>Input</strong><br>
+The first line contains a single integer n (1 ≤ n ≤ 150) — the number of statements in the programme.
+<br>
+<p>Next n lines contain a statement each. Each statement contains exactly one operation (++ or --) and exactly one variable x (denoted as letter «X»). Thus, there are no empty statements. The operation and the variable can be written in any order.</p>
+<strong>Output</strong><br>
+Print a single integer — the final value of x.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+1
+++X
+output
+1
+
+input
+2
+X++
+--X
+output
+0
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#第一行输入表示总共有几步操作</span>
+<span class="c">#X初始值为0</span>
+<span class="c">#直接判断输入中是否含有&quot;+&quot;或者&quot;-&quot;来进行加减操作就可以了</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">#循环处理输入，用string.find(&#39;+&#39;)函数来检查时候含有&quot;+&quot;</span>
+<span class="c">#这里用到了三元运算符，在java里是exp1?exp2:exp3</span>
+<span class="c">#python里面的使用方式为(相对于java来说):exp2 if exp1 else exp3</span>
+<span class="c">#即：如果exp1返回True,则执行exp2，否则执行exp3</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">inputs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;+&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="n">result</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span> <span class="n">result</span>
+</code></pre></div>
+<hr>
+
+<h1>266A Stones on the Table</h1>
+
+<blockquote>
+<p>There are n stones on the table in a row, each of them can be red, green or blue. Count the minimum number of stones to take from the table so that any two neighboring stones had different colors. Stones in a row are considered neighboring if there are no other stones between them.</p>
+
+<strong>Input</strong><br>
+The first line contains integer n (1 ≤ n ≤ 50) — the number of stones on the table.
+
+<p>The next line contains string s, which represents the colors of the stones. We'll consider the stones in the row numbered from 1 to n from left to right. Then the i-th character s equals "R", if the i-th stone is red, "G", if it's green and "B", if it's blue.</p>
+
+<strong>Output</strong><br>
+Print a single integer — the answer to the problem.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+3
+RRG
+output
+1
+
+input
+5
+RRRRR
+output
+4
+
+input
+4
+BRBG
+output
+0
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#需要拿掉最少多少块带颜色的石头才能保证每块石头与相邻的石头颜色不同</span>
+<span class="c">#任意N块挨着的石头就一定得拿走N-1块。</span>
+<span class="c">#只需要从头遍历一遍，发现相同颜色的石头则记录下来就可以了</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">mini</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">cmpColor</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c">#currentColor用来记录当前石头的颜色</span>
+    <span class="c">#cmpColor用来记录上一块需要比较颜色的石头的颜色</span>
+    <span class="n">currentColor</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="c">#如果石头颜色相同，则mini加1，cmpColor不变</span>
+    <span class="c">#如果石头颜色不同，则改变cmColor为当前石块的颜色</span>
+    <span class="k">if</span> <span class="n">currentColor</span> <span class="o">==</span> <span class="n">cmpColor</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cmpColor</span> <span class="o">=</span> <span class="n">currentColor</span>
+<span class="k">print</span> <span class="n">mini</span>
+</code></pre></div>
+<hr>
+
+<h1>119A Epic Game</h1>
+
+<blockquote>
+<p>Simon and Antisimon play a game. Initially each player receives one fixed positive integer that doesn't change throughout the game. Simon receives number a and Antisimon receives number b. They also have a heap of n stones. The players take turns to make a move and Simon starts. During a move a player should take from the heap the number of stones equal to the greatest common divisor of the fixed number he has received and the number of stones left in the heap. A player loses when he cannot take the required number of stones (i. e. the heap has strictly less stones left than one needs to take).</p>
+
+<p>Your task is to determine by the given a, b and n who wins the game.</p>
+
+<strong>Input</strong><br>
+The only string contains space-separated integers a, b and n (1 ≤ a, b, n ≤ 100) — the fixed numbers Simon and Antisimon have received correspondingly and the initial number of stones in the pile.
+<br>
+<br>
+<strong>Output</strong><br>
+If Simon wins, print "0" (without the quotes), otherwise print "1" (without the quotes).
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+3 5 9
+output
+0
+
+input
+1 1 100
+output
+1
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#Simon和Antisimon在玩一个游戏，他们分解获得a和b两个数字</span>
+<span class="c">#有一个石头堆，总共有n块石头</span>
+<span class="c">#Simon和Antisimon轮流从石头堆中拿石头</span>
+<span class="c">#每次拿石头的数量是他们所拥有的数字(a或者b)与剩下石头的最大公约数</span>
+<span class="c">#直到没有石头可拿为止</span>
+<span class="c">#如果Simon赢了，输出0，如果Antisimon赢了，输出1</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#首先定义一个计算最大公约数的函数</span>
+<span class="c">#注意：数字k和0的最大公约数是k(题目中给出的定义)</span>
+<span class="c"># def function(para1,para2):  函数定义，具体请参考Python的基础语法教程</span>
+<span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">temp</span>
+    <span class="k">return</span> <span class="n">a</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">turn</span> <span class="o">=</span> <span class="mi">1</span> <span class="c">#1 stands for simon&#39;s turn, 0 stands for Antisimon&#39;s turn</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">turn</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="n">turn</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="n">l</span>
+        <span class="n">turn</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="n">l</span>
+        <span class="n">turn</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div>
+<hr>
+
+<h1>121A Petya and Strings</h1>
+
+<blockquote>
+<p>Little Petya loves presents. His mum bought him two strings of the same size for his birthday. The strings consist of uppercase and lowercase Latin letters. Now Petya wants to compare those two strings lexicographically. The letters' case does not matter, that is an uppercase letter is considered equivalent to the corresponding lowercase letter. Help Petya perform the comparison.</p>
+
+<strong>Input</strong><br>
+Each of the first two lines contains a bought string. The strings' lengths range from 1 to 100 inclusive. It is guaranteed that the strings are of the same length and also consist of uppercase and lowercase Latin letters.
+<br>
+<br>
+<strong>Output</strong><br>
+If the first string is less than the second one, print "-1". If the second string is less than the first one, print "1". If the strings are equal, print "0". Note that the letters' case is not taken into consideration when the strings are compared.
+<br>
+<br>
+<strong>Note</strong><br>
+If you want more formal information about the lexicographical order (also known as the "dictionary order" or "alphabetical order"), you can visit the following site: http://en.wikipedia.org/wiki/Lexicographical_order
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+aaaa
+aaaA
+output
+0
+
+input
+abs
+Abz
+output
+-1
+
+input
+abcdefg
+AbCdEfF
+output
+1
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#输入两段字符串，比较两段字符串大小</span>
+<span class="c">#题目要求忽略大小写，所以首先把字符串全部转换成小写</span>
+<span class="c">#从头开始逐字母进行比较</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#lower()函数会将字符串中所有字母转换成小写</span>
+<span class="c">#upper()函数会将字符串中所有字母转换成大写</span>
+<span class="n">firstS</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">secondS</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">firstS</span><span class="p">)):</span>
+    <span class="n">firstChar</span> <span class="o">=</span> <span class="n">firstS</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">secondChar</span> <span class="o">=</span> <span class="n">secondS</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">firstChar</span> <span class="o">&gt;</span> <span class="n">secondChar</span><span class="p">:</span>
+        <span class="k">print</span> <span class="mi">1</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">firstChar</span> <span class="o">&lt;</span> <span class="n">secondChar</span><span class="p">:</span>
+        <span class="k">print</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">firstS</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">print</span> <span class="mi">0</span>
+</code></pre></div>
+<hr>
+
+<h1>133A HQ9+</h1>
+
+<blockquote>
+<p>HQ9+ is a joke programming language which has only four one-character instructions:</p>
+
+* "H" prints "Hello, World!",<br>
+* "Q" prints the source code of the program itself,<br>
+* "9" prints the lyrics of "99 Bottles of Beer" song,<br>
+* "+" increments the value stored in the internal accumulator.
+<p>Instructions "H" and "Q" are case-sensitive and must be uppercase. The characters of the program which are not instructions are ignored.</p>
+
+<p>You are given a program written in HQ9+. You have to figure out whether executing this program will produce any output.</p>
+
+<strong>Input</strong><br>
+The input will consist of a single line p which will give a program in HQ9+. String p will contain between 1 and 100 characters, inclusive. ASCII-code of each character of p will be between 33 (exclamation mark) and 126 (tilde), inclusive.
+<br>
+<br>
+<strong>Output</strong><br>
+Output "YES", if executing the program will produce any output, and "NO" otherwise.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first case the program contains only one instruction — "H", which prints "Hello, World!".<br>
+In the second case none of the program characters are language instructions.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+Hi!
+output
+YES
+
+input
+Codeforces
+output
+NO
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这道题不想多做解释....想多了就杯具了</span>
+<span class="c">#上面的不是这道题的code，下面的才是</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c">#wtf... it is indeed a joke...</span>
+<span class="c">#it doesn&#39;t need to be taken seriously</span>
+<span class="c">#Here is the code for &quot;+&quot; which can increase the </span>
+<span class="c">#value of formal letter</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">inputs = sys.stdin.readline().strip()</span>
+<span class="sd">flag = False</span>
+<span class="sd">while True:</span>
+<span class="sd">    n = inputs.find(&quot;+&quot;)</span>
+<span class="sd">    if n == -1: break</span>
+<span class="sd">    if n == 0: inputs = inputs[1:]</span>
+<span class="sd">    else:</span>
+<span class="sd">        if inputs[n-1] in &quot;GP8&quot;: </span>
+<span class="sd">            print &quot;YES&quot;</span>
+<span class="sd">            flag = True</span>
+<span class="sd">            break</span>
+<span class="sd">        else:</span>
+<span class="sd">            inputs = inputs[:n-1] + inputs[n+1:]</span>
+<span class="sd">if not flag:</span>
+<span class="sd">    for i in range(len(inputs)):</span>
+<span class="sd">        if inputs[i] in &quot;HQ9&quot;:</span>
+<span class="sd">            print &quot;YES&quot;</span>
+<span class="sd">            flag = True</span>
+<span class="sd">            break</span>
+<span class="sd">if not flag:</span>
+<span class="sd">    print &quot;NO&quot;</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="c">#here is the code for this stupid question</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="s">&quot;HQ9&quot;</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;YES&quot;</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">break</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">flag</span><span class="p">:</span> <span class="k">print</span> <span class="s">&quot;NO&quot;</span>
+</code></pre></div>
+<hr>
+
+<h1>148A Insomnia cure</h1>
+
+<blockquote>
+<p>«One dragon. Two dragon. Three dragon», — the princess was counting. She had trouble falling asleep, and she got bored of counting lambs when she was nine.</p>
+
+<p>However, just counting dragons was boring as well, so she entertained herself at best she could. Tonight she imagined that all dragons were here to steal her, and she was fighting them off. Every k-th dragon got punched in the face with a frying pan. Every l-th dragon got his tail shut into the balcony door. Every m-th dragon got his paws trampled with sharp heels. Finally, she threatened every n-th dragon to call her mom, and he withdrew in panic.</p>
+
+<p>How many imaginary dragons suffered moral or physical damage tonight, if the princess counted a total of d dragons?</p>
+
+<strong>Input</strong><br>
+Input data contains integer numbers k, l, m, n and d, each number in a separate line (1 ≤ k, l, m, n ≤ 10, 1 ≤ d ≤ 10**5).
+<br>
+<br>
+<strong>Output</strong><br>
+Output the number of damaged dragons.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first case every first dragon got punched with a frying pan. Some of the dragons suffered from other reasons as well, but the pan alone would be enough.
+<br><br>
+In the second case dragons 1, 7, 11, 13, 17, 19 and 23 escaped unharmed.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+1
+2
+3
+4
+12
+output
+12
+
+input
+2
+3
+4
+5
+24
+output
+17
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#这孩纸睡不着没事数龙玩...还自己制造故事情节...</span>
+<span class="c">#第k和k倍数的龙会被她用平底锅打飞(灰太狼的节奏吗)...</span>
+<span class="c">#第l和l倍数的龙尾巴会被她用门夹...</span>
+<span class="c">#第m和m倍数的龙脚掌会被她用高跟鞋踩...</span>
+<span class="c">#第n和n倍数的龙会被她威胁...</span>
+<span class="c">#输出的是有多少只龙精神上或者肉体上受到了她的摧残...</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">l</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c">#遍历数组，如果能被klmn整除</span>
+<span class="c">#则说明这条可怜的龙已然被摧残</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="n">k</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span><span class="o">%</span><span class="n">l</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span><span class="o">%</span><span class="n">m</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span><span class="o">%</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> 
+        <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span> <span class="n">result</span>
+</code></pre></div>
+<hr>
+
+<h1>96A Football</h1>
+
+<blockquote>
+<p>Petya loves football very much. One day, as he was watching a football match, he was writing the players' current positions on a piece of paper. To simplify the situation he depicted it as a string consisting of zeroes and ones. A zero corresponds to players of one team; a one corresponds to players of another team. If there are at least 7 players of some team standing one after another, then the situation is considered dangerous. For example, the situation 00100110111111101 is dangerous and 11110111011101 is not. You are given the current situation. Determine whether it is dangerous or not.</p>
+
+<strong>Input</strong><br>
+The first input line contains a non-empty string consisting of characters "0" and "1", which represents players. The length of the string does not exceed 100 characters. There's at least one player from each team present on the field.
+<br>
+<br>
+<strong>Output</strong><br>
+Print "YES" if the situation is dangerous. Otherwise, print "NO".
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+001001
+output
+NO
+
+input
+1000000001
+output
+YES
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#如果有至少7个同队球员在一起，则输出YES,否则输出NO</span>
+<span class="c">#实际上就是给定包含0和1的输入，计算相连数字的最大个数</span>
+<span class="c">#如果大于等于7，则输出YES,否则输出NO</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">zeroN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">oneN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">lastN</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">result</span> <span class="o">=</span> <span class="s">&quot;NO&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;0&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">lastN</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">zeroN</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">zeroN</span> <span class="o">==</span> <span class="mi">7</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="s">&quot;YES&quot;</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">zeroN</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">oneN</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">lastN</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;1&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">lastN</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">oneN</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">oneN</span> <span class="o">==</span> <span class="mi">7</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="s">&quot;YES&quot;</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">oneN</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">zeroN</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">lastN</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">print</span> <span class="n">result</span>
+</code></pre></div>
+<hr>
+
+<h1>160A Twins</h1>
+
+<blockquote>
+<p>Imagine that you have a twin brother or sister. Having another person that looks exactly like you seems very unusual. It's hard to say if having something of an alter ego is good or bad. And if you do have a twin, then you very well know what it's like.</p>
+
+<p>Now let's imagine a typical morning in your family. You haven't woken up yet, and Mom is already going to work. She has been so hasty that she has nearly forgotten to leave the two of her darling children some money to buy lunches in the school cafeteria. She fished in the purse and found some number of coins, or to be exact, n coins of arbitrary values a1, a2, ..., an. But as Mom was running out of time, she didn't split the coins for you two. So she scribbled a note asking you to split the money equally.</p>
+
+<p>As you woke up, you found Mom's coins and read her note. "But why split the money equally?" — you thought. After all, your twin is sleeping and he won't know anything. So you decided to act like that: pick for yourself some subset of coins so that the sum of values of your coins is strictly larger than the sum of values of the remaining coins that your twin will have. However, you correctly thought that if you take too many coins, the twin will suspect the deception. So, you've decided to stick to the following strategy to avoid suspicions: you take the minimum number of coins, whose sum of values is strictly more than the sum of values of the remaining coins. On this basis, determine what minimum number of coins you need to take to divide them in the described manner.</p>
+
+<strong>Input</strong><br>
+The first line contains integer n (1 ≤ n ≤ 100) — the number of coins. The second line contains a sequence of n integers a1, a2, ..., an (1 ≤ ai ≤ 100) — the coins' values. All numbers are separated with spaces.
+<br>
+<br>
+<strong>Output</strong><br>
+In the single line print the single number — the minimum needed number of coins.
+<br>
+<br>
+<strong>Note</strong><br>
+In the first sample you will have to take 2 coins (you and your twin have sums equal to 6, 0 correspondingly). If you take 1 coin, you get sums 3, 3. If you take 0 coins, you get sums 0, 6. Those variants do not satisfy you as your sum should be strictly more that your twins' sum.
+<br><br>
+In the second sample one coin isn't enough for us, too. You can pick coins with values 1, 2 or 2, 2. In any case, the minimum number of coins equals 2.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+2
+3 3
+output
+2
+
+input
+3
+2 1 2
+output
+2
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#简单说，就是给你一堆硬币，每个硬币都有自己的面值</span>
+<span class="c">#你需要拿一些硬币，使得你拿走的硬币总面值大于剩下的硬币</span>
+<span class="c">#你可能有很多种方案，但是题目要求用最少的硬币数量来实现</span>
+<span class="c">#最终输出你总共拿了几个硬币</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">coins</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">coinsValueTotal</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)):</span>
+    <span class="n">coin</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">coins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
+    <span class="n">coinsValueTotal</span> <span class="o">+=</span> <span class="n">coin</span>
+<span class="n">coins</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">minCoins</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">halfCoinsValueTotal</span> <span class="o">=</span> <span class="n">coinsValueTotal</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coins</span><span class="p">)):</span>
+    <span class="n">minCoins</span> <span class="o">+=</span>  <span class="n">coins</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">minCoins</span> <span class="o">&gt;</span> <span class="n">halfCoinsValueTotal</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">break</span>
+</code></pre></div>
+<hr>
+
+<h1>228A Is your horseshoe on the other hoof?</h1>
+
+<blockquote>
+<p>Valera the Horse is going to the party with friends. He has been following the fashion trends for a while, and he knows that it is very popular to wear all horseshoes of different color. Valera has got four horseshoes left from the last year, but maybe some of them have the same color. In this case he needs to go to the store and buy some few more horseshoes, not to lose face in front of his stylish comrades.</p>
+
+<p>Fortunately, the store sells horseshoes of all colors under the sun and Valera has enough money to buy any four of them. However, in order to save the money, he would like to spend as little money as possible, so you need to help Valera and determine what is the minimum number of horseshoes he needs to buy to wear four horseshoes of different colors to a party.</p>
+
+<strong>Input</strong><br>
+The first line contains four space-separated integers s1, s2, s3, s4 (1 ≤ s1, s2, s3, s4 ≤ 10**9) — the colors of horseshoes Valera has.
+<br>
+Consider all possible colors indexed with integers.
+<br>
+<br>
+<strong>Output</strong><br>
+Print a single integer — the minimum number of horseshoes Valera needs to buy.
+</blockquote>
+
+<h4>Sample test(s):</h4>
+<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">input
+1 7 3 3
+output
+1
+
+input
+7 7 7 7
+output
+3
+</code></pre></div>
+<h4>Code:</h4>
+<div class="highlight"><pre><code class="python language-python" data-lang="python"><span class="c">#输入为4个数字，每个数字代表一个颜色</span>
+<span class="c">#题目要求最终要4个不同的颜色</span>
+<span class="c">#输出为了要4个不同的颜色，需要更改几个颜色</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">colors</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">differentColors</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">lastColor</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">lastColor</span><span class="p">:</span>
+        <span class="n">differentColors</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">lastColor</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="k">print</span> <span class="mi">4</span> <span class="o">-</span> <span class="n">differentColors</span>
+</code></pre></div>
+<hr>
