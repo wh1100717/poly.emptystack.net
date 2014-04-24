@@ -3,12 +3,12 @@
 		<div class=top-container>
 			<div class=top-icon></div>
 			<div class=top-navs>
-				<a href="{{ site.url }}/home.html" data-hover="HOME">HOME</a>
-				<a href="{{ site.url }}/docs/home/" data-hover="INTRO">INTRO</a>
-				<a href="#" data-hover="PYTHON">PYTHON</a>
-				<a href="#" data-hover="JAVASCRIPT">JAVASCRIPT</a>
-				<a href="#" data-hover="AIRWATCH">AIRWATCH</a>
-				<a href="#" data-hover="EMM">EMM</a>
+				<a href="{{ site.url }}/home.html" data-hover="HOME" class={% if page.overview %}current{% endif %}>HOME</a>
+				<a href="{{ site.url }}/docs/home/" data-hover="INTRO" class={% if page.url contains '/docs/' %}current{% endif %}>INTRO</a>
+				<a href="#" data-hover="PYTHON" class={% if page.url contains '/python/' %}current{% endif %}>PYTHON</a>
+				<a href="#" data-hover="JAVASCRIPT" class={% if page.url contains '/javascript/' %}current{% endif %}>JAVASCRIPT</a>
+				<a href="#" data-hover="AIRWATCH" class={% if page.url contains '/airwatch/' %}current{% endif %}>AIRWATCH</a>
+				<a href="#" data-hover="EMM" class={% if page.url contains '/emm/' %}current{% endif %}>EMM</a>
 			</div>
 		</div>
 	</div>

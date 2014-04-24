@@ -1,6 +1,15 @@
 			*{
 				margin: 0;
 				padding: 0;
+				font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+			}
+
+			* a {
+				color: #8aa8bd;
+				text-decoration: none;
+			}
+
+			* a:hover {
 			}
 
 			body{
@@ -66,6 +75,14 @@
 			.top-navs a:hover::before{
 				opacity:1;
 				-webkit-transform:scale(1) rotateY(0deg) translateX(0px) translateY(0px);
+			}
+
+			.top-navs .current {
+				color: #fff;
+			}
+
+			.top-navs .current:hover::before {
+				opacity: 0;
 			}
 			/* end header */
 
