@@ -1,4 +1,7 @@
 .content{
+	-webkit-animation:content 1.5s ;
+}
+.content-start{
 	position:relative;
 	z-index:1000;
 	-webkit-animation:content 3s linear 5s backwards;
