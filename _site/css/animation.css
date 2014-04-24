@@ -29,9 +29,9 @@
 	position:absolute;
 	text-align:center;
 	text-shadow: 0px 0px 1px #fff;
-	-webkit-animation:title 3s linear 2s backwards;
+	-webkit-animation:start 3s linear 2s backwards;
 }
-@-webkit-keyframes title{
+@-webkit-keyframes start{
 	0%{
 		opacity: 0;
 		text-shadow: 0px 0px 40px #fff;
