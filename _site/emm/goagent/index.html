@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<title>GoAgent Configuration</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/wh1100717/PolyTechDocs/commits/master.atom" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/x-icon" href="/PolyTechDocs/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="/PolyTechDocs/css/animation.css"/>
+		<link rel="stylesheet" type="text/css" href="/PolyTechDocs/css/base.css"/>
+		<script src="/PolyTechDocs/js/jquery-2.0.3.min.js"></script>
+		<script src="/PolyTechDocs/js/dropdown.js"></script>
+	</head>
+
+<body class="wrap">
+	<div class=content>
+		<header>
+	<div class=top>
+		<div class=top-container>
+			<div class=top-icon></div>
+			<div class=top-navs>
+				<a href="/PolyTechDocs/home.html" data-hover="HOME" class=>HOME</a>
+				<a href="/PolyTechDocs/docs/home/" data-hover="INTRO" class=>INTRO</a>
+				<a href="/PolyTechDocs/python/intro/" data-hover="PYTHON" class=>PYTHON</a>
+				<a href="/PolyTechDocs/javascript/intro/" data-hover="JAVASCRIPT" class=>JAVASCRIPT</a>
+				<a href="/PolyTechDocs/airwatch/intro/" data-hover="AIRWATCH" class=>AIRWATCH</a>
+				<a href="/PolyTechDocs/emm/intro/" data-hover="EMM" class=current>EMM</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+    	<div class=container>
+	<div class=main>
+
+		<article>
+    <h2>
+        GoAgent Configuration
+        <a href="javascript:void(0)" class="permalink">∞</a>
+    </h2>
+    <span class="post-category">
+        
+        <span class="label">RELEASE</span>
+        
+    </span>
+    <div class="post-meta">
+        <span class="post-date">
+            13 Dec 2013
+        </span>
+        <a href="https://github.com/zq920320" class="post-author">
+            <img src="https://github.com/zq920320.png" class="avatar" />
+            zq920320
+        </a>
+    </div>
+    <p class="post-content">
+        <h1>GoAgent安装教程</h1>
+
+<p><strong>GoAgent</strong>是一个基于Google Appengine的，全面兼容IE，FireFox，chrome的代理工具，使用Python和Google App EngineSDK编写，程序可以在MicrosoftWindows，Mac，Linux，Android，iPod Touch，iPhone，iPad，webOS，OpenWrt，Maemo上使用。GoAgent出口地址使用的是美国加利福尼亚州山景城Google数据中心IP段。</p>
+
+<div class="note info">
+  <h5>gmail注册和appengine访问不了的情况</h5>
+  <p>gmail访问不稳定，有时候appengine访问不了，我们可以先用自由门来翻墙访问并注册，但是自由门不稳定并且不安全，不建议长期使用</p>
+  <p>具体下载地址点击<a href="http://pan.baidu.com/s/13oRlq" target="_blank">这里</a>，选择/polysaas/代理软件/fg.rar下载即可</p>
+</div>
+
+<h2>一、申请Google App Engine并创建appid</h2>
+
+<ul>
+<li>申请注册一个<strong>Google App Engine</strong>账号<a href="https://appengine.google.com">点击这里注册</a>。没有Gmail账号先注册一个， 用你的Gmaill账号登录。<br></li>
+<li>登录之后，自动转向<strong>Application</strong>注册页面，如下图：<br>
+<img src="http://ww1.sinaimg.cn/large/786e2887tw1e4thu8o1tuj20hs067mxn.jpg" alt=""><br></li>
+<li>接下来的页面，输入你的手机号码，需要注意的是，手机号码前面要+86（中国区号） 格式如：+86 13888888888。<br>
+<img src="http://ww2.sinaimg.cn/large/786e2887tw1e4thubjc3yj20hs07dmxw.jpg" alt=""><br>
+然后等待收取手机短信，收到短信后（一串数字号码）填入下图表单，点send提交.。<br>
+<img src="http://ww1.sinaimg.cn/large/786e2887tw1e4thucmsi5j20hc0743z5.jpg" alt=""><br></li>
+<li>提交完成之后，GAE账号即被激活，然后就可以创建新的应用程序了。填写新应用的必要信息，如下图。在图中第一处添加一个应用名称，如abc555,验证一下是否可用，如果显示“Yes”那么abc555就是你的Appid（记住这个id），而abc555.appspot.com就是你的应用服务器地址了。第二个空可随便填，点击Create Application按钮提交<br>
+<img src="http://ww2.sinaimg.cn/large/786e2887tw1e2s3t7k4v9j.jpg?craete-app.png"  width="600" /><br>
+提交之后，就能看到下图这个页面，就说明你已经成功创建了一个新的应用,你也可以点击应用名称，进入控制面板进行管理。<br>
+<img src="http://ww4.sinaimg.cn/large/786e2887tw1e4thubz37cj20go049t8w.jpg" alt=""><br></li>
+</ul>
+
+<h2>二、下载GoAgent并上传至Google App Engine</h2>
+
+<ul>
+<li>下载GoAgent并解压
+
+<ul>
+<li><a href="http://goo.gl/qFyRk">GoAgent官方下载链接</a><br></li>
+<li><a href="http://pan.baidu.com/s/13oRlq">网盘链接</a>: /polysaas/代理软件/客户端下载.zip<br></li>
+<li><a href="https://code.google.com/p/goagent/">GoAgent项目地址</a><br></li>
+</ul></li>
+<li>上传
+
+<ul>
+<li>双击server文件夹下的upload.bat<strong>(Linux/Mac用户上传方法：在server目录下执行：python uploader.zip)</strong>，输入你上步创建的appid（同时上传多appid在appid之间用 | 隔开,一次只能上传同一个谷歌帐户下的appid）填完按回车。根据提示填你的谷歌帐户邮箱地址，填完按回车。根据提示填你的谷歌帐户密码(注意：如果开启了两步验证，密码应为16位的应用程序专用密码而非谷歌帐户密码），填完按回车。<br>
+<img src="http://ww4.sinaimg.cn/large/786e2887jw9e7n5u3iijqj20iq0c8q6b.jpg"  width="600" /><br>
+上传成功就会看图下图界面<br>
+<img src="http://ww1.sinaimg.cn/large/786e2887jw1e3bnmhap9wj.jpg?uploaded.png"  width="600" /><br></li>
+</ul></li>
+<li>上传成功后编辑local\proxy.ini，把其中appid = goagent中的goagent 改成你已经上传成功的应用的appid </li>
+</ul>
+
+<h2>三、Chrome浏览器配置</h2>
+
+<ul>
+<li>安装扩展
+
+<ul>
+<li>地址栏输入chrome://extensions/后按回车，打开扩展管理页，将local文件夹中的SwitchySharp.crx拖拽到该页面之后点击确定即可安装<br>
+<img src="http://ww4.sinaimg.cn/large/786e2887tw1e3hhmzjy1zj.jpg?install_Proxy_Switchy_Sharp.png"  width="600" /><br></li>
+</ul></li>
+<li>导入设置
+
+<ul>
+<li>点击 Proxy SwitchySharp图标--&gt;选项--&gt;倒入/导出<br>
+<img src="http://ww1.sinaimg.cn/large/786e2887jw1e2s44kpzqyj.jpg?bak.png"  width="600" /><br></li>
+<li>浏览到SwitchyOptions.bak，点击确定导入设置</li>
+<li>更新自动切换规则（如果遇到无法更新规则列表，可以先运行<strong>goagent</strong>，并把浏览器代理设置为<strong>GoAgent</strong>模式再更新规则，不更新规则只会影响自动切换模式，不会影响其他模式的使用，若确实无法更新也可不更新，直接使用PAC模式即可）</li>
+<li>在扩展设置页点击“切换规则”，点击“立即更新列表”，最后点击“保存”。<br>
+<img src="http://ww4.sinaimg.cn/large/786e2887tw1e2s3tcf8lij.jpg?getrules.png"  width="600" /><br></li>
+<li>单击地址栏右侧Proxy SwitchySharp图标即可进行模式选择<br>
+<img src="http://ww2.sinaimg.cn/large/786e2887tw1e2s3t6x2ivj.jpg?changemode.png" alt=""><br></li>
+<li><strong>GoAgent</strong>模式 除匹配proxy.ini中sites的直连外，其他全部通过GAE</li>
+<li><strong>GoAgent PAAS</strong>模式 全部通过PAAS</li>
+<li><strong>GoAgent Socks5</strong>模式 全部通过Socks5（暂不可用）</li>
+<li>自动切换模式 根据切换规则自动选择是否进行代理，自动选择使用何种代理</li>
+</ul></li>
+</ul>
+
+<h2>四、Mac开机自动启动GoAgent</h2>
+
+<ul>
+<li>在local/目录下执行下面这条命令即可<br>
+<code>python addto-startup.py</code></li>
+<li>如果权限不够，执行<br>
+<code>sudo python addto-startup.py</code></li>
+<li>输入密码即可</li>
+</ul>
+
+    </p>
+    <br>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'polytechdocs'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</article>
+
+		
+	</div>
+
+	<div id="kk" class=container-navs>
+	<span id="jj">Transport</span>
+	<ul class="dropdown">
+		<li><a href="#">Classic mail</a></li>
+		<li><a href="#">UPS Delivery</a></li>
+		<li><a href="#">Private jet</a></li>
+	</ul>
+</div>
+					
+	<div class=clear></div>
+</div>
+
+   		<footer>
+    <div class=footer>
+        <div class=footer-container>
+            <div class=footer-left>
+                <p>By <a href="http://github.com/wh1100717">Eric Wang</a>
+                    <script type="text/javascript">
+                        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                        document.write(unescape("%3Cspan id='cnzz_stat_icon_5744809'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D5744809%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+                    </script>
+                    <br>
+                    and many more <a href="https://github.com/wh1100717/PolyTechDocs/graphs/contributors">awesome&nbsp;contributors</a>.
+                </p>
+            </div>
+            <div class=footer-right>
+                <p>
+                    hosted by
+                    <a href="https://github.com/wh1100717/PolyTechDocs" class=footer-img>
+                        <img width = '100' height="30" src="/PolyTechDocs/img/footer-logo.png" alt="GitHub | Social coding">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+	</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_item
 title: Markdown Syntax
 prev_section: markdownbase
 next_section: pythonbase

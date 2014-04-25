@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<title>hljemm</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="https://github.com/wh1100717/PolyTechDocs/commits/master.atom" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/x-icon" href="/PolyTechDocs/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="/PolyTechDocs/css/animation.css"/>
+		<link rel="stylesheet" type="text/css" href="/PolyTechDocs/css/base.css"/>
+		<script src="/PolyTechDocs/js/jquery-2.0.3.min.js"></script>
+		<script src="/PolyTechDocs/js/dropdown.js"></script>
+	</head>
+
+<body class="wrap">
+	<div class=content>
+		<header>
+	<div class=top>
+		<div class=top-container>
+			<div class=top-icon></div>
+			<div class=top-navs>
+				<a href="/PolyTechDocs/home.html" data-hover="HOME" class=>HOME</a>
+				<a href="/PolyTechDocs/docs/home/" data-hover="INTRO" class=>INTRO</a>
+				<a href="/PolyTechDocs/python/intro/" data-hover="PYTHON" class=>PYTHON</a>
+				<a href="/PolyTechDocs/javascript/intro/" data-hover="JAVASCRIPT" class=>JAVASCRIPT</a>
+				<a href="/PolyTechDocs/airwatch/intro/" data-hover="AIRWATCH" class=>AIRWATCH</a>
+				<a href="/PolyTechDocs/emm/intro/" data-hover="EMM" class=current>EMM</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+    	<div class=container>
+	<div class=main>
+
+		<article>
+    <h2>
+        hljemm
+        <a href="javascript:void(0)" class="permalink">∞</a>
+    </h2>
+    <span class="post-category">
+        
+        <span class="label">release</span>
+        
+    </span>
+    <div class="post-meta">
+        <span class="post-date">
+            11 Dec 2013
+        </span>
+        <a href="https://github.com/wh1100717" class="post-author">
+            <img src="https://github.com/wh1100717.png" class="avatar" />
+            wh1100717
+        </a>
+    </div>
+    <p class="post-content">
+        <h2>hljemm项目搭建</h2>
+
+<ul>
+<li>  首先在eclipse中新建Dynamic Web Project</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm1.png" alt=""></p>
+
+<ul>
+<li>  进行项目配置：
+
+<ul>
+<li>  项目名称自拟，比如该例子中为hjlemm1</li>
+<li>  服务器选择tomcat 7.0</li>
+<li>  选择2.5版本的Dynamic Web Module Version</li>
+<li>  选择<custom> Configuration</li>
+<li>  点击Modify勾选Javascript,点击完成生成项目。</li>
+</ul></li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm2.png" alt=""></p>
+
+<ul>
+<li>  右键点击项目，选择Import</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm3.png" alt=""></p>
+
+<ul>
+<li>  在Import中进行选择和配置：
+
+<ul>
+<li>  选择src和WebContent文件夹</li>
+<li>  勾选Overwrite existing resources without warning</li>
+<li>  点击完成</li>
+</ul></li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm4.png" alt=""></p>
+
+<ul>
+<li>  右键点击项目，选择属性Properties，选择Resources，将Text file encoding改为utf-8</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm5.png" alt=""></p>
+
+<ul>
+<li>  执行clean操作，具体位置在菜单栏--&gt;Project--&gt;Clean</li>
+<li>  如果已有tomcat服务器，则选择服务器右键点击，选择Add and Remove，将项目添加到服务器中</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm6.png" alt=""></p>
+
+<ul>
+<li>  如果没有tomcat服务器，则在server标签页里面右键点击空白地方，New--&gt;Server，新建一个服务器</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm7.png" alt=""></p>
+
+<ul>
+<li>  如图所示去配置tomcat服务器，并点击下一步</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm8.png" alt=""></p>
+
+<ul>
+<li>  将项目添加到服务器中</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm9.png" alt=""></p>
+
+<ul>
+<li>  项目用到了sqlite数据库，其指定了一个具体的目录来存放数据库文件，因此需要保证项目数据库文件存放路径是存在的，所以需要建立该路径所需要的文件夹，如图所示：</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm10.png" alt=""></p>
+
+<ul>
+<li>  启动tomcat，在浏览器中输入以http://localhost:8080/hljemm1/services/listServices查看是否服务启动成功</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm11.png" alt=""></p>
+
+<ul>
+<li>  点击OrderManage进入具体的wsdl描述页面，复制该链接，在soapUI中将会用到</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm12.png" alt=""></p>
+
+<ul>
+<li>  启动soapUI，新建一个soapUI Project</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm13.png" alt=""></p>
+
+<ul>
+<li>  将刚才复制的链接粘帖到Initial WSDL/WADL栏中，ProjectName自己随便起</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm14.png" alt=""></p>
+
+<ul>
+<li>  点击具体的请求，赋值参数，点击绿色按钮来进行消息测试</li>
+</ul>
+
+<p><img src="/PolyTechDocs/img/hljemm/hljemm15.png" alt=""></p>
+
+<p>至此，hljemm项目的搭建就完成了，之后可以利用soapUI对具体的请求、业务逻辑进行熟悉和测试工作。</p>
+
+<p>收工o(∩_∩)o</p>
+
+    </p>
+    <br>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'polytechdocs'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</article>
+
+		
+	</div>
+
+	<div id="kk" class=container-navs>
+	<span id="jj">Transport</span>
+	<ul class="dropdown">
+		<li><a href="#">Classic mail</a></li>
+		<li><a href="#">UPS Delivery</a></li>
+		<li><a href="#">Private jet</a></li>
+	</ul>
+</div>
+					
+	<div class=clear></div>
+</div>
+
+   		<footer>
+    <div class=footer>
+        <div class=footer-container>
+            <div class=footer-left>
+                <p>By <a href="http://github.com/wh1100717">Eric Wang</a>
+                    <script type="text/javascript">
+                        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                        document.write(unescape("%3Cspan id='cnzz_stat_icon_5744809'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s17.cnzz.com/stat.php%3Fid%3D5744809%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+                    </script>
+                    <br>
+                    and many more <a href="https://github.com/wh1100717/PolyTechDocs/graphs/contributors">awesome&nbsp;contributors</a>.
+                </p>
+            </div>
+            <div class=footer-right>
+                <p>
+                    hosted by
+                    <a href="https://github.com/wh1100717/PolyTechDocs" class=footer-img>
+                        <img width = '100' height="30" src="/PolyTechDocs/img/footer-logo.png" alt="GitHub | Social coding">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+	</div>
+</body>
+</html>

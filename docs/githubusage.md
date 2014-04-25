@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_item
 title: GitHub Usage
 prev_section: installation
 next_section: jekyllusage

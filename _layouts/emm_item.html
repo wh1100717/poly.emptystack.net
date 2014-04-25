@@ -1,0 +1,42 @@
+---
+layout: emm
+---
+
+<article>
+    <h2>
+        {{ page.title }}
+        <a href="javascript:void(0)" class="permalink">∞</a>
+    </h2>
+    <span class="post-category">
+        {% for category in page.categories %}
+        <span class="label">{{ category }}</span>
+        {% endfor %}
+    </span>
+    <div class="post-meta">
+        <span class="post-date">
+            {{ page.date | date_to_string }}
+        </span>
+        <a href="https://github.com/{{ page.author }}" class="post-author">
+            <img src="https://github.com/{{ page.author }}.png" class="avatar" />
+            {{ page.author }}
+        </a>
+    </div>
+    <p class="post-content">
+        {{ content }}
+    </p>
+    <br>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'polytechdocs'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</article>

@@ -5,10 +5,10 @@
 			<div class=top-navs>
 				<a href="{{ site.url }}/home.html" data-hover="HOME" class={% if page.overview %}current{% endif %}>HOME</a>
 				<a href="{{ site.url }}/docs/home/" data-hover="INTRO" class={% if page.url contains '/docs/' %}current{% endif %}>INTRO</a>
-				<a href="#" data-hover="PYTHON" class={% if page.url contains '/python/' %}current{% endif %}>PYTHON</a>
-				<a href="#" data-hover="JAVASCRIPT" class={% if page.url contains '/javascript/' %}current{% endif %}>JAVASCRIPT</a>
-				<a href="#" data-hover="AIRWATCH" class={% if page.url contains '/airwatch/' %}current{% endif %}>AIRWATCH</a>
-				<a href="#" data-hover="EMM" class={% if page.url contains '/emm/' %}current{% endif %}>EMM</a>
+				<a href="{{ site.url }}/python/intro/" data-hover="PYTHON" class={% if page.url contains '/python/' %}current{% endif %}>PYTHON</a>
+				<a href="{{ site.url }}/javascript/intro/" data-hover="JAVASCRIPT" class={% if page.url contains '/javascript/' %}current{% endif %}>JAVASCRIPT</a>
+				<a href="{{ site.url }}/airwatch/intro/" data-hover="AIRWATCH" class={% if page.url contains '/airwatch/' %}current{% endif %}>AIRWATCH</a>
+				<a href="{{ site.url }}/emm/intro/" data-hover="EMM" class={% if page.url contains '/emm/' %}current{% endif %}>EMM</a>
 			</div>
 		</div>
 	</div>

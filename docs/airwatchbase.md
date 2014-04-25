@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_item
 title: AirWatch
 prev_section: pythonbase
 next_section: emmbase

@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_item
 title: Markdown Base
 prev_section: jekyllusage
 next_section: markdownsyntax

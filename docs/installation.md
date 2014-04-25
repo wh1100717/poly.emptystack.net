@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_item
 title: Installation
 prev_section: invovled
 next_section: githubusage
