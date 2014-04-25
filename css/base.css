@@ -147,6 +147,14 @@
 				top: 102px;
 			}
 
+			#kk2 {
+				top: 152px;
+			}
+
+			#kk3 {
+				top: 202px;
+			}
+
 			.container-navs:after {
 			    content: "";
 			    width: 0;
@@ -227,9 +235,18 @@
 			    border-radius: 7px 7px 0 0;
 			}
 
+			.container-navs .dropdown li:first-of-type .single {
+			    border-radius: 7px 7px;
+			}
+
 			.container-navs .dropdown li:last-of-type a {
 			    border: none;
 			    border-radius: 0 0 7px 7px;
+			}
+
+			.container-navs .dropdown li:last-of-type .single {
+			    border: none;
+			    border-radius: 7px 7px;
 			}
 
 			/* Hover state */
