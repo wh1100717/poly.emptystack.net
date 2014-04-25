@@ -39,7 +39,7 @@
 				float: left;
 				width: 32px;
 				height: 32px;
-				margin: 5px 22px 0 0;
+				margin: 5px 7px 0 0;
 				background: url("../favicon.ico")
 			}
 
@@ -50,7 +50,7 @@
 			.top-navs a{
 				position: relative;
 				display: inline-block;
-				margin: 10px 15px;
+				margin: 10px 40px;
 				outline: none;
 				color: #939393;
 				text-decoration: none;
