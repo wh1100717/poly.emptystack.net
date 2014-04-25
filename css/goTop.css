@@ -1,0 +1,44 @@
+			.gotop {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				width: 40px;
+				height: 40px;
+				background: #fafaf3;
+			    border-radius: 7px;
+			    border: 1px solid rgba(0,0,0,0.15);
+				overflow: hidden;
+				opacity: 0;
+			}
+
+			.gotop a {
+				text-decoration: none;
+				font-weight: bold;
+			}
+
+			#gotop {
+				position: relative;
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				color: rgba(0,0,0,0.15);
+				line-height: 40px;
+				text-decoration: none;
+				display: block;
+				-webkit-transition: all .3s;
+			}
+
+			#gotop::before {
+				content: attr(data-hover);
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+			}
+
+			.gotop:hover #gotop {
+				color: #8AA8BD;
+				-webkit-transform: translateY(-100%);
+			}
