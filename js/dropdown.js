@@ -1,16 +1,18 @@
 $(document).ready(function(){
 
-
-setInterval(function(){
+ $("body").click(function(e){
+ 	
+if(e.target.className!='symbol2' && e.target.className!='symbol'){
 
 $(".container-navs .dropdown").css("pointer-events","none");
 $(".container-navs .dropdown").css("opacity","0");
 
 $(".container-navs").animate({right:'-80px' },1000);
+$(".main").animate({right:'0%' },500);
+}
 
-
-
-},20000);
+   
+  });
 
 
 
