@@ -25,6 +25,11 @@ article ul li p {
   margin: 0px;
 }
 
+article p{
+  margin: 8px;
+}
+
+
 article ul li, article ol li {
   line-height: 1.5em;
   margin-bottom: 0.5em;
@@ -32,6 +37,10 @@ article ul li, article ol li {
 
 article ul li blockquote {
   margin: 10px 0;
+}
+
+article ul{
+  padding-left: 40px;
 }
 
 blockquote {
