@@ -74,7 +74,7 @@ Pygments支持easy\_install安装，而easy\_install是用Python编写的脚本�
 * 下载脚本[ez_setup.py](https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py)至本地，例如D盘根目录
 * 终端执行`$ python d:/ez_setup.py`进行SetupTools的安装
 
-在运行的时候会发生一个错误，该错误为`ascii codec can't decode byte 0xe8 in position 0:ordinal not in range(128)`大意为ascii编码不能解析byte 0xe8。解决方法：找到并打开python根目录/Lib/mimetypes.py文件，在`import urllib`后，添加代码:
+在运行的时候会发生一个错误，该错误为```ascii codec can't decode byte 0xe8 in position 0:ordinal not in range(128)```大意为ascii编码不能解析byte 0xe8。解决方法：找到并打开python根目录/Lib/mimetypes.py文件，在`import urllib`后，添加代码:
 
 {% highlight python %}
 reload(sys)
