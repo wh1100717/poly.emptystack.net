@@ -1,7 +1,16 @@
 $(document).ready(function(){
 
 
+setInterval(function(){
 
+$(".container-navs .dropdown").css("pointer-events","none");
+$(".container-navs .dropdown").css("opacity","0");
+
+$(".container-navs").animate({right:'-80px' },1000);
+
+
+
+},20000);
 
 
 
