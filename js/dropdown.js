@@ -8,7 +8,7 @@ $(".container-navs .dropdown").css("pointer-events","none");
 $(".container-navs .dropdown").css("opacity","0");
 
 $(".container-navs").animate({right:'-80px' },1000);
-$(".main").animate({right:'0%' },500);
+$(".main").animate({right:'0%' },1000);
 }
 
    
