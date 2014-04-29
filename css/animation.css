@@ -8,11 +8,11 @@
 .content-start{
 	position:relative;
 	z-index:1000;
-	-webkit-animation: content 3s linear 5s backwards;
-	-moz-animation: content 3s linear 5s backwards;
-	-ms-animation: content 3s linear 5s backwards;
-	-o-animation: content 3s linear 5s backwards;
-	animation: content 3s linear 5s backwards;
+	-webkit-animation: content 2s linear 3.5s backwards;
+	-moz-animation: content 2s linear 3.5s backwards;
+	-ms-animation: content 2s linear 3.5s backwards;
+	-o-animation: content 2s linear 3.5s backwards;
+	animation: content 2s linear 3.5s backwards;
 }
 .start{
 	z-index:0;
@@ -21,11 +21,11 @@
 	top:0px;left:0px;
 	background:#ccc;
 	text-align:center;
-	-webkit-animation: background 3s linear 5s forwards;
-	-moz-animation: background 3s linear 5s forwards;
-	-ms-animation: background 3s linear 5s forwards;
-	-o-animation: background 3s linear 5s forwards;
-	animation: background 3s linear 5s forwards;
+	-webkit-animation: background 2s linear 3.5s forwards;
+	-moz-animation: background 2s linear 3.5s forwards;
+	-ms-animation: background 2s linear 3.5s forwards;
+	-o-animation: background 2s linear 3.5s forwards;
+	animation: background 2s linear 3.5s forwards;
 }
 .image{
 	position:absolute;
@@ -33,14 +33,24 @@
 	top:50%;left:50%;
 	margin:-37px;
 	background-image:url("../logo.png");
-	-webkit-animation: image 3s linear forwards;
-	-moz-animation: image 3s linear forwards;
-	-ms-animation: image 3s linear forwards;
-	-o-animation: image 3s linear forwards;
-	animation: image 3s linear forwards;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-transform: scale(0) rotate(360deg);
+	-moz-transform: scale(0) rotate(360deg);
+	-ms-transform: scale(0) rotate(360deg);
+	-o-transform: scale(0) rotate(360deg);
+	transform: scale(0) rotate(360deg);
+	-webkit-animation: image 1s linear 1.5s forwards;
+	-moz-animation: image 1s linear 1.5s forwards;
+	-ms-animation: image 1s linear 1.5s forwards;
+	-o-animation: image 1s linear 1.5s forwards;
+	animation: image 1s linear 1.5s forwards;
 }
 .start h2{
-	font-weight:blod;
+	font-weight:bold;
 	font-size:60px;
 	top:60%;
 	width:100%;height:68px;
@@ -48,11 +58,11 @@
 	position:absolute;
 	text-align:center;
 	text-shadow: 0px 0px 1px #fff;
-	-webkit-animation: start 3s linear 2s backwards;
-	-moz-animation: start 3s linear 2s backwards;
-	-ms-animation: start 3s linear 2s backwards;
-	-o-animation: start 3s linear 2s backwards;
-	animation: start 3s linear 2s backwards;
+	-webkit-animation: start 2s linear backwards;
+	-moz-animation: start 2s linear backwards;
+	-ms-animation: start 2s linear backwards;
+	-o-animation: start 2s linear backwards;
+	animation: start 2s linear backwards;
 }
 @-webkit-keyframes start{
 	0%{
@@ -74,11 +84,11 @@
 @-webkit-keyframes image{
 	0%{
 		opacity: 0;
-		-webkit-transform: scale(100);
+		-webkit-transform: scale(0) rotate(360deg);
 	}
 	100%{
 		opacity: 1;
-		-webkit-transform: scale(1.5);
+		-webkit-transform: scale(1) rotate(0deg);
 	}
 }
 @-webkit-keyframes background{
@@ -118,11 +128,11 @@
 @-moz-keyframes image{
 	0%{
 		opacity: 0;
-		-moz-transform: scale(100);
+		-moz-transform: scale(0) rotate(360deg);
 	}
 	100%{
 		opacity: 1;
-		-moz-transform: scale(1.5);
+		-moz-transform: scale(1) rotate(0deg);
 	}
 }
 @-moz-keyframes background{

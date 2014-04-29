@@ -4,7 +4,7 @@
 				right: 20px;
 				width: 40px;
 				height: 40px;
-				background: #fafaf3;
+				background: rgba(255,255,255,.7);
 			    border-radius: 7px;
 			    border: 1px solid rgba(0,0,0,0.15);
 			    box-shadow: 0 3px 10px rgba(0,0,0,.2);
@@ -22,7 +22,7 @@
 				width: 40px;
 				height: 40px;
 				text-align: center;
-				color: rgba(0,0,0,0.15);
+				color: rgba(0,0,0,.7);
 				line-height: 40px;
 				text-decoration: none;
 				display: block;
@@ -48,7 +48,7 @@
 			}
 
 			.gotop:hover #gotop {
-				color: #8AA8BD;
+				color: #0389aa;
 				-webkit-transform: translateY(-100%);
 				-moz-transform: translateY(-100%);
 				-ms-transform: translateY(-100%);
