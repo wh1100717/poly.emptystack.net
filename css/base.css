@@ -436,16 +436,18 @@
 			  text-shadow: none;
 			  position: relative;
 			  padding: 0 20px 30px;
+			  height: 250px;
+			  width: 938px;
 			}
 
 			.free-hosting img {
 			  float: left;
 			  margin: -20px -30px -30px -50px;
 			  width: 300px;
-			  height: 251px;
+			  height: 190px;
 			}
 			.free-hosting .pane-content {
-			  margin-top: 35px;
+			  margin-top: 12px;
 			  padding-right: 30px;
 			}
 			.free-hosting p,
@@ -466,6 +468,32 @@
 			    right: 0;
 			    bottom: -30px;
 			}
+
+
+			.mm1{
+
+                height: 45px;
+                width: 251px;
+                
+                
+
+			}
+			#head{
+                -webkit-transform-origin: 50% 100%;
+                -webkit-transition: 2s;
+
+			}
+			.mm2{
+
+                height: 45px;
+                width: 251px;
+                
+
+			}
+
+
+
+
 
 			/* footer */
 			.footer{
