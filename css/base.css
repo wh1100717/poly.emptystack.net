@@ -121,7 +121,7 @@
 			    /* Size and position */
 			    position: fixed;
 			    
-			    right: -130px;
+			    right: -80px;
 			    width: 200px;
 			    margin-top: 0px;
 			    padding: 10px;
@@ -133,7 +133,7 @@
 			    box-shadow: 0 3px 10px rgba(0,0,0,.2);
 			    cursor: pointer;
 			    outline: none;
-
+                pointer-events: none;
 			    /* Font settings */
 			    font-weight: bold;
 			    color: #8AA8BD;
@@ -147,6 +147,7 @@
 				top: 102px;
 			}
 
+
 			#kk2 {
 				top: 152px;
 			}
@@ -154,6 +155,16 @@
 			#kk3 {
 				top: 202px;
 			}
+
+			.symbol{
+				
+				pointer-events: auto;
+				width:222px;
+				height:22px; 
+			}
+            .dropdown.li{
+            	
+            }
 
 			.container-navs:after {
 			    content: "";
@@ -187,7 +198,7 @@
 			    -o-transition: all 0.5s ease-in;
 			    transition: all 0.5s ease-in;
 			    list-style: none;
-
+                pointer-events: none;
 			    /* Hiding */
 			    opacity: 0;
 			  

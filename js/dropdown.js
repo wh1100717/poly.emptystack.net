@@ -1,18 +1,39 @@
 $(document).ready(function(){
-  $(".container-navs").click(function(){
-    $(".container-navs").animate({right:'13%' },1000);
-    $(".main").animate({right:'20%' },1000);
+
+
+
+
+
+
+  $(".symbol").click(function(){
+
+$(".container-navs .dropdown").css("pointer-events","none");
+$(".container-navs .dropdown").css("opacity","0");
+
+$(".container-navs").animate({right:'-80px' },200);
+ var i=$(this).parent();
+
+
+
+
+
+
+    i.animate({right:'13%' },500);
+
+   
+   
+    $(".main").animate({right:'20%' },500);
     setTimeout(function(){
-      $(".container-navs .dropdown").css("opacity","1");
-    },1000);
+      
+      i.find("ul").css("opacity","1");
+       i.find(".dropdown").css("pointer-events","auto")
+    },500);
+
+  
+
   });
-  $("body").click(function(e){
-    if(e.target.id.indexOf("kk")==-1 && e.target.id.indexOf("jj")==-1){
-      $(".container-navs .dropdown").css("opacity","0");
-        setTimeout(function(){
-          $(".container-navs").animate({right:'-130px' },1000);
-          $(".main").animate({right:'0px' },1000);
-        },1000);
-    }
-  });
+
+
+
+
 });
