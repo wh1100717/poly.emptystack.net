@@ -551,6 +551,7 @@
                 margin: -20px -30px -30px -50px;
 			}
 			#head{
+				float: left;
                 -webkit-transform-origin: 50% 100%;
                 -moz-transform-origin: 50% 100%;
                 -ms-transform-origin: 50% 100%;
@@ -570,7 +571,7 @@
                 height: 130px;
                 width: 300px;
                 margin: 0px -30px -30px -50px;
-                float: left;
+                
                 
 			}
 
