@@ -17,4 +17,19 @@
 		<script src="{{ site.url }}/js/dropdown.js"></script>
 		<script src="{{ site.url }}/js/mm.js"></script>
 		<script src="{{ site.url }}/js/toTop.js"></script>
+		<script>
+			var window_href = window.location.href;
+			var window_flag = false;
+			if(window_href.indexOf('/PolyTechDocs') > -1){
+				window_href = window_href.replace('/PolyTechDocs');
+				window_flag = true;
+			}
+			if(window_href.indexOf('wh1100717.github.io') > -1){
+				window_href = window_href.replace('wh1100717.github.io','poly.emptystack.net');
+				window_flag = true;
+			}
+			if(window_flag){
+				location.href = window_href;				
+			}
+		</script>
 	</head>
