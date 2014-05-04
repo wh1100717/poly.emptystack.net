@@ -1,0 +1,57 @@
+			.gotop {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				width: 40px;
+				height: 40px;
+				background: rgba(255,255,255,.7);
+			    border-radius: 7px;
+			    border: 1px solid rgba(0,0,0,0.15);
+			    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+				overflow: hidden;
+				opacity: 0;
+				z-index: 100;
+			}
+
+			.gotop a {
+				text-decoration: none;
+			}
+
+			#gotop {
+				position: relative;
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				color: rgba(0,0,0,.7);
+				line-height: 40px;
+				text-decoration: none;
+				display: block;
+				-webkit-transition: all .3s;
+				-moz-transition: all .3s;
+				-ms-transition: all .3s;
+				-o-transition: all .3s;
+				transition: all .3s;
+			}
+
+			#gotop::before {
+				content: attr(data-hover);
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+			}
+
+			.gotop:hover {
+				background: #f3f8f8;
+			}
+
+			.gotop:hover #gotop {
+				color: #0389aa;
+				-webkit-transform: translateY(-100%);
+				-moz-transform: translateY(-100%);
+				-ms-transform: translateY(-100%);
+				-o-transform: translateY(-100%);
+				transform: translateY(-100%);
+			}

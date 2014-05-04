@@ -54,7 +54,7 @@ categories: [demo]
 *	解压放置在eclipse文件夹下
 *	启动eclipse
 *	windows->Preferences->PyDev->Interpreters->Python interpreter下点击new添加python.exe完成
-<img src="{{ site.url }}/img/python/eclipse4python/eclipsePydev.jpg"  alt="">
+<img src="{{ site.url }}/img/python/eclipse4python/eclipsePydev.jpg" width="650" alt="">
 ##Eclipse配置Github
 *	[下载Egit](http://pan.baidu.com/s/13oRlq)
 *	解压放置在eclipse文件夹下

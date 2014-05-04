@@ -1,15 +1,15 @@
 <header>
-    <div class="grid">
-        <div class="unit one-third center-on-mobiles">
-            <h1>
-                <a href="{{ site.url }}/">
-                    <span>PolyTechDocs</span>
-                    <img src="{{ site.url }}/img/logo-2x.png" width="115" height="115" alt="">
-                </a>
-            </h1>
-        </div>
-        <nav class="main-nav unit two-thirds hide-on-mobiles">
-            {% include primary-nav-items.html %}
-        </nav>
-    </div>
+	<div class=top>
+		<div class=top-container>
+			<div class=top-icon></div>
+			<div class=top-navs>
+				<a href="{{ site.url }}/home.html" data-hover="HOME" class={% if page.overview %}current{% endif %}>HOME</a>
+				<a href="{{ site.url }}/docs/home/" data-hover="INTRO" class={% if page.url contains '/docs/' %}current{% endif %}>INTRO</a>
+				<a href="{{ site.url }}/python/intro/" data-hover="PYTHON" class={% if page.url contains '/python/' %}current{% endif %}>PYTHON</a>
+				<a href="{{ site.url }}/javascript/intro/" data-hover="JAVASCRIPT" class={% if page.url contains '/javascript/' %}current{% endif %}>JAVASCRIPT</a>
+				<a href="{{ site.url }}/airwatch/intro/" data-hover="AIRWATCH" class={% if page.url contains '/airwatch/' %}current{% endif %}>AIRWATCH</a>
+				<a href="{{ site.url }}/emm/intro/" data-hover="EMM" class={% if page.url contains '/emm/' %}current{% endif %}>EMM</a>
+			</div>
+		</div>
+	</div>
 </header>

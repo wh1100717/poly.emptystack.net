@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_item
 title: Poly EMM
 prev_section: airwatchbase
 next_section: todo-translate

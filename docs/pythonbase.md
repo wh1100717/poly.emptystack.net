@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_item
 title: Python
 prev_section: markdownsyntax
 next_section: airwatchbase

@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_item
 title: Getting Invovled
 prev_section: home
 next_section: installation

@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs_item
 title: Jekyll Usage
 prev_section: githubusage
 next_section: markdownbase
